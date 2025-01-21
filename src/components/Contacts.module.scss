@@ -2,11 +2,14 @@ body {
   font-family: 'Cannonade', sans-serif;
 }
 .contacts {
+
     display: flex;
     justify-content: center;
     padding: 40px;
-    background-color: #1e1e1e;
+    background-image: url('./assents/icon/Backround.png');
     color: #fff;
+    background-size: cover;
+  background-position: center;
   
     .container {
       display: flex;
