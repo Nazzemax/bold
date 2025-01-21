@@ -5,6 +5,7 @@ import Image from 'next/image';
 import icon1 from './assents/icon/Frame_239.png'
 import icon2 from './assents/icon/Frame_241.png'
 import Button from "./button/button";
+import Form from "./form/form";
 
 const Contacts: React.FC = () => {
   const [name, setName] = useState("");
@@ -19,6 +20,10 @@ const Contacts: React.FC = () => {
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value);
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => setIsAgree(e.target.checked);
+
+  function handleFormSubmit(name: string, phone: string, email: string): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <div className={style.contacts}>
@@ -61,60 +66,7 @@ const Contacts: React.FC = () => {
           <h2 className={style.formTitle}>
             Заполните форму и получите предложение
           </h2>
-          <form className={style.form}>
-            <div className={style.formGroup}>
-              <label htmlFor="name">Имя</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Иван Иванов Иванович"
-                className={style.input}
-                value={name}
-                onChange={handleNameChange}
-              />
-            </div>
-            <div className={style.formGroup}>
-              <label htmlFor="phone">Номер телефона</label>
-              <input
-                type="text"
-                id="phone"
-                placeholder="+996"
-                className={style.input}
-                value={phone}
-                onChange={handlePhoneChange}
-              />
-            </div>
-            <div className={style.formGroup}>
-              <label htmlFor="email">Электронная почта</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Введите электронную почту"
-                className={style.input}
-                value={email}
-                onChange={handleEmailChange}
-              />
-            </div>
-            <div className={style.checkboxGroup}>
-              <label className={style.checkbox}>
-                <input
-                  type="checkbox"
-                  checked={isAgree}
-                  onChange={handleCheckboxChange}
-                />
-                <span>
-                  Я согласен на обработку моих данных в соответствии с{" "}
-                  <a href="#" className={style.privacyLink}>
-                    политикой <br/>конфиденциальности
-                  </a>
-                  
-                </span>
-                
-              </label>
-              <Button disabled={!isFormValid} isValid={isFormValid} />
-            </div>
-            
-          </form>
+          <Form onSubmit={handleFormSubmit} />
         </div>
       </div>
     </div>
