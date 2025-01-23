@@ -15,7 +15,8 @@
     "react-slick": "^0.30.3",
     "sass": "^1.83.4",
     "scss": "^0.2.4",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
