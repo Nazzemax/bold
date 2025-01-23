@@ -98,6 +98,8 @@ function Cases() {
 
   return (
     <div className={styles.pageWrapper}>
+        
+      <div className={styles.conteiner}>
       <h1 className={styles.title}>Кейсы</h1>
       <div className={styles.filters}>
         <div className={styles.filterButtons}>
@@ -159,6 +161,7 @@ function Cases() {
         >
           &#8250;
         </button>
+      </div>
       </div>
     </div>
   );

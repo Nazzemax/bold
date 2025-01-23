@@ -1,6 +1,6 @@
 import React from 'react';
 import './button.scss';
-import iconButton from '../assents/icon/Frame 268.png'
+import iconButton from '../../assents/icon/Frame_268.png'
 import Image from 'next/image';
 
 
