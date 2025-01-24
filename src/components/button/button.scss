@@ -1,0 +1,38 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 170px;
+    height: 56px;
+    background-color: #313336; // Цвет кнопки
+    border: none;
+    border-radius: 20px; // Закругленные края
+    color: #a0a0a0; // Цвет текста
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); // Внутренняя тень
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  
+    &:hover {
+      background-color: #5e5e5e; // Цвет при наведении
+    }
+  
+    &:active {
+      background-color: #3c3c3c; // Цвет при нажатии
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3); // Глубокая внутренняя тень
+    }
+  
+    &__text {
+      flex-grow: 1;
+    }
+  
+    &__icon {
+      fill: #a0a0a0; // Цвет стрелки
+      width: 16px;
+      height: 16px;
+    }
+  }
+  
