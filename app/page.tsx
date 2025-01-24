@@ -7,6 +7,7 @@ import Team from "@/src/components/Team/TeamSection"
 
 import { Content } from "next/font/google";
 import Image from "next/image";
+import ApproachSection from "@/src/UI/ApproachSection/ApproachSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       {/* <Carousel partners={[]}/> */}
       <ReviewsSlider/>
       <Team/>
+      <ApproachSection/>
     </div>
     
   );
