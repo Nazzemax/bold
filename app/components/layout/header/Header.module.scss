@@ -1,0 +1,191 @@
+@function toRem($value) {
+    @return ($value / 16) * 1rem;
+  }
+  
+  .header {
+    position: relative;
+    z-index: 100;
+    color: #fff;
+
+    .container {
+      width: 100%;
+      max-width: toRem(1808);
+      margin: 0 auto;
+  
+      .top {
+        position: relative;
+        z-index: 2;
+        padding: toRem(40) 0;
+        display: flex;
+        align-items: center;
+        max-height: toRem(96);
+        justify-content: space-between;
+      }
+  
+      .logo {
+        font-size: toRem(24);
+        font-weight: bold;
+        color: #ff0033;
+      }
+  
+      .nav {
+        .navList {
+          list-style: none;
+          display: flex;
+          gap: toRem(24);
+  
+          li {
+            padding: toRem(16) toRem(40) toRem(16) toRem(18);
+          }
+  
+          a {
+            text-decoration: none;
+            color: #fff;
+            font-size: toRem(18);
+            line-height: toRem(22);
+  
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+  
+          .menu {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: toRem(5);
+            transition: background-color 0.3s ease;
+  
+            &__item {
+              display: flex;
+              gap: toRem(11);
+            }
+  
+            &:hover .submenu {
+              transition: all 0.5s;
+              opacity: 1;
+              visibility: visible;
+              transform: translateY(0);
+            }
+  
+            .submenu {
+              font-family: 'Cannonade';
+              position: absolute;
+              z-index: 2;
+              list-style: none;
+              padding: toRem(10) toRem(15);
+              margin: 0;
+              top: 100%;
+              left: 0;
+              min-width: toRem(334);
+              background-color: white;
+              box-shadow: 0 toRem(4) toRem(6) rgba(0, 0, 0, 0.1);
+              border-radius: toRem(5);
+              opacity: 0;
+              visibility: hidden;
+              transform: translateY(toRem(10));
+              transition: all 0.3s ease;
+
+              &__item {
+                z-index: 2;
+                position: relative;
+                font-size: toRem(18);
+                line-height: toRem(27);
+                padding-left: toRem(58);
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                color: #2A2D35;
+
+                .first,
+                .second, 
+                .third, 
+                .fourth, 
+                .fifth,
+                .six {
+                    position: absolute;
+                    content: '';
+                    width: toRem(20);
+                    height: toRem(20);
+                    left:toRem(0);
+                    top:50%;
+                    transform: translate(50%,-50%);
+                    background:url('../../../../public/header/menu1.png') center / cover no-repeat ;
+                }
+
+                .second {
+                    background:url('../../../../public/header/menu2.png') center / cover no-repeat ;
+                }
+
+                .third {
+                    background:url('../../../../public/header/menu3.png') center / cover no-repeat ;
+                }
+
+                .fourth {
+                    background:url('../../../../public/header/menu4.png') center / cover no-repeat ;
+                }
+
+                .fifth {
+                    background:url('../../../../public/header/menu5.png') center / cover no-repeat ;
+                }
+
+                .six {
+                    background:url('../../../../public/header/menu6.png') center / cover no-repeat ;
+                }
+
+                &:hover {
+                  background-color: #F1F3F7;
+                  border-radius: toRem(16);
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      .langSwitch {
+        position: relative;
+  
+        .select {
+          width: toRem(107);
+          height: toRem(48);
+          background-color: transparent;
+          font-size: toRem(18);
+          appearance: none;
+          outline: none;
+        }
+  
+        &::before {
+          background: url('../../../../public/cases/lang.svg') no-repeat center center;
+          width: toRem(18);
+          height: toRem(18);
+          position: absolute;
+          content: '';
+          left: toRem(-24);
+          top: toRem(15);
+        }
+  
+        .arrowDown {
+          width: auto;
+          position: absolute;
+          content: '';
+          right: toRem(59.2);
+          top: toRem(20);
+        }
+      }
+  
+      .contactBtn {
+        background-color: transparent;
+        color: #fff;
+        border: toRem(1) solid #fff;
+        padding: toRem(10) toRem(20);
+        border-radius: toRem(4);
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #ff0033;
+          border-color: #ff0033;
+        }
+      }
+    }
+  }
+  
