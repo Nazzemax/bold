@@ -1,0 +1,100 @@
+body {
+    font-family: 'Cannonade', sans-serif;
+  }
+  
+  .seo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    flex-direction: column;
+    background-size: cover;
+  }
+  
+  .faqContainer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1328px;
+    height: 593px;
+  
+    .title {
+      font-size: 68px;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #2a2d35;
+      text-align: center;
+    }
+  
+    .questionsList {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  
+    .questionItem {
+        width: 800px;
+      background-color: #f9fafb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, width 0.3s ease;
+      height: 94px; /* Закрытое состояние */
+      overflow: hidden;
+  
+      &:hover {
+        background-color: #f3f4f6;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      &.open {
+        height: 164px; /* Открытое состояние */
+      }
+  
+      .seo_question {
+        max-width: 800px;
+      }
+  
+      .question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #1f2937;
+        transition: opacity 0.3s ease;
+      }
+  
+      .icon {
+        font-size: 1.5rem;
+        color: #6b7280;
+        transition: transform 0.3s ease;
+  
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+  
+      .answer {
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #4b5563;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+  
+        &.open {
+          max-height: 100px; /* Высота для открытого состояния */
+          padding-top: 1rem;
+        }
+      }
+    }
+  }
+  

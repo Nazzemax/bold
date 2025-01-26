@@ -10,6 +10,7 @@ import Image from "next/image";
 import ApproachSection from "@/src/UI/ApproachSection/ApproachSection";
 import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
 import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
+import Seo from "@/src/components/Seo/seo";
 
 
 
@@ -25,6 +26,7 @@ export default function Home() {
       <ApproachSection/>
       <BusinessResults/>
       <HowWeWork/>
+      <Seo/>
     </div>
     
   );
