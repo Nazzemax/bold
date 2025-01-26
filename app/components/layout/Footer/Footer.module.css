@@ -1,0 +1,100 @@
+.Footer {
+    display: flex;
+    flex-direction: row;
+    width: 1920;
+    height: 718;
+    background-color: #ffffff;
+    padding: 56;
+}
+.BrandPrefs{
+    width: 342;
+    height: 500;
+}
+.LogotypePrefs{
+    padding-top: 30;
+    color: #6D758A;
+    display: flex;
+    flex-direction: column;
+}
+.p{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: max-content;
+    color: #6D758A; 
+    margin-top: 400;
+    width: 550px;
+}
+.rightDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1505;
+    height: 500;
+    color: #2A2D35;
+    margin-left: 500 ;
+}
+.rightDiv p {
+    color: #838895;
+}
+.WeCompany {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:278px;
+    height:147px;
+}
+.WeWork {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 278px;
+    height: 270px;
+}
+.WeUs{
+    display: flex;
+        width: 278px;
+        height: 80px;
+        flex-direction: column;
+}
+.LinkPrefs {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.adress {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 35;
+    width: 875;
+    height: 268px;
+}
+.adress h1{
+    display: flex;
+    font-size: 20;
+}
+
+.copirated {
+    background-color: #f1f1f1; 
+    border-top: 1px solid #ccc;  
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  .copirated-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .privacy-policy {
+    text-decoration: none;
+    color: #666;
+    text-decoration: underline gray;
+  }
