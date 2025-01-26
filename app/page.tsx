@@ -8,6 +8,10 @@ import Team from "@/src/components/Team/TeamSection"
 import { Content } from "next/font/google";
 import Image from "next/image";
 import ApproachSection from "@/src/UI/ApproachSection/ApproachSection";
+import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
+import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
+
+
 
 export default function Home() {
   return (
@@ -19,6 +23,8 @@ export default function Home() {
       <ReviewsSlider/>
       <Team/>
       <ApproachSection/>
+      <BusinessResults/>
+      <HowWeWork/>
     </div>
     
   );
