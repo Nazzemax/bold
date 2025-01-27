@@ -17,7 +17,7 @@ const ApproachSection: React.FC = () => {
       description:
         'Создаем уникальную SMM-стратегию, которая выделяет ваш бренд и приносит реальные результаты.',
       image: imageApproach,
-      reverse: true,
+      reverse: false,
     },
     {
       title: 'Создание контента',

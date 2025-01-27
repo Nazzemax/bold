@@ -18,7 +18,7 @@
   justify-content: center; /* Центрируем элементы по горизонтали */
   width: 100%;
   max-width: 1328px; /* Это будет работать, если тебе нужно ограничить максимальную ширину */
-  height: 593px;
+  max-height: 593px;
   }
   .swiperSl{
     display: flex;
@@ -53,36 +53,27 @@
   
     .swiperContainer {
         
-      .swiper-button-prev,
-      .swiper-button-next {
 
-        color: #777;
-        background-color: #F1F3F7;
-        background: #f5f5f5;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        &::after {
-          font-size: 18px;
-        }
-        &:hover {
-          background: #e0e0e0;
-        }
-      }
   
       .swiper-button-prev {
-        width: 64px;
-        height: 64px;
+     
         left: -10px;
-        
+
+        &::after {
+          color: red;
+        }
+ 
       }
+
+
   
       .swiper-button-next {
         right: -10px;
+
+        &::before {
+          color: pink;
+        }
+  
       }
     }
   
@@ -98,7 +89,6 @@
       .stars {
         display: flex;
         width: 200px;
-        height: 40px;
         font-size: 40px;
         color: #ffc107;
         margin-bottom: 10px;
@@ -130,9 +120,6 @@
         position: fixed;
 
         
-      }
-      .blog_header{
-
       }
 
       .bog_info{
