@@ -4,6 +4,7 @@ import imageApproach from '@/public/image/image.png'
 import Image from "next/image";
 
 const ApproachSection: React.FC = () => {
+  
   const items = [
     {
       title: 'Погружение в ваш бизнес',
