@@ -1,0 +1,72 @@
+.carouselContainer {
+    margin: 0 auto; /* Центровка контейнера */
+    padding: 20px;
+  
+    .slick-slider {
+      position: relative;
+  
+      .slick-list {
+        overflow: hidden;
+        border-radius: 8px; /* Скругление краев */
+      }
+
+      
+  
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+  
+      .slick-slide {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+  
+      .slick-dots {
+        bottom: -20px; /* Отступ снизу */
+        display: flex !important;
+        justify-content: center;
+  
+        li {
+          // Ваши стили для точек
+        }
+      }
+  
+      /* Скрытие стрелок */
+      .slick-prev, .slick-next::before {
+        display: none !important; /* Обязательное скрытие стрелок */
+      }
+    }
+  }
+  
+  .image {
+    width: 350px;
+    height: 350px;
+    gap: 20px;
+  }
+  .title{
+    display: grid;
+    justify-items: center; /* Центрируем по горизонтали */
+    align-items: center;   /* Центрируем по вертикали */
+    text-align: center;    /* Центрируем текст внутри */
+    height: 100%;      
+
+    h2{
+        font-size: 68px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    p{
+        width: 357px;
+        height: 54px;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+  }
+  
+  .slick-slider {
+    display: none;
+  }
