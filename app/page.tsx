@@ -13,6 +13,7 @@ import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
 import Seo from "@/src/components/Seo/seo";
 import CarouselBlog from '@/src/components/CaruselBlog/caruselblog'
 import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
+import Carousel from "@/src/components/Carousel/Carousel";
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
       <Contacts/>
       <Cases/>
       <VideoTestimonials/>
-      {/* <Carousel partners={[]}/> */}
+      
       <ReviewsSlider/>
       <Team/>
       <ApproachSection/>
@@ -31,6 +32,7 @@ export default function Home() {
       <Seo/>
       <CarouselBlog/>
       {/* <CRMIntegration/> */}
+      <Carousel />
     </div>
     
   );

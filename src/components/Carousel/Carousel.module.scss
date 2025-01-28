@@ -1,21 +1,66 @@
-// .partnersCarousel {
-//     text-align: center;
-//     padding: 20px;
+.carouselContainer {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
   
-//     .swiper {
-//       margin-top: 20px;
-//     }
-//   }
+    .title {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
   
-//   .partnersTitle {
-//     font-size: 1.5rem;
-//     margin-bottom: 20px;
-//     color: #555;
-//   }
+      h2 {
+        margin-top: 60px;
+        color: #838895;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 60px;
+      }
+    }
   
-//   .partnerLogo {
-//     max-width: 100%;
-//     height: auto;
-//     display: inline-block;
-//   }
-// //   
+    .imageWrapper {
+      position: relative; /* Для слоя затемнения */
+      display: inline-block;
+      border-radius: 8px;
+      overflow: hidden; /* Скрываем тёмный слой за границами изображения */
+  
+      .image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        pointer-events: none; /* Чтобы слой не мешал кликам */
+      }
+    }
+  
+    .slick-slider {
+      position: relative;
+  
+      .slick-list {
+        overflow: hidden;
+        border-radius: 8px;
+      }
+  
+      .slick-prev,
+      .slick-next {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        &:hover {
+          background: rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+  }
+  

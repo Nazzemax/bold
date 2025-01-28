@@ -1,90 +1,123 @@
 body {
-    font-family: 'Cannonade', sans-serif;
-  }
-.teamSection {
-    display: flex;
-    justify-content: center;
+  font-family: 'Cannonade', sans-serif;
+}
 
-    padding: 2rem;
-    text-align: center;
-    background-color:#fff;
-    
-    
-  .conteiner{
-    width: 1328px;
-    height: 1244px;
+.teamSection {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.conteiner {
+  width: 100%;
+  max-width: 1328px; /* Ограничение ширины */
+  height: auto; /* Высота будет изменяться автоматически */
+}
+
+.title {
+  font-size: 68px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+  line-height: 74px;
+  text-align: justify;
+  width: 100%;
+  max-width: 636px; /* Ограничение ширины */
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #666;
+  line-height: 27px;
+  text-align: justify;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 761px; /* Ограничение ширины */
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.teamCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  filter: grayscale(100%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+  padding: 1rem;
+  border-radius: 31px;
+  color: white;
+  text-align: justify;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Медиазапросы для улучшения адаптивности */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 56px;
   }
-    .title {
-        width: 636px;
-        height: 150px;
-        text-align: justify;
-        line-height: 74px;
-      font-size: 68px;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-  
-    .subtitle {
-        line-height: 27px;
-        font-size: 18px;
-        font-weight: 500;
-        width: 761px;
-        height: 54px;
-        text-align: justify;
-        
-      
-      margin-bottom: 2rem;
-      color: #666;
-    }
-  
-    .teamGrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
-      gap: 1.5rem;
-    }
-  
-    .teamCard {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px 24px 24px 24px;
-      filter: grayscale(100%); /* Черно-белый фильтр для изображения */
-      cursor: pointer;
-  
-      .image {
-        width: 308px;
-        height: 460px;
-        object-fit: cover;
-        display: block;
-        border-radius: 24px 24px 24px 24px;
-      }
-  
-      .overlay {
-        border-radius: 31px;
-        text-align: justify;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 98%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)); /* Градиент */
-        padding: 1rem;
-        color: white;
-  
-        .name {
-          font-size: 1.2rem;
-          font-weight: bold;
-          margin-bottom: 0.3rem;
-        }
-  
-        .role {
-          font-size: 1rem;
-          font-weight: normal;
-        }
-      }
-    }
+
+  .subtitle {
+    font-size: 16px;
   }
-  
+
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Уменьшаем минимальную ширину */
+  }
+
+  .teamCard {
+    height: auto; /* Убираем фиксированную высоту */
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr; /* Один элемент в строке на мобильных устройствах */
+  }
+}
