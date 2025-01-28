@@ -1,0 +1,58 @@
+.CasesSlider {
+    display: flex;
+    flex-direction: column;
+    max-width: 70vw;
+    margin: 200px auto;
+    overflow: hidden;
+  
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .titles {
+        flex: 1;
+        .subtitle {
+          color: #838895;
+          font-size: 24px;
+        }
+        .title {
+          font-size: 68px;
+          line-height: 1.2;
+          font-weight: 700;
+        }
+      }
+  
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: red;
+  
+        span {
+          word-break: break-word;
+        }
+      }
+    }
+  
+    .slider {
+      width: 100%;
+      height: auto;
+  
+      .slide {
+        flex-shrink: 0;
+        width: 300px; // Задайте ширину слайда
+        height: 200px; // Задайте высоту слайда
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  

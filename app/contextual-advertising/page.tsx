@@ -4,6 +4,7 @@ import Banner from "../components/layout/banner/Banner";
 import bannerImage from "@/public/context-ad/banner.png";
 import WhyContext from "../components/layout/why-context/WhyContext";
 import HowWeWork from "../components/layout/how-we-work/HowWeWork";
+import CasesSlider from "../components/layout/cases-slider/CasesSlider";
 type Props = {};
 
 export default function index({}: Props) {
@@ -17,6 +18,7 @@ export default function index({}: Props) {
         image={bannerImage.src}/>
         <WhyContext/>
         <HowWeWork/>
+        <CasesSlider/>
     </div>
   );
 }

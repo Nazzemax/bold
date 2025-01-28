@@ -1,6 +1,6 @@
 @function toRem($value) {
     @return ($value / 16) * 1rem;
-  }
+}
   
   .header {
     position: relative;
