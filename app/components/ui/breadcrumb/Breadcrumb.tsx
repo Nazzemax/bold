@@ -29,7 +29,7 @@ const Breadcrumb: React.FC = () => {
   });
 
   return (
-    <nav className="flex text-white text-lg pb-[69px]">
+    <nav className="flex text-white text-lg">
       <Link href="/" className="hover:underline text-white">
         Главная
       </Link>
