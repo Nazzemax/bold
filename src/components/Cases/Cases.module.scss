@@ -40,8 +40,13 @@ body {
   gap: 8px;
 }
 .filterButton {
-  background-color: #f3f4f6;
-  border: 1px solid #e0e0e0;
+  color:#838895;
+  background-color: #F1F3F7;
+font-size: 18px;
+line-height: 22px;
+color: #838895;
+opacity: 0.7;
+
   border-radius: 8px;
   padding: 8px 16px;
   cursor: pointer;
@@ -49,7 +54,9 @@ body {
   color: #333;
 }
 .filterButton:hover {
-  background-color: #e4e4e4;
+  opacity: 1;
+  color:white;
+  background-color: #2A2D35;
 }
 .searchWrapper {
   position: relative;
