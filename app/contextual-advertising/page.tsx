@@ -3,6 +3,7 @@ import React from "react";
 import Banner from "../components/layout/banner/Banner";
 import bannerImage from "@/public/context-ad/banner.png";
 import WhyContext from "../components/layout/why-context/WhyContext";
+import HowWeWork from "../components/layout/how-we-work/HowWeWork";
 type Props = {};
 
 export default function index({}: Props) {
@@ -15,6 +16,7 @@ export default function index({}: Props) {
         button="Оставить заявку"
         image={bannerImage.src}/>
         <WhyContext/>
+        <HowWeWork/>
     </div>
   );
 }
