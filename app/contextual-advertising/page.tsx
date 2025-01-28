@@ -1,6 +1,6 @@
 import Header from "@/app/components/layout/header/Header";
 import React from "react";
-import Banner from "../components/Banner/Banner";
+import Banner from "../components/layout/banner/Banner";
 import bannerImage from "@/public/context-ad/banner.png";
 type Props = {};
 

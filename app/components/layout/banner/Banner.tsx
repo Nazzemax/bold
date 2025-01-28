@@ -1,6 +1,6 @@
 import React from "react";
 import arrowRight from "@/public/cases/arrowRight.png";
-import Breadcrumb from "../ui/breadcrumb/Breadcrumb";
+import Breadcrumb from "../../ui/breadcrumb/Breadcrumb";
 import styles from './Banner.module.scss';
 
 type Props = {
