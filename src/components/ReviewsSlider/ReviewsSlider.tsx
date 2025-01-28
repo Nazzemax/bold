@@ -8,6 +8,8 @@ import styles from "./ReviewsSlider.module.scss";
 import Image from "next/image";
 import logoEllipse from "@/public/Ellipse_3092.png"; // Путь к изображению
 import store from '@/public/image/Frame_64.png'
+import arrowRight from '@/public/arrowright.png'
+import arrowLeft from '@/public/arrowleft.png'
 
 const Reviews = () => {
   const reviews = [
@@ -41,6 +43,7 @@ const Reviews = () => {
 
       <div className={styles.sliderSection}>
         <Swiper
+        
           modules={[Navigation]} 
           navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }} // Указываем стрелки
           spaceBetween={20}
@@ -57,8 +60,8 @@ const Reviews = () => {
                         src={index < review.stars ? store : "/path/to/empty-star.png"}
                         alt={index < review.stars ? "Full star" : "Empty star"}
                         className={styles.starImage}
-                        width={20}
-                        height={20}
+                        width={30}
+                        height={30}
                       />
                     ))}
                   </div>
@@ -75,9 +78,6 @@ const Reviews = () => {
                 <p className={styles.position}>{review.position}</p>
                 </div>
                 </div>
-               
-                
-               
                 </div>
                 <p className={styles.text}>{review.text}</p>
                 <a href="#" className={styles.readMore}>
@@ -88,12 +88,26 @@ const Reviews = () => {
           ))}
         </Swiper>
         {/* Добавляем стрелки навигации */}
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
+        <div className={"swiper-button-next"} style={{width:'64px',height:'64px',backgroundColor:'#F1F3F7', borderRadius:'16px' }}>
+          <Image src={arrowRight} alt="next arrow button icon" width={10} height={15} />
+        </div>
+        <div className="swiper-button-prev" style={{width:'64px',height:'64px',backgroundColor:'#F1F3F7',borderRadius:'16px' }}>
+          <Image src={arrowLeft} alt="previous arrow button icon" width={10} height={15} />
+        </div>
       </div>
         </div>
+        <style>
+          {
+            `
+            .swiper-button-prev::after,
+            .swiper-button-next::after { 
+            content:''; 
+            }
+`}
+        </style>
       
     </div>
+    
   );
 };
 

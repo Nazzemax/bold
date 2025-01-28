@@ -6,11 +6,9 @@
     align-items: center;
     
 
-    
-  
     .title {
-        width: 1328px;
-        height: 150px;
+      max-width: 1328px;
+      min-height: 150px;
       font-size: 68px;
       padding: 1px 30px 1px 1px;
       font-weight: 700;

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from './Cases.module.scss';
 import Image from 'next/image';
-import iconBlog from '@/public/image/Frame_41.png';
+import iconBlog from '@/public/caseItem.png';
 import insta from '@/public/image/social.png';
 import tiktok from '@/public/image/tiktok.png';
 import search from '@/public/image/Vector.png';
