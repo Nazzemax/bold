@@ -1,4 +1,5 @@
 
+
 import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
@@ -16,6 +17,7 @@ import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
 import Carousel from "@/src/components/Carousel/Carousel";
 import Cases_Carusel from "@/src/components/BoldBrands/BoldBrands";
 import BrandingSection from "@/src/components/BrandingSection/BrandingSection";
+import Advantages from "./components/layout/advantages/Advantages";
 
 
 
@@ -37,7 +39,9 @@ export default function Home() {
       <Carousel />
       <BrandingSection/>
       <Cases_Carusel backgroundImage={undefined}/>
+      
     </div>
-    
-  );
+  )
 }
+
+
