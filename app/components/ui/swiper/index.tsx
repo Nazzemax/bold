@@ -22,7 +22,7 @@ const Swiper = ({
   children,
   scrollbar,
   onSlideChange,
-  spaceBetween = 32
+  spaceBetween = 16
 }: SwiperProps) => {
 
   const slides = React.Children.map(children, (child, index) => (
@@ -47,7 +47,8 @@ const Swiper = ({
       } : false}
       modules={[Autoplay]}
       scrollbar={scrollbar}
-      className="!px-4 md:!px-8"
+      //зависит от требований
+      grabCursor
     >
       {slides}
     </PrimitiveSwiper>

@@ -14,8 +14,8 @@ export const CaseCard = ({
   instagramFollowers
 }: ICaseCard) => {
   return (
-    <div className="w-full max-w-[450px] md:max-w-[500px] lg:max-w-[535px] mx-auto">
-      <div className="relative overflow-hidden rounded-2xl">
+    <div className="w-full max-w-[450px] md:max-w-[500px] lg:max-w-[535px]">
+      <div className="relative overflow-hidden rounded-3xl">
         <Image
           src={img}
           alt={'case image'}
@@ -23,7 +23,7 @@ export const CaseCard = ({
           height={320}
           className="rounded-2xl w-full h-auto object-cover"
         />
-        <div className="absolute top-4 left-4 flex gap-2 flex-wrap">
+        <div className="absolute top-7 left-6 flex gap-2 flex-wrap">
           <Badge icon="/cases/smm.svg">SMM</Badge>
           <Badge icon="/cases/target.svg">Таргет</Badge>
           <Badge icon="/cases/marketing.svg">Маркетинг</Badge>
@@ -31,10 +31,10 @@ export const CaseCard = ({
       </div>
       <div className="flex justify-between items-center mt-3 flex-wrap gap-1">
         <Badge className="bg-white border text-gray-400 py-1 text-sm" icon="/cases/social/instagram.svg">
-          +{formatNumber(instagramFollowers)} подписчиков
+          +{formatNumber(instagramFollowers)} подписчиков в Instagram
         </Badge>
         <Badge className="bg-white border text-gray-400 py-1 text-sm" icon="/cases/social/tiktok.svg">
-          {formatNumber(tiktokViews)} просмотров
+          {formatNumber(tiktokViews)} просмотров в TikTok
         </Badge>
       </div>
       <div className="mt-3">

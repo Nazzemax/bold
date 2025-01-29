@@ -9,7 +9,7 @@ export const Badge = ({ className, children, icon }: BadgeProps) => {
   return (
     <div
       className={cn(
-        'flex items-center gap-2 max-w-full rounded-lg bg-gray-500/30 px-3 py-1 text-white text-sm whitespace-nowrap',
+        'flex items-center gap-2 max-w-[260px] rounded-lg bg-[#41414166] px-3 py-2 text-white text-sm whitespace-nowrap',
         'overflow-hidden text-ellipsis',
         className
       )}
@@ -17,7 +17,7 @@ export const Badge = ({ className, children, icon }: BadgeProps) => {
       {icon && (
         <Image src={icon} alt="icon" width={20} height={20} className="min-w-[20px]" />
       )}
-      <span>{children}</span>
+      <span className="text-lg truncate">{children}</span>
     </div>
   );
 };
