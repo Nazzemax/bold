@@ -2,7 +2,13 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./CasesSlider.module.scss";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -29,23 +35,30 @@ export default function CasesSlider({}: Props) {
           <Image src={arrowRight} alt="arrow" />
         </Link>
       </div>
+
       <Swiper
         className={styles.slider}
         spaceBetween={30}
         slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
+        loop={true}
+        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        speed={3000}
+        freeMode={true}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       >
         {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
           <SwiperSlide key={index} className={styles.slide}>
-            <Image src={image} alt={`Work ${index + 1}`} width={400} height={300} />
+            <Image
+              src={image}
+              alt={`Work ${index + 1}`}
+              width={400}
+              height={300}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
