@@ -17,10 +17,142 @@ import Image from "next/image";
 import Link from "next/link";
 import arrowRight from "@/public/cases/arrowRight.png";
 import image from "@/public/context-ad/slider-img.png";
-
+import smm from "@/public/context-ad/smm.png";
+import target from "@/public/context-ad/target-tag-icon.png";
+import marketing from "@/public/context-ad/marketing-tag-icon.png";
+import insta from "@/public/context-ad/insta.png"
+import tiktok from "@/public/context-ad/tiktok.png"
 type Props = {};
 
 export default function CasesSlider({}: Props) {
+  const cases = [
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+    {
+      image: image,
+      title:
+        "Увеличили выручку корейского ресторана на 70% уже во 2-й месяц работы",
+      client: "Корейский ресторан",
+      date: "12 октября",
+      tags: [
+        {
+          title: "SMM",
+          image: smm,
+        },
+        {
+          title: "Таргет",
+          image: target,
+        },
+        {
+          title: "Маркетинг",
+          image: marketing,
+        },
+      ],
+    },
+  ];
   return (
     <div className={styles.CasesSlider}>
       <div className={styles.info}>
@@ -51,16 +183,45 @@ export default function CasesSlider({}: Props) {
         }}
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
       >
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
-          <SwiperSlide key={index} className={styles.slide}>
-            <Image
-              src={image}
-              alt={`Work ${index + 1}`}
-              width={400}
-              height={300}
-            />
-          </SwiperSlide>
-        ))}
+        {cases.map((caseItem, index) => {
+          return (
+            <SwiperSlide key={index} className={styles.slide}>
+              <div
+                className={styles.tags}
+                style={{ backgroundImage: `url(${caseItem.image.src})` }}
+              >
+                {caseItem.tags.map((tag, tagIndex) => (
+                  <div key={tagIndex} className={styles.tag}>
+                    <Image
+                      src={tag.image}
+                      alt={tag.title}
+                      width={20}
+                      height={20}
+                    />
+                    <span>{tag.title}</span>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.social}>
+                <div>
+                  <Image src={insta.src} alt="insta" height={20} width={20}/>
+                  <span>+10,5K подписчиков в Instagram</span>
+                </div>
+
+                <div>
+                  <Image src={tiktok.src} alt="tiktok" height={20} width={20}/>
+                  <span>1,5 млн просмотров в TikTok</span>
+                </div>
+              </div>
+              <div className={styles.caseInfo}>
+                <h3>{caseItem.title}</h3>
+                <p>{caseItem.client}</p>
+                <div className={styles.box}></div>
+                <p>{caseItem.date}</p>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
