@@ -40,8 +40,9 @@ const statsData = [
 const BoldBrands = ({ backgroundImage }) => {
   return (
     <section
+    
       className={styles.section}
-      style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      
     >
       <div className={styles.container}>
         <div className={styles.block_title}>

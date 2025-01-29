@@ -2,13 +2,16 @@ body {
   font-family: 'Cannonade', sans-serif;
 }
 .section {
-  background: #000;
+  display: block;
+  justify-content: center;
+  background-image: url('/image/BackGround.png');
+
   color: white;
   padding: 60px 20px;
   text-align: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  
+  background-position: bottom center;
   position: relative;
 }
 
@@ -44,7 +47,6 @@ body {
 .statsBlock {
   display: flex;
   width: 100%;
-
   justify-content: space-between;
 }
 
