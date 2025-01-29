@@ -1,0 +1,184 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.challenges {
+  position: relative;
+  padding: toRem(150) 0;
+
+  .container {
+    width: 100%;
+    max-width: toRem(1328);
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: toRem(68);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: toRem(64);
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(40);
+
+    background-image: url("../../../public/challenges/bg_vector.png");
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
+
+  &__card {
+    position: relative;
+    z-index: 10;
+    width: toRem(421);
+    height: toRem(382);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: toRem(16);
+
+    border: toRem(1.5) solid #d1d7e2;
+    border-radius: toRem(32);
+    padding: toRem(20);
+    cursor: pointer;
+    transition: all 0.1s;
+    &:hover {
+      background: #fff;
+      box-shadow: 0 0 toRem(32) 0 #6d758a2e;
+      border: toRem(1.5) solid #fff;
+
+      .challenges__RightCircle {
+        border: toRem(8) solid #fafafc;
+      }
+      .challenges__LeftCircle {
+        border: toRem(8) solid #fafafc;
+      }
+    }
+  }
+  &__cardIcon {
+    display: flex;
+    justify-content: center;
+    img {
+      width: toRem(48);
+      height: toRem(48);
+    }
+  }
+  &__cardTitle {
+    font-size: toRem(28);
+    font-weight: 700;
+  }
+  &__cardDescription {
+    font-weight: 500;
+    color: #6d758a;
+  }
+
+  &__RightCircle {
+    position: absolute;
+    top: 50%;
+    right: toRem(-16);
+    width: toRem(32);
+    height: toRem(32);
+    border-radius: 50%;
+    background: #a8b0bb;
+    border: toRem(8) solid #fff;
+    z-index: 10;
+  }
+  &__LeftCircle {
+    position: absolute;
+    top: 50%;
+    left: toRem(-16);
+    width: toRem(32);
+    height: toRem(32);
+    border-radius: 50%;
+    background: #a8b0bb;
+    border: toRem(8) solid #fff;
+    z-index: 10;
+  }
+
+  // ========================
+
+  &__col1 {
+    display: flex;
+    justify-content: center;
+    gap: toRem(220);
+    .challenges__card {
+      &:first-child::after {
+        content: "";
+        position: absolute;
+        top: 54%;
+        right: toRem(-110);
+        width: toRem(110);
+        height: toRem(425);
+        background-image: url("../../../public/challenges/vector_1.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+      }
+      &:last-child::before {
+        content: "";
+        position: absolute;
+        top: 54%;
+        left: toRem(-110);
+        width: toRem(110);
+        height: toRem(425);
+        background-image: url("../../../public/challenges/vector_2.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+      }
+    }
+  }
+  &__col2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 toRem(24);
+    .challenges__card {
+      &:first-child::after {
+        content: "";
+        position: absolute;
+        top: 54%;
+        left: toRem(420);
+        width: toRem(438);
+        height: toRem(5);
+        background-image: url("../../../public/challenges/vector_3.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+      }
+    }
+  }
+  &__col3 {
+    display: flex;
+    justify-content: center;
+    gap: toRem(220);
+    .challenges__card {
+      &:first-child::after {
+        content: "";
+        position: absolute;
+        bottom: 45%;
+        right: toRem(-110);
+        width: toRem(110);
+        height: toRem(425);
+        background-image: url("../../../public/challenges/vector_4.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+      }
+      &:last-child::before {
+        content: "";
+        position: absolute;
+        bottom: 45%;
+        left: toRem(-110);
+        width: toRem(110);
+        height: toRem(425);
+        background-image: url("../../../public/challenges/vector_5.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+      }
+    }
+  }
+}
