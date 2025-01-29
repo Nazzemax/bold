@@ -14,6 +14,7 @@ import Seo from "@/src/components/Seo/seo";
 import CarouselBlog from '@/src/components/CaruselBlog/caruselblog'
 import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
 import Carousel from "@/src/components/Carousel/Carousel";
+import Cases_Carusel from "@/src/components/BoldBrands/BoldBrands";
 
 
 
@@ -33,6 +34,7 @@ export default function Home() {
       <CarouselBlog/>
       {/* <CRMIntegration/> */}
       <Carousel />
+      <Cases_Carusel/>
     </div>
     
   );
