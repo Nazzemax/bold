@@ -24,7 +24,7 @@ const Section: React.FC<SectionProps> = ({ title, items }) => {
           {items.map((item, index) => (
             <div
               key={index}
-              style={{width:"100%" , background:"white"} }
+              style={{width:"100%" , background:"white"}}
               className={`${styles.card}  ${item.reverse ? styles.reverse : ""}`}
             >
               <Image
@@ -37,7 +37,8 @@ const Section: React.FC<SectionProps> = ({ title, items }) => {
               <div className={styles.text}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
-                <p className={styles.cardDescription}>{item.points}</p>
+                <p className={styles.cardDescription2}>{item.points}</p>
+                <p className={styles.cardDescription3}>{item.points1}</p>
               </div>
             </div>
           ))}

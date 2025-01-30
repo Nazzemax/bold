@@ -75,5 +75,33 @@
         text-align: left;
       }
     }
+    .cardDescription2{
+      display: flex;
+      width: 355px;
+      height: 40px;
+      font-weight: 500;
+      font-size: 18px;
+      color: #838895;
+      border: 1.5px solid #e0e0e0;
+      margin-bottom: 25px;
+      border-radius: 8px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .cardDescription3{
+      display: flex;
+      width: 488px;
+      height: 40px;
+      font-weight: 500;
+      font-size: 18px;
+      color: #838895;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
   }
   
