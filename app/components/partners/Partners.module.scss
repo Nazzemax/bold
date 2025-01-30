@@ -1,0 +1,70 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.partners {
+  padding: toRem(150) 0;
+  position: relative;
+  &__title {
+    font-size: toRem(24);
+    font-weight: 500;
+    color: #838895;
+    text-align: center;
+    margin-bottom: toRem(8);
+    text-transform: uppercase;
+  }
+  &__content {
+    width: 100%;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: toRem(200);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, white, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, white, transparent);
+    }
+  }
+  &__group {
+    display: flex;
+    gap: toRem(32);
+    justify-content: center;
+    position: relative;
+
+    width: max-content;
+    animation: scroll 30s linear infinite;
+  }
+
+  &__logo {
+    min-width: toRem(274);
+    height: toRem(216);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
