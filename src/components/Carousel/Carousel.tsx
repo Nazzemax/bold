@@ -3,6 +3,7 @@
 import React from "react";
 import Slider from "react-slick";
 import styles from "./Carousel.module.scss";
+import Image from "next/image";
 
 // Импорт изображений
 import raxat from "@/public/image/raxat.png";
@@ -15,15 +16,36 @@ import group39783 from "@/public/image/Group_39783.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Carusel: React.FC = () => {
+const Carousel: React.FC = () => {
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   const images = [raxat, group890, group4490, group4648, group39783];
@@ -31,13 +53,12 @@ const Carusel: React.FC = () => {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.title}>
-        <h2>Наши партнеры</h2>
-        <p></p>
+        <h2>НАШИ ПАРТНЕРЫ</h2>
       </div>
-      <Slider {...settings}>
+      <Slider {...settings} className={styles.slider}>
         {images.map((src, index) => (
-          <div key={index}>
-            <img className={styles.image} src={src.src} alt={`Slide ${index + 1}`} />
+          <div key={index} className={styles.imageWrapper}>
+            <Image className={styles.image} src={src} alt={`Slide ${index + 1}`} width={150} height={80} />
           </div>
         ))}
       </Slider>
@@ -45,4 +66,4 @@ const Carusel: React.FC = () => {
   );
 };
 
-export default Carusel;
+export default Carousel;

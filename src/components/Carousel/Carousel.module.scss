@@ -1,66 +1,50 @@
 .carouselContainer {
-    max-width: 1920px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-  
-    .title {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-  
-      h2 {
-        margin-top: 60px;
-        color: #838895;
-        font-size: 24px;
-        font-weight: 500;
-        margin-bottom: 60px;
-      }
-    }
-  
-    .imageWrapper {
-      position: relative; /* Для слоя затемнения */
-      display: inline-block;
-      border-radius: 8px;
-      overflow: hidden; /* Скрываем тёмный слой за границами изображения */
-  
-      .image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        display: block;
-        
-      }
-  
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        
-        pointer-events: none; /* Чтобы слой не мешал кликам */
-      }
-    }
-  
-    .slick-slider {
-      position: relative;
-  
-      .slick-list {
-        overflow: hidden;
-        border-radius: 8px;
-      }
-  
-      .slick-prev,
-      .slick-next {
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        &:hover {
-          background: rgba(0, 0, 0, 0.7);
-        }
-      }
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      color: #838895;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
   }
-  
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    max-width: 150px;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image:hover {
+    opacity: 1;
+    filter: grayscale(50%) brightness(70%);
+  }
+}

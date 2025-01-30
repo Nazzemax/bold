@@ -7,7 +7,7 @@ import Team from "@/src/components/Team/TeamSection"
 
 import { Content } from "next/font/google";
 import Image from "next/image";
-import ApproachSection from "@/src/UI/ApproachSection/ApproachSection";
+import ApproachSection from "@/src/components/ApproachSection/ApproachSection";
 import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
 import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
 import Seo from "@/src/components/Seo/seo";
@@ -34,7 +34,7 @@ export default function Home() {
       <CarouselBlog/>
       {/* <CRMIntegration/> */}
       <Carousel />
-      <Cases_Carusel/>
+      <Cases_Carusel backgroundImage={undefined}/>
     </div>
     
   );

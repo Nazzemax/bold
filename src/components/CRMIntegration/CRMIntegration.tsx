@@ -1,5 +1,5 @@
 import React from 'react';
-import ApproachSection from '@/src/UI/ApproachSection/ApproachSection';
+import ApproachSection from '@/src/UI/Section/Section';
 
 import dataMigrationImage from '@/public/image/dataMigration.png';
 import processAutomationImage from '@/public/image/processAutomation.png';

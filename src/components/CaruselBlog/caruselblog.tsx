@@ -11,14 +11,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Carusel: React.FC = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-    // arrows: true,
+    autoplaySpeed: 2000,
+    arrows: false,
   };
 
   const images = [

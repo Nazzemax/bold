@@ -1,0 +1,78 @@
+.approachSection {
+    padding: 100px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    .title {
+      max-width: 1328px;
+      min-height: 150px;
+      font-size: 68px;
+      padding: 1px 30px 1px 1px;
+      font-weight: 700;
+      text-align: justify;
+      margin-bottom: 60px;
+      color: #333;
+      line-height: 74px;
+    }
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 1328px;
+    max-height: 3487px;
+    }
+  
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  
+      .image {
+        max-width: 648px;
+        max-width: 339px;
+        flex: 1;
+        max-width: 50%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+  
+      .text {
+        flex: 1;
+        padding: 20px;
+        margin-left: 20px;
+  
+        .cardTitle {
+          font-size: 40px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          color: #222;
+        }
+  
+        .cardDescription {
+            width: 536px;
+            height: 81px;
+            font-weight: 500;
+          font-size: 18px;
+          color: #666;
+          line-height: 1.5;
+        }
+      }
+  
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  
+    .reverse {
+      flex-direction: row-reverse;
+  
+      .text {
+        text-align: left;
+      }
+    }
+  }
