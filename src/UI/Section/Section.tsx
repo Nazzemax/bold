@@ -17,13 +17,14 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ title, items }) => {
   return (
     <section className={styles.approachSection}>
-      <div className={styles.container1}>
+      <div className={styles.container}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.container}>
           {items.map((item, index) => (
             <div
               key={index}
-              className={`${styles.card} ${item.reverse ? styles.reverse : ""}`}
+              style={{width:"100%" , background:"white"} }
+              className={`${styles.card}  ${item.reverse ? styles.reverse : ""}`}
             >
               <Image
                 src={item.image}
