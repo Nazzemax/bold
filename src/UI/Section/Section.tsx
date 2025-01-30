@@ -7,6 +7,7 @@ interface Item {
   description: string;
   image: string;
   reverse?: boolean;
+  points?: string[];
 }
 
 interface SectionProps {
@@ -36,6 +37,7 @@ const Section: React.FC<SectionProps> = ({ title, items }) => {
               <div className={styles.text}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
+                <p className={styles.cardDescription}>{item.points}</p>
               </div>
             </div>
           ))}
