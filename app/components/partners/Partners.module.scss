@@ -16,39 +16,45 @@
   &__content {
     width: 100%;
     overflow: hidden;
+    position: relative;
 
     &::before,
     &::after {
-      content: "";
       position: absolute;
       top: 0;
-      bottom: 0;
-      width: toRem(200);
+      width: toRem(250);
+      height: 100%;
+      content: "";
       z-index: 2;
       pointer-events: none;
     }
 
-    &::before {
+    &:before {
       left: 0;
-      background: linear-gradient(to right, white, transparent);
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
     }
 
-    &::after {
+    &:after {
       right: 0;
-      background: linear-gradient(to left, white, transparent);
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
     }
   }
+
   &__group {
     display: flex;
     gap: toRem(32);
     justify-content: center;
     position: relative;
 
-    width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: 30s slide infinite linear;
+    will-change: transform;
+
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
-  &__logo {
+  &__img {
     min-width: toRem(274);
     height: toRem(216);
     filter: grayscale(100%);
@@ -60,11 +66,25 @@
   }
 }
 
-@keyframes scroll {
+@keyframes slide {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% / 3 * 2));
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .partners {
+    padding: toRem(56) 0;
+
+    &__content {
+      &::before,
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
   }
 }

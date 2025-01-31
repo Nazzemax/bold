@@ -9,6 +9,7 @@ import logo4 from "@/public/partners/logo_4.png";
 import logo5 from "@/public/partners/logo_5.png";
 import logo6 from "@/public/partners/logo_6.png";
 import logo7 from "@/public/partners/logo_7.png";
+import { useLayoutEffect, useRef } from "react";
 
 interface PartnersProps {}
 
@@ -27,26 +28,26 @@ const partners: IPartner[] = [
   { id: 7, img: logo7 },
 ];
 const Partners: React.FC<PartnersProps> = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const clonedPartners = [...partners, ...partners, ...partners];
+
+  useLayoutEffect(() => {
+    if (trackRef.current) {
+      const width = trackRef.current.scrollWidth / 3;
+      trackRef.current.style.width = `${width * 3}px`;
+    }
+  }, []);
   return (
     <div className={styles.partners}>
       <h3 className={styles.partners__title}>наши партнеры</h3>
       <div className={styles.partners__content}>
-        <div className={styles.partners__group}>
-          {partners.map((partner) => (
-            <div className={styles.partners__items} key={partner.id}>
+        <div className={styles.partners__group} ref={trackRef}>
+          {clonedPartners.map((partner, idx) => (
+            <div className={styles.partners__items} key={idx}>
               <Image
                 src={partner.img}
                 alt="logo"
-                className={styles.partners__logo}
-              />
-            </div>
-          ))}
-          {partners.map((partner) => (
-            <div className={styles.partners__items} key={partner.id}>
-              <Image
-                src={partner.img}
-                alt="logo"
-                className={styles.partners__logo}
+                className={styles.partners__img}
               />
             </div>
           ))}

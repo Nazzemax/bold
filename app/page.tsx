@@ -5,8 +5,8 @@ import Partners from "./components/partners/Partners";
 export default function Home() {
   return (
     <>
-      <Header bgColor="black" />
-      <Challenges />
+      {/* <Header bgColor="black" /> */}
+      {/* <Challenges /> */}
       <Partners/>
     </>
   );
