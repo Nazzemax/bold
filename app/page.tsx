@@ -18,6 +18,9 @@ import Carousel from "@/src/components/Carousel/Carousel";
 import Cases_Carusel from "@/src/components/BoldBrands/BoldBrands";
 import BrandingSection from "@/src/components/BrandingSection/BrandingSection";
 import Header from "./components/layout/header/Header";
+import Swiper from "./components/ui/swiper";
+import { CaseCard } from "./components/ui/swiper/case-card";
+import { ICaseCard } from "./components/ui/swiper/type";
 
 
 
@@ -30,6 +33,7 @@ export default function Home() {
       <Team/>
       <Carousel />
       <ReviewsSlider/>
+      <CaseCard img={""} title={""} company={""} date={""} instagramFollowers={0} tiktokViews={0}/>
       {/* <Contacts/>
       <Cases/>
       <VideoTestimonials/>
