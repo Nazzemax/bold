@@ -1,4 +1,5 @@
 
+
 import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
@@ -39,5 +40,6 @@ export default function Home() {
       <Cases_Carusel backgroundImage={undefined}/>
     </div>
     
+
   );
 }

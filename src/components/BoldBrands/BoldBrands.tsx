@@ -37,7 +37,7 @@ const statsData = [
   ],
 ];
 
-const BoldBrands = ({ backgroundImage }) => {
+const BoldBrands = ({ }) => {
   return (
     <section
     
@@ -57,7 +57,6 @@ const BoldBrands = ({ backgroundImage }) => {
               {block.map((stat, index) => (
                 <div key={index} className={styles.statCard}>
                   <div className={styles.circleWrapper}>
-                    {/* Проверяем, загружено ли изображение */}
                     {stat.image ? (
                       <Image src={stat.image} alt={stat.value} className={styles.circle} />
                     ) : (
