@@ -17,27 +17,34 @@ import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
 import Carousel from "@/src/components/Carousel/Carousel";
 import Cases_Carusel from "@/src/components/BoldBrands/BoldBrands";
 import BrandingSection from "@/src/components/BrandingSection/BrandingSection";
+import Header from "./components/layout/header/Header";
 
 
 
 export default function Home() {
   return (
     <div>
-      <Contacts/>
+      <Header bgColor="black"/>
+      <BusinessResults/>
+      <Cases_Carusel backgroundImage={undefined}/>
+      <Team/>
+      <Carousel />
+      <ReviewsSlider/>
+      {/* <Contacts/>
       <Cases/>
       <VideoTestimonials/>
       
       <ReviewsSlider/>
-      <Team/>
+      
       <ApproachSection/>
-      <BusinessResults/>
+      
       <HowWeWork/>
       <Seo/>
       <CarouselBlog/>
       {/* <CRMIntegration/> */}
-      <Carousel />
-      <BrandingSection/>
-      <Cases_Carusel backgroundImage={undefined}/>
+      {/* <Carousel />
+      <BrandingSection/> */}
+       
     </div>
     
 

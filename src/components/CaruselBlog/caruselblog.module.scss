@@ -25,18 +25,18 @@
     }
 
     .slick-dots {
-      bottom: -20px; /* Отступ снизу */
+      bottom: -20px; 
       display: flex !important;
       justify-content: center;
 
       li {
-        // Ваши стили для точек
+        
       }
     }
 
-    /* Скрытие стрелок */
+    
     .slick-prev, .slick-next::before {
-      display: none !important; /* Обязательное скрытие стрелок */
+      display: none !important; 
     }
     
     
@@ -50,9 +50,9 @@
 }
 .title{
   display: grid;
-  justify-items: center; /* Центрируем по горизонтали */
-  align-items: center;   /* Центрируем по вертикали */
-  text-align: center;    /* Центрируем текст внутри */
+  justify-items: center; 
+  align-items: center;   
+  text-align: center;   
   height: 100%;      
 
   
@@ -62,7 +62,7 @@
       margin-bottom: 20px;
   }
   p{
-      width: 357px;
+      width: 393px;
       height: 54px;
       font-size: 18px;
       font-weight: 500;
