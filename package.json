@@ -9,17 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+
+    "lodash": "^4.17.21",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-slick": "^0.30.3",
     "sass": "^1.83.4",
-    "swiper": "^11.2.1"
+    "scss": "^0.2.4",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^8.4.7"
+
+  
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "postcss": "^8",

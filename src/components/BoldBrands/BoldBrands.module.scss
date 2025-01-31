@@ -1,0 +1,113 @@
+body {
+  font-family: 'Cannonade', sans-serif;
+}
+.section {
+  display: block;
+  justify-content: center;
+  background-image: url('/image/BackGround.png');
+  background-color: black;
+
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  background-repeat: no-repeat;
+  
+  background-position: bottom center;
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
+}
+.block_title{
+  text-align: left;
+}
+
+.title {
+  font-size: 68px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ff4a4a;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.blocksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.statsBlock {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.leftBlock {
+  max-width: 1280px;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.rightBlock {
+  max-width: 1280px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.statCard {
+  text-align: center;
+  position: relative;
+}
+
+.circleWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 440px;
+  height: 440px;
+  object-fit: contain;
+}
+
+.textOverlay {
+  position: absolute;
+  width: 227px;
+  height: 186px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+}
+
+.value {
+  font-size: 64px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  max-width: 227px;
+  margin: auto;
+  text-align: left;
+}

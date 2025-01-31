@@ -1,0 +1,50 @@
+.carouselContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      color: #838895;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    max-width: 150px;
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image:hover {
+    opacity: 1;
+    filter: grayscale(50%) brightness(70%);
+  }
+}
