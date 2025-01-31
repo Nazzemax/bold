@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.scss";
 
+
+
 const cannonade = localFont({
   src:[
     {
@@ -16,6 +18,7 @@ const cannonade = localFont({
     }
   ]
 })
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
