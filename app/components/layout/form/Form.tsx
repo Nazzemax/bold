@@ -191,7 +191,7 @@ const Form: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col justify-start pl-3">
+              <div id="form-left-phone-2" className="flex flex-col justify-start pl-3">
                 <span className="form-left-span-2 font-medium text-[#AAADB5]">
                   Телефон (Ташкент)
                 </span>
@@ -228,7 +228,7 @@ const Form: React.FC = () => {
               Заполните форму и получите предложение
             </span>
 
-            <div className="form-right-circle-2 flex flex-row justify-between pt-6 pb-6">
+            <div className="form-right-circle-2 flex  pt-6 pb-6">
               <div className="flex gap-1">
                 <Image
                   src="/form/circle1-form.svg"
