@@ -1,155 +1,230 @@
-
 body {
   font-family: 'Cannonade', sans-serif;
 }
+
 .reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 10px;
+  margin: 0 auto;
+  flex-direction: column;
+  background-size: cover;
+}
+
+.conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1328px;
+  max-height: 593px;
+}
+
+.swiperSl {
+  display: flex;
+  justify-content: center;
+}
+
+.textSection {
+  flex: 1;
+  max-width: 40%;
+  
+  h2 {
+    text-align: center;
+    font-size: 62px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #777;
+    line-height: 1.6;
+  }
+}
+
+.sliderSection {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+}
+
+.reviewCard {
+  max-width: 480px;
+  height: 593px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  .stars {
+    display: flex;
+    width: 200px;
+    font-size: 40px;
+    color: #ffc107;
+    margin-bottom: 10px;
+  }
+
+  .blog_name {
     display: flex;
     align-items: center;
-    justify-content: center; /* Центрируем все элементы по горизонтали */
-    padding: 30px;
-    background-color: #fff;
-    width: 100%;
-    border-radius: 10px;
-    margin: 0 auto;
-    flex-direction: column; /* Уже есть, чтобы элементы шли по вертикали */
-    background-size: cover;
-   
+    margin-bottom: 56px;
   }
-  .conteiner {
-  display: flex;
-  align-items: center; /* Центрируем элементы по вертикали */
-  justify-content: center; /* Центрируем элементы по горизонтали */
-  width: 100%;
-  max-width: 1328px; /* Это будет работать, если тебе нужно ограничить максимальную ширину */
-  max-height: 593px;
-  }
-  .swiperSl{
+
+  .blog_header {
     display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bog_info {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
   }
-  .textSection {
-    flex: 1;
-    max-width: 40%;
-    
-    h2 {
-        text-align: center;
-        font-size: 62px;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 10px;
-    }
-    
-    p {
-        text-align: center;
-      font-size: 16px;
-      font-weight: 500;
-      font-size: 24px;
-      color: #777;
-      line-height: 1.6;
-    }
+
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
   }
-  
-  .sliderSection {
-    flex: 1;
-    max-width: 50%;
-    position: relative;
-  
-    .swiperContainer {
-        
 
-  
-      .swiper-button-prev {
-     
-        left: -10px;
+  .position {
+    font-size: 14px;
+    color: #777;
+  }
 
-        &::after {
-          color: red;
-        }
- 
-      }
+  .text {
+    font-weight: 500;
+    font-size: 18px;
+    color: #838895;
+    line-height: 27px;
+  }
+  .text p{
+    margin-bottom: 20px;
+  }
 
+  .readMore {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Отступ между текстом и иконкой */
+    font-size: 18px;
+    color: #FF3B30; /* Красный цвет текста */
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
 
-  
-      .swiper-button-next {
-        right: -10px;
+    .logoicon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        &::before {
-          color: pink;
-        }
-  
-      }
-    }
-  
-    .reviewCard {
-
-      max-width: 480px;
-      height: 593px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-  
-      .stars {
-        display: flex;
-        width: 200px;
-        font-size: 40px;
-        color: #ffc107;
-        margin-bottom: 10px;
-      }
-  
-      .name {
-        font-size: 18px;
+        font-size: 20px;
+        width: 24px;
+        height: 24px;
         font-weight: bold;
-        color: #333;
-      }
-  
-      .position {
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 10px;
-        margin-right: 112px;
-      }
-      .blog_name{
-        display: flex;
-        
-       align-items: center;
-       margin-bottom: 16px
-      }
-  
-      .logo {
-        width: 60px;
-        height: auto;
-        margin-right: 12px;
-        position: fixed;
-
-        
-      }
-
-      .bog_info{
-        display: block;
-        text-align: center;
-        width: 324px;
-        height: 65px;
-      }
-  
-      .text {
-        font-weight: 500;
-        font-size: 18px;
-        color: #838895;
-        line-height: 27px;
-
-      }
-  
-      .readMore {
-        font-size: 14px;
-        color: #007bff;
-        text-decoration: none;
-        margin-top: 10px;
-        display: inline-block;
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
+
+    &:hover {
+        text-decoration: none;
+        color: #E60000; /* Темно-красный цвет при наведении */
+    }
+}
+}
+
+.customNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prevButton {
+  position: absolute;
+  left: -50px;
+  width: 48px;
+  height: 48px;
+  background-color: #F1F3F7;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #E0E4EA;
+    transform: scale(1.1);
   }
-  
+}
+
+.nextButton {
+  position: absolute;
+  right: -50px;
+  width: 48px;
+  height: 48px;
+  background-color: #F1F3F7;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #E0E4EA;
+    transform: scale(1.1);
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.arrow-icon {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 1024px) {
+  .prevButton {
+    left: -30px;
+  }
+  .nextButton {
+    right: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .prevButton {
+    left: 10px;
+  }
+  .nextButton {
+    right: 10px;
+  }
+}

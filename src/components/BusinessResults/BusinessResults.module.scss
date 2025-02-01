@@ -13,7 +13,7 @@ body {
         
         
         max-width: 1328px; 
-        max-height: 610px;
+        height: auto;
         margin: 0 auto; 
         
         
@@ -99,7 +99,69 @@ body {
           height: 404px;
           border-radius: 8px;
         }
+        @media (max-width: 375px) {
+          .BusinessResults {
+            padding: 20px;
+          }
+          .container{
+            width: 100%;
+            .header{
+              display: none;
+              height: auto;
+            }
+          }
+          
+        }
       }
     }
   }
+
+  @media (max-width: 375px) {
+    .BusinessResults {
+      padding: 20px;
+    }
   
+    .container {
+      width: 100%;
+    }
+  
+    /* ==== Скрываем заголовок на мобильных, как на фото ==== */
+    .header {
+      flex-wrap: wrap;
+    }
+  
+    /* ==== Делаем контент вертикальным ==== */
+    .content {
+      display: flex;
+      flex-direction: column; /* Переключаем в столбец */
+      align-items: flex-start; /* Выравниваем по левому краю */
+      gap: 15px; /* Добавляем отступы между блоками */
+    }
+  
+    /* ==== Карточка "Наша философия" ==== */
+    .philosophy {
+      width: 100% !important; /* Делаем карточку адаптивной */
+      max-width: 100%; /* Ограничиваем ширину */
+      height: auto !important; /* Убираем фиксированную высоту */
+      padding: 15px; /* Уменьшаем отступы */
+    }
+  
+    /* ==== Текст внутри карточки ==== */
+    .philosophy .text {
+      text-align: left;
+    }
+  
+    /* ==== Картинка ==== */
+    .image {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    .image img {
+      max-width: 100%;
+      height: auto !important; /* Делаем изображение адаптивным */
+      border-radius: 8px;
+    }
+  }

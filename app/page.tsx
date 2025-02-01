@@ -1,5 +1,6 @@
 
 
+
 import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
@@ -18,12 +19,15 @@ import Carousel from "@/src/components/Carousel/Carousel";
 import Cases_Carusel from "@/src/components/BoldBrands/BoldBrands";
 import BrandingSection from "@/src/components/BrandingSection/BrandingSection";
 import Advantages from "./components/layout/advantages/Advantages";
+import Form from "./components/layout/form/Form";
+import VideoButton from "@/src/components/VideoButton/VideoButton";
 
 
 
 export default function Home() {
   return (
     <div>
+      <VideoButton/>
       <Contacts/>
       <Cases/>
       <VideoTestimonials/>
@@ -39,9 +43,11 @@ export default function Home() {
       <Carousel />
       <BrandingSection/>
       <Cases_Carusel backgroundImage={undefined}/>
+      <Form/>
       
     </div>
   )
+
 }
 
 
