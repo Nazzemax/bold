@@ -9,7 +9,7 @@ export const Badge = ({ className, children, icon }: BadgeProps) => {
   return (
     <div
       className={cn(
-        'flex items-center gap-2 max-w-[260px] rounded-lg bg-[#41414166] px-3 py-2 text-white text-sm whitespace-nowrap',
+        'flex items-center gap-2 max-w-[260px] rounded-lg bg-[#41414166] shadow-sm px-3 py-2 text-white text-sm whitespace-nowrap',
         'overflow-hidden text-ellipsis',
         className
       )}
