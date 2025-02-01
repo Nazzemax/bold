@@ -323,7 +323,7 @@ const Form: React.FC = () => {
                   Какая услуга вам нужна?
                 </label>
                 <div
-                  className="flex flex-row justify-between border border-t-0 border-l-0 border-r-0 border-b-[#696B74] bg-[#18181A] text-white p-2 cursor-pointer"
+                  className="form-typeBusiness flex flex-row justify-between border border-t-0 border-l-0 border-r-0 border-b-[#696B74] bg-[#18181A] text-white p-2 cursor-pointer"
                   onClick={() => setIsOpenService(!isOpenService)}
                 >
                   <div className="form-service flex flex-wrap gap-2">

@@ -6,6 +6,8 @@
   background-position: center;
   background-repeat: no-repeat;
   gap: 2.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .form-left {
@@ -265,9 +267,115 @@
   }
 }
 
+@media (min-width: 430px) and (max-width: 430px) and (min-height: 932px) and (max-height: 932px) {
+  .form-image-circle {
+    width: 7vh;
+    height: 7vh;
+  }
+  .form-left-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-input-text-bottom {
+    font-size: 1vh;
+  }
+  .form-button-red {
+    width: 45%;
+    span {
+      font-size: 1.4vh;
+    }
+  }
+  .form-right-span-3 {
+    font-size: 1.4vh;
+  }
+  .form-right-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-button-disabled {
+    padding: 2.7vh;
+    width: 38%;
+    span {
+      font-size: 1.3vh;
+    }
+  }
+  .form-right-span-1 {
+    font-size: 2vh;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 414px) and (min-height: 896px) and (max-height: 896px) {
+  .form-input-text-bottom {
+    font-size: 1vh;
+  }
+  .form-button-red {
+    width: 45%;
+    span {
+      font-size: 1.4vh;
+    }
+  }
+  .form-left-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-image-circle {
+    width: 7vh;
+    height: 7vh;
+  }
+  .form-right-span-1 {
+    font-size: 2vh;
+  }
+  .form-right-span-3 {
+    font-size: 1.4vh;
+  }
+  .form-right {
+    padding: 2.5vh;
+  }
+  .form-right-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-button-disabled {
+    padding: 2.7vh;
+  }
+}
+
+@media (min-width: 412px) and (max-width: 412px) and (min-height: 914px) and (max-height: 915px) {
+  .form-image-circle {
+    width: 7vh;
+    height: 7vh;
+  }
+  .form-left-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-input-text-bottom {
+    font-size: 1vh;
+  }
+  .form-button-red {
+    width: 45%;
+    span {
+      font-size: 1.4vh;
+    }
+  }
+  .form-right-span-3 {
+    font-size: 1.4vh;
+  }
+  .form-right-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-button-disabled {
+    padding: 2.7vh;
+    width: 38%;
+    span {
+      font-size: 1.3vh;
+    }
+  }
+  .form-right-span-1 {
+    font-size: 2vh;
+  }
+}
+
 @media all and (max-width: 406px) {
   .form-button-red {
     margin-top: 0.4rem;
+    height: 5vh;
+    width: 38%;
   }
   .form-right-span-3 {
     font-size: 1.6vh;
@@ -275,8 +383,112 @@
   .form-right {
     padding: 3.4vh;
   }
+  .form-typeBusiness {
+    img {
+      width: 3.8vh;
+      height: 2.5vh;
+    }
+    span {
+      height: 2.4vh;
+    }
+  }
+  .form-button-disabled {
+    width: 30%;
+    height: 1.3rem;
+  }
+  .form-right-circle-2 {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 390px) and (min-height: 844px) and (max-height: 844px) {
+  .form-image-circle {
+    width: 7vh;
+    height: 7vh;
+  }
+  .form-left-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-input-text-bottom {
+    font-size: 1vh;
+  }
   .form-button-red {
-    height: 5vh;
+    width: 45%;
+    span {
+      font-size: 1.4vh;
+    }
+  }
+  .form-right-span-3 {
+    font-size: 1.4vh;
+  }
+  .form-right-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-button-disabled {
+    padding: 2.7vh;
     width: 38%;
+    span {
+      font-size: 1.3vh;
+    }
+  }
+  .form-right-span-1 {
+    font-size: 2vh;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .form-left-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-left-phone-1-1 {
+    span {
+      width: 20%;
+      font-size: 1vh;
+    }
+  }
+  #form-left-phone-1 {
+    font-size: 0.75vh;
+  }
+  .form-input-text-bottom {
+    font-size: 0.75vh;
+  }
+  .form-image-circle {
+    width: 7vh;
+    height: 7vh;
+  }
+  .form-button-red {
+    padding: 1.5vh;
+    span {
+      font-size: 1.2vh;
+    }
+    img {
+      width: 2.5vh;
+      height: 2.5vh;
+    }
+  }
+  .form-right-span-2 {
+    font-size: 1.1vh;
+  }
+  .form-button-disabled {
+    padding: 2.7vh;
+    width: 38%;
+    span {
+      font-size: 1.3vh;
+    }
+  }
+}
+
+@media (min-width: 344px) and (max-width: 344px) and (min-height: 882px) and (max-height: 882px) {
+  .form-button-disabled {
+    width: 43%;
+    span {
+      font-size: 1.1vh;
+    }
+  }
+  .form-button-red {
+    width: 43%;
+    span {
+      font-size: 1vh;
+    }
   }
 }
