@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   background-image: url("/form/formBackGround.svg");
+  background-color: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -209,30 +210,46 @@
   .form {
     flex-direction: column;
     gap: 0;
+    h2{
+      font-size: 4vh;
+    }
   }
   .form-right {
     width: 80vw;
   }
   .form-left {
-    width: 85vw;
+    width: 50vw;
     padding-top: 2rem;
+    margin-right: 6rem;
     gap: 0.3rem;
-  }
-  #form-left-phone {
-    padding-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    h2,
+    span {
+      line-height: 1.25;
+    }
   }
   .form-right-circle-2 {
     padding-top: 1vh;
     padding-bottom: 0;
     height: 9vh;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
   }
   #form-left-phone-1 {
     display: flex;
-    gap: 0.2vh;
+    flex-direction: column;
+    gap: 1vh;
     padding-bottom: 1rem;
+  }
+  #form-left-phone-2 {
+    padding-left: 4.3vh;
+  }
+  #form-left-phone{
+    padding-top: 0.8rem;
+  }
+  .form-left-span-2{
+    font-size: 1.5vh;
   }
   .form-left-phone-1-1 {
     padding-top: 0;
@@ -250,14 +267,20 @@
     height: 3vh;
   }
   .form-right-span-2 {
-    font-size: 1.4vh;
-    max-width: 32vw;
+    max-width: 60vw;
   }
   .form-button-disabled {
     width: 40%;
   }
   .form-input-gap-2 {
     gap: 0.5rem;
+  }
+  #form-checkbox-button {
+    flex-direction: column;
+    align-items: start;
+    span{
+      font-size: 1.6vh;
+    }
   }
 }
 
@@ -437,17 +460,26 @@
 }
 
 @media all and (max-width: 375px) {
+  .form {
+    overflow-y: auto;
+    h2{
+      font-size: 4vh;
+    }
+  }
   .form-left-span-2 {
-    font-size: 1.1vh;
+    font-size: 1.3vh;
   }
   .form-left-phone-1-1 {
     span {
       width: 20%;
-      font-size: 1vh;
+      font-size: 1.3vh;
     }
   }
   #form-left-phone-1 {
     font-size: 0.75vh;
+  }
+  #form-left-phone{
+    padding-top: 2vh;
   }
   .form-input-text-bottom {
     font-size: 0.75vh;
@@ -475,6 +507,14 @@
     span {
       font-size: 1.3vh;
     }
+  }
+  #form-checkbox-button {
+    span{
+      font-size: 1.4vh;
+    }
+  }
+  .form-right-span-3{
+    font-size: 2vh;
   }
 }
 

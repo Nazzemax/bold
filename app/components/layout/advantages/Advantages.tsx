@@ -17,14 +17,14 @@ const Advantages = () => {
         <div className="circles">
           <div className="circles-1">
             <Image
-              src="/circle1.svg"
+              src="/advantages/circle1.svg"
               alt="circle1"
               layout="responsive"
               width={100}
               height={100}
             />
             <Image
-              src="/circle2.svg"
+              src="/advantages/circle2.svg"
               alt="circle2"
               layout="responsive"
               width={100}
@@ -33,14 +33,14 @@ const Advantages = () => {
           </div>
           <div className="circles-2">
             <Image
-              src="/circle3.svg"
+              src="/advantages/circle3.svg"
               alt="circle3"
               layout="responsive"
               width={100}
               height={100}
             />
             <Image
-              src="/circle4.svg"
+              src="/advantages/circle4.svg"
               alt="circle4"
               layout="responsive"
               width={100}
@@ -52,7 +52,7 @@ const Advantages = () => {
 
       <Image
         className="background-img"
-        src="/BackGround.svg"
+        src="/advantages/BackGround.svg"
         alt="BackGround"
         layout="responsive"
         width={1220}
