@@ -6,6 +6,7 @@ import WhyContext from "../components/layout/why-context/WhyContext";
 import HowWeWork from "../components/layout/how-we-work/HowWeWork";
 import CasesSlider from "../components/layout/cases-slider/CasesSlider";
 import Consultation from "../components/layout/consultation/Consultation";
+import Form from "../components/layout/form/Form";
 type Props = {};
 
 export default function index({}: Props) {
@@ -20,7 +21,7 @@ export default function index({}: Props) {
         <WhyContext/>
         <HowWeWork/>
         <CasesSlider/>
-        <Consultation/>
+        <Form/>
     </div>
   );
 }
