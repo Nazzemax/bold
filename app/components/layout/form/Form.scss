@@ -209,7 +209,9 @@
 @media all and (max-width: 500px) {
   .form {
     flex-direction: column;
+    justify-content: start;
     gap: 0;
+    height: 50rem;
     h2{
       font-size: 4vh;
     }
@@ -461,7 +463,6 @@
 
 @media all and (max-width: 375px) {
   .form {
-    overflow-y: auto;
     h2{
       font-size: 4vh;
     }
