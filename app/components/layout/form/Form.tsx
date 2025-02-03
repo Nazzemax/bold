@@ -460,16 +460,15 @@ const Form: React.FC = () => {
                       alt={selectedCountry.name}
                       width={20}
                       height={15}
-                      className="mr-2"
+                      className="mr-1"
                     />
-                    <span>{selectedCountry.code}</span>
-                    <Image
+                     <Image
                       src="/form/inputIconSelect.svg"
                       alt="dropdown arrow"
                       width={20}
                       height={20}
-                      className="ml-2"
                     />
+                    <span>{selectedCountry.code}</span>
                   </div>
 
                   {isOpenCountry && (
@@ -482,7 +481,7 @@ const Form: React.FC = () => {
                         >
                           <Image
                             src={country.flag}
-                            alt={country.name}
+                            alt={country. name}
                             width={20}
                             height={15}
                             className="mr-2"
@@ -527,7 +526,7 @@ const Form: React.FC = () => {
                     className="mr-2 border border-gray-400 rounded appearance-none 
             checked:bg-[#FF2B44] checked:border-[#FF2B44] 
             before:content-['✔'] before:text-white before:text-sm before:font-bold before:hidden 
-            checked:before:block"
+            checked:before:block flex items-center justify-center"
                     checked={packedInfo.agree}
                     onChange={handleCheckboxChange}
                   />
