@@ -31,24 +31,27 @@ export default function WhyContext({}: Props) {
   ];
   return (
     <div className={styles.WhyContext}>
-      <h1>Почему конкекстная реклама?</h1>
+      <h1>Почему контекстная реклама?</h1>
       <div className={styles.cards}>
         {cards.map((card, id) => {
           return (
-            <div className={styles.card} key={id}>
-              <div
-                className={styles.image}
-                style={{ backgroundImage: `url(${card.image.src})` }}
-              ></div>
-              <div className={styles.info}>
-                <h6>{card.title}</h6>
-                <p>{card.text}</p>
-              </div>
+            <div className={styles.card_container} key={id}>
               <img
                 className={styles.icon}
                 src={card.icon.src}
                 alt={card.title}
               />
+              <div className={styles.card} >
+                <div
+                  className={styles.image}
+                  style={{ backgroundImage: `url(${card.image.src})` }}
+                ></div>
+                <div className={styles.info}>
+                  <h6>{card.title}</h6>
+                  <p>{card.text}</p>
+                </div>
+              </div>
+              
             </div>
           );
         })}
