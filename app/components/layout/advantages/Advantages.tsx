@@ -6,16 +6,16 @@ const Advantages = () => {
   return (
     <div className="advantages">
       <div className="advantages-up">
-        <div className="text">
-          <span className="text-1">Bold Brands International</span>
-          <span className="text-2">
+        <div className="advantages-text">
+          <span className="advantages-text-1">Bold Brands International</span>
+          <span className="advantages-text-2">
             совместно создаём прочную основу и уверенное будущее для вашей
             компании
           </span>
         </div>
 
-        <div className="circles">
-          <div className="circles-1">
+        <div className="advantages-circles">
+          <div className="advantages-circles-1">
             <Image
               src="/advantages/circle1.svg"
               alt="circle1"
@@ -31,7 +31,7 @@ const Advantages = () => {
               height={100}
             />
           </div>
-          <div className="circles-2">
+          <div className="advantages-circles-2">
             <Image
               src="/advantages/circle3.svg"
               alt="circle3"
@@ -51,7 +51,7 @@ const Advantages = () => {
       </div>
 
       <Image
-        className="background-img"
+        className="advantages-background-img"
         src="/advantages/BackGround.svg"
         alt="BackGround"
         layout="responsive"
