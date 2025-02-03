@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import arrowLeft from '@/public/cases/arrowLeft.png'
-
+import './Breadcrumb.scss'
 // Define the route-to-name mapping
 const routeMap: Record<string, string> = {
   "/": "Главная",
@@ -29,7 +29,7 @@ const Breadcrumb: React.FC = () => {
   });
 
   return (
-    <nav className="flex text-white text-lg">
+    <nav className="flex text-white text-lg breadcrumb">
       <Link href="/" className="hover:underline text-white">
         Главная
       </Link>

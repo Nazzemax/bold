@@ -61,3 +61,44 @@
     }
   }
 }
+
+@media (max-width:1200px) {
+  .Banner{
+    h1{
+      font-size: 56px;
+    }
+    h2{
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width:950px) {
+  .Banner{
+    h1{
+      font-size: 42px;
+    }
+    h2{
+      font-size: 14px;
+    }
+  }
+}
+@media (max-width:750px) {
+  .Banner{
+    h1{
+      font-size: 32px;
+    }
+    h2{
+      font-size: 14px;
+      max-width: 60vw;
+    }
+  }
+}
+@media (max-width:550px) {
+  .Banner{
+    padding: 20px;
+    align-items: start;
+    h1, h2{
+      text-align: start;
+    }
+  }
+}

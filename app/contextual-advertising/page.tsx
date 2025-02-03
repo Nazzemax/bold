@@ -12,7 +12,7 @@ type Props = {};
 export default function index({}: Props) {
   return (
     <div>
-      <Header bgColor="transparent"/>
+      {/* <Header bgColor="transparent"/> */}
       <Banner
         title="Не упустите клиентов, готовых купить прямо сейчас!"
         subtitle="Настраиваем рекламу, которая приносит заявки с первого дня запуска"
