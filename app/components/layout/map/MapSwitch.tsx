@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  InfoWindow,
+  Marker,
+  OverlayView,
+  useLoadScript,
+} from "@react-google-maps/api";
 import MapButton from "../../ui/map/MapButton";
 import "../../ui/map/MapButton.scss";
 
@@ -20,6 +26,16 @@ const centerTashkent: { lat: number; lng: number } = {
   lat: 41.310758,
   lng: 69.310728,
 }; // Координаты для Ташкента
+
+const infoWindowBishkek: { lat: number; lng: number } = {
+  lat: 42.847085,
+  lng: 74.618839,
+}; // Координаты для окна адреса в Бишкеке
+
+const infoWindowTashkent: { lat: number; lng: number } = {
+  lat: 41.311576,
+  lng: 69.311335,
+}; // Координаты для окна адреса в Ташкенте
 
 //стиль карты
 const mapOptions: google.maps.MapOptions = {
@@ -98,6 +114,10 @@ const MapSwitch: React.FC = () => {
     ? centerBishkek
     : centerTashkent;
 
+  const centerInfoWindow: { lat: number; lng: number } = mapCondition
+    ? infoWindowBishkek
+    : infoWindowTashkent;
+
   const { isLoaded, loadError }: { isLoaded: boolean; loadError?: Error } =
     useLoadScript({
       googleMapsApiKey: "AIzaSyCtrTvA1wlB3E3bjqGqPKte_pSN6aVaIoE" as string,
@@ -127,17 +147,38 @@ const MapSwitch: React.FC = () => {
       ) : (
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
-          zoom={15}
+          zoom={16}
           center={center}
           options={mapOptions}
         >
           <Marker
             position={center}
-            // icon={{
-            //   url: "",
-            //   scaledSize: new window.google.maps.Size(40, 40), //место для кастомной иконки
-            // }}
+            icon={{
+              url: "/map/mapMarker.svg",
+              scaledSize: new window.google.maps.Size(50, 50), //место для кастомной иконки
+            }}
           />
+
+          <OverlayView
+            position={centerInfoWindow}
+            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+          >
+            <div
+              style={{
+                backgroundColor: "white",
+                padding: "7px",
+                borderRadius: "5px",
+                width: "6rem",
+                height: "3rem",
+              }}
+            >
+              {mapCondition ? (
+                <p style={{ fontWeight: "700" }}>ул. Матросова, дом 102</p>
+              ) : (
+                <p style={{ fontWeight: "700" }}>Яшнободский район, Янгибозор 1</p>
+              )}
+            </div>
+          </OverlayView>
         </GoogleMap>
       )}
     </div>
