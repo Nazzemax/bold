@@ -154,13 +154,6 @@ const Form: React.FC = () => {
     }));
   };
 
-  const handleAgreeChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setPackedInfo((prev) => ({
-      ...prev,
-      agree: e.target.checked,
-    }));
-  };
-
   return (
     <main className="form-main">
       <div className="form flex justify-center items-center">

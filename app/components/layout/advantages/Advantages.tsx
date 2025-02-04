@@ -2,7 +2,7 @@ import React from "react";
 import "../advantages/Advantages.scss";
 import Image from "next/image";
 
-const Advantages = () => {
+const Advantages: React.FC = () => {
   return (
     <div className="advantages">
       <div className="advantages-up">

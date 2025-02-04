@@ -1,5 +1,6 @@
 // import Advantages from "./components/layout/advantages/Advantages";
 import Form from "./components/layout/form/Form";
+import MapSwitch from "./components/layout/map/MapSwitch";
 // import Header from "./components/layout/header/Header";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       {/* <Header bgColor="black" /> */}
       <Form/>
       {/* <Advantages/> */}
+      <MapSwitch/>
     </>
   );
 }
