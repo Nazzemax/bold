@@ -1,6 +1,6 @@
 @function toRem($value) {
     @return ($value / 16) * 1rem;
-  }
+}
   
   .header {
     position: relative;
@@ -94,7 +94,10 @@
                 padding-left: toRem(58);
                 cursor: pointer;
                 transition: background-color 0.3s ease;
-                color: #2A2D35;
+                a{
+                  color: #2A2D35;
+                  text-decoration: none;
+                }
 
                 .first,
                 .second, 
