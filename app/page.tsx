@@ -21,6 +21,7 @@ import BrandingSection from "@/src/components/BrandingSection/BrandingSection";
 import Advantages from "./components/layout/advantages/Advantages";
 import Form from "./components/layout/form/Form";
 import VideoButton from "@/src/components/VideoButton/VideoButton";
+import DiagnosticBanner from "@/src/components/DiagnosticBanner/DiagnosticBanner";
 
 
 
@@ -44,6 +45,7 @@ export default function Home() {
       <BrandingSection/>
       <Cases_Carusel backgroundImage={undefined}/>
       <Form/>
+      <DiagnosticBanner/>
       
     </div>
   )
