@@ -22,6 +22,7 @@ import Advantages from "./components/layout/advantages/Advantages";
 import Form from "./components/layout/form/Form";
 import VideoButton from "@/src/components/VideoButton/VideoButton";
 import DiagnosticBanner from "@/src/components/DiagnosticBanner/DiagnosticBanner";
+import PartnershipBanner from "@/src/components/award/PartnershipBanner";
 
 
 
@@ -46,6 +47,7 @@ export default function Home() {
       <Cases_Carusel backgroundImage={undefined}/>
       <Form/>
       <DiagnosticBanner/>
+      <PartnershipBanner/>
       
     </div>
   )

@@ -18,7 +18,7 @@ const DiagnosticBanner: React.FC = () => {
         <button className={styles.diagnosticBtn}>
           Пройти диагностику
           <div className={styles.arrowContainer}>
-            <Image className={styles.iconimage} src={arrowIcon} alt="arrow" width={20} height={20} />
+            <Image className={styles.iconimage} src={arrowIcon} alt=""  />
           </div>
         </button>
       </div>

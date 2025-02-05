@@ -54,7 +54,7 @@ body {
     text-align: center;
   }
   
-  /* Кнопка */
+
   .diagnosticBtn {
     background-color: #e3001b;
     width: 255px;
@@ -65,7 +65,7 @@ body {
     font-size: 18px;
     display: inline-flex;
     align-items: center;
-    justify-content: space-between; /* Двигаем иконку в край */
+    justify-content: space-between; 
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
@@ -79,7 +79,7 @@ body {
     }
   }
   
-  /* Контейнер для стрелки */
+
   .arrowContainer {
     width: 40px;
     height: 40px;
@@ -89,14 +89,15 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: auto; /* Двигаем в правый край */
+    margin-left: auto; 
     position: absolute;
-    right: 8px; /* Двигаем ещё ближе к правому краю */
+    right: 8px; 
+    .iconimage {
+        width: 5px;
+        height: 10px;
+      }
   }
   
-  /* Иконка внутри стрелки */
-  .iconImage {
-    width: 8px;
-    height: 14px;
-  }
+
+  
   
