@@ -30,7 +30,7 @@ const ApproachSection = () => {
     <div>
       <Section 
         title="Наш бизнес-подход"
-        items={Items} // ✅ Теперь передаем корректные данные
+        items={Items} 
       />
     </div>
   );
