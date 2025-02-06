@@ -1,0 +1,44 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.casesMeasurableResults {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(20);
+  padding: toRem(70) toRem(210) toRem(70) toRem(210);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    li {
+      width: toRem(187);
+    }
+  }
+}
+
+@media all and (max-width: 1060px) {
+  .casesMeasurableResults {
+    ul {
+      flex-direction: column;
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 750px) {
+  .casesMeasurableResults {
+    padding: toRem(70) toRem(60) toRem(70) toRem(60);
+  }
+}
+
+@media all and (max-width: 450px) {
+    .casesMeasurableResults {
+      padding: toRem(70) toRem(30) toRem(70) toRem(30);
+    }
+  }

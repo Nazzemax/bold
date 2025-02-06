@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import {
   GoogleMap,
-  InfoWindow,
   Marker,
   OverlayView,
   useLoadScript,
