@@ -1,90 +1,80 @@
-'use client'
-
+"use client";
 import { useState } from "react";
-import styles from "./LanguageSelect.module.scss"; // Импорт модульных стилей
 import Image from "next/image";
-import langIcon from '@/public/cases/lang.svg'
-import arrowDown from '@/public/cases/arrowdown.svg'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/app/components/ui/shadcnui/popover";
+import styles from "./LanguageSelect.module.scss";
+import langIcon from "@/public/cases/lang.svg";
+import arrowDown from "@/public/cases/arrowdown.svg";
 
 interface LanguageOption {
   code: string;
   label: string;
-  full:string;
-  flag: string; // Путь к иконке флага
+  full: string;
+  flag: string;
 }
 
 const languages: LanguageOption[] = [
-  { code: "ru", label: "РУ", flag: '/header/russia.png' , full:'Русский'},
-  { code: "en", label: "EN", flag: '/header/english.png', full:'English' },
-  { code: "uz", label: "UZ", flag: '/header/uzbek.png' , full:"O'zbek"}, 
+  { code: "ru", label: "РУ", flag: "/header/russia.png", full: "Русский" },
+  { code: "en", label: "EN", flag: "/header/english.png", full: "English" },
+  { code: "uz", label: "UZ", flag: "/header/uzbek.png", full: "O'zbek" },
 ];
 
 export default function LanguageSelect() {
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(languages[0]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<LanguageOption>(
+    languages[0]
+  );
 
   const handleLanguageChange = (language: LanguageOption) => {
     setSelectedLanguage(language);
-    setIsOpen(false);
-    console.log(`Selected language: ${language.code}`); // Здесь можно добавить смену языка
-  };
-
-  const handleBlur = (e: React.FocusEvent<HTMLDivElement>) => {
-    // Close the dropdown only if focus moves outside the parent container
-    if (!e.currentTarget.contains(e.relatedTarget)) {
-      setIsOpen(false);
-    }
+    console.log(`Selected language: ${language.code}`);
   };
 
   return (
-    <div  
-         className={styles["language-select"]}
-         tabIndex={0}
-         onBlur={handleBlur}
-         >
-      <button
-       
-        className={styles["language-select__button"]}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-         <Image
-        width={16}
-        height={16}
-          src={langIcon}
-          alt={selectedLanguage.label}
-          className={styles["language-select__flag"]}
-        />
-        <span>{selectedLanguage.label}</span>
-        <span
-          className={`${isOpen ? styles["language-select__button__icon__open"] : styles["language-select__button__icon"]
-          }`}
-        >
-            <Image src={arrowDown}  alt="arrow down icon" />
-        </span>
-      </button>
+    <Popover>
+      <PopoverTrigger asChild className={styles.trigger} id="lang">
+        <button className={styles.button}>
+          <Image
+            width={24}
+            height={24}
+            src={langIcon}
+            alt={"lang-icon"}
+            className={styles.button__icon}
+          />
+          <span className={styles.button__label}>{selectedLanguage.label}</span>
+          <Image
+            src={arrowDown}
+            alt="arrow-icon"
+            className={styles.button__arrow}
+          />
+        </button>
+      </PopoverTrigger>
 
-      {isOpen && (
-        <ul className={styles["language-select__dropdown"]}>
-          {languages.map((language) => (
-            <li
-              key={language.code}
-              className={`${styles["language-select__dropdown__item"]} ${
-                selectedLanguage.code === language.code ? styles["selected"] : ""
-              }`}
-              onClick={() => handleLanguageChange(language)}
-            >
-              <Image
-                height={24}
-                src={language.flag}
-                alt={language.label}
-                className={styles["language-select__flag"]}
-                width={24}
-              />
-              <span>{language.full}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      <PopoverContent className={styles.dropdown}>
+        {languages.map((language) => (
+          <div
+            key={language.code}
+            className={`${styles.item} ${
+              selectedLanguage.code === language.code
+                ? styles["item--selected"]
+                : ""
+            }`}
+            onClick={() => handleLanguageChange(language)}
+          >
+            <Image
+              width={24}
+              height={24}
+              src={language.flag}
+              alt={language.label}
+              className={styles.item__flag}
+            />
+            <span className={styles.item__label}>{language.full}</span>
+          </div>
+        ))}
+      </PopoverContent>
+    </Popover>
   );
 }

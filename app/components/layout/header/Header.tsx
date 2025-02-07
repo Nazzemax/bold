@@ -4,89 +4,111 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Logo from "../../../../public/mainLogo.svg";
-import arrowDown from "@/public/cases/arrowdown.svg";
 import LanguageSelect from "../../ui/header/langSelect/LanguageSelect";
+import { useEffect, useRef, useState } from "react";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/app/components/ui/shadcnui/navigation-menu";
+import { usePathname } from "next/navigation";
+import HeaderModal from "../../ui/header/headerModal/HeaderModal";
+import { links } from "@/app/lib/constants/links";
 
-interface HeaderProps {
-  bgColor?: string;
-}
+interface HeaderProps {}
 
-const Header: React.FC<HeaderProps> = ({ bgColor }) => {
+const Header: React.FC<HeaderProps> = () => {
+  const pathname = usePathname();
+  const [isVisible, setIsVisible] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const scrollPos = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      const visible = scrollPos.current > currentScrollPos;
+      setIsVisible(visible);
+      setHasScrolled(currentScrollPos >= 120);
+      scrollPos.current = currentScrollPos;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header
-      className={styles.header}
-      style={{ backgroundColor: bgColor || "transparent" }}
+      className={`
+        ${styles.header} 
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        ${hasScrolled ? styles.header__scrolled : ""}
+      `}
     >
-      <div className={styles.container}>
-        <div className={styles.top}>
-          <div className={styles.logo}>
-            <Image
-              height={31}
-              style={{ width: "auto" }}
-              priority
-              src={Logo}
-              alt="Main logo"
-            />
-          </div>
-          <nav className={styles.nav}>
-            <ul className={styles.navList}>
-              <li>
-                <Link href="/">Главная</Link>
-              </li>
-              <li>
-                <Link href="/about">О нас</Link>
-              </li>
-              <li>
-                <Link href="/cases">Кейсы</Link>
-              </li>
-              <li className={styles.menu}>
-                <div className={styles.menu__item}>
-                  <Link href="/services">Услуги</Link>
-                  <Image src={arrowDown} alt="arrow down icon" />
-                </div>
-                <ul className={styles.submenu}>
-                  <li className={styles.submenu__item}>
-                    Брендинг
-                    <div className={styles.first}></div>
-                  </li>
-                  <li className={styles.submenu__item}>
-                    Digital продвижение
-                    <div className={styles.second}></div>
-                  </li>
-                  <li className={styles.submenu__item}>
-                    Видеопродакшн
-                    <div className={styles.third}></div>
-                  </li>
-                  <li className={styles.submenu__item}>
-                    Веб-разработка и дизайн
-                    <div className={styles.fourth}></div>
-                  </li>
-                  <li className={styles.submenu__item}>
-                    Комплексное маркетинговое продвижение
-                    <div className={styles.fifth}></div>
-                  </li>
-                  <li className={styles.submenu__item}>
-                    Внедрение CRM системы
-                    <div className={styles.six}></div>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <Link href="/contacts">Контакты</Link>
-              </li>
-            </ul>
-          </nav>
+      <div className={styles.header__container}>
+        <Link href={"/"} className={styles.header__logo}>
+          <Image
+            height={31}
+            style={{ width: "auto" }}
+            priority
+            src={Logo}
+            alt="Main logo"
+          />
+        </Link>
+        <nav className={styles.header__nav}>
+          <ul className={styles.header__navList}>
+            {links.map((item) =>
+              !item.menu ? (
+                <li key={`${item.name}-${item.href}`}>
+                  <Link
+                    href={item.href}
+                    className={
+                      pathname === item.href ? styles.header__linkActive : ""
+                    }
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ) : (
+                <NavigationMenu key={`${item.name}-${item.href}`}>
+                  <NavigationMenuList>
+                    <NavigationMenuItem>
+                      <Link href={item.href}>
+                        <NavigationMenuTrigger>
+                          {item.name}
+                        </NavigationMenuTrigger>
+                      </Link>
+                      <NavigationMenuContent className={styles.header__menu}>
+                        {item.menu.map((subitem) => (
+                          <Link
+                            key={`${subitem.name}-${subitem.href}`}
+                            href={subitem.href}
+                            className={styles.header__menuLink}
+                          >
+                            <Image
+                              width={20}
+                              height={20}
+                              src={subitem.icon}
+                              alt={"icon"}
+                            />
+                            <span>{subitem.name}</span>
+                          </Link>
+                        ))}
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  </NavigationMenuList>
+                </NavigationMenu>
+              )
+            )}
+          </ul>
+        </nav>
+        <div className={styles.header__block}>
           <LanguageSelect />
-          {/* <div className={styles.langSwitch}>
-            <select className={styles.select} defaultValue={'РУ'}>
-                <option value={'РУ'}>РУ</option>
-                <option value={'АНГЛ'}>EN</option>
-                <option value={'ТУРЕЦКИЙ'}>TU</option>
-            </select>
-            <div>
-                <Image alt="arrow down" src={arrowDown} className={styles.arrowDown}  />
-            </div>
-        </div> */}
+
+          {/* Header Mobile */}
+          <HeaderModal />
         </div>
       </div>
     </header>

@@ -4,10 +4,11 @@ import Partners from "./components/partners/Partners";
 
 export default function Home() {
   return (
-    <>
-      {/* <Header bgColor="black" /> */}
+    <div className="h-[5000px] bg-black">
+      <Header />
+      <div className="">ee</div>
       {/* <Challenges /> */}
-      <Partners/>
-    </>
+      {/* <Partners/> */}
+    </div>
   );
 }
