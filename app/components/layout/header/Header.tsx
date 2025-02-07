@@ -66,16 +66,7 @@ const Header:React.FC<HeaderProps> = ({ bgColor }) => {
           </ul>
         </nav>
         <LanguageSelect />
-        {/* <div className={styles.langSwitch}>
-            <select className={styles.select} defaultValue={'РУ'}>
-                <option value={'РУ'}>РУ</option>
-                <option value={'АНГЛ'}>EN</option>
-                <option value={'ТУРЕЦКИЙ'}>TU</option>
-            </select>
-            <div>
-                <Image alt="arrow down" src={arrowDown} className={styles.arrowDown}  />
-            </div>
-        </div> */}
+
         </div>
       </div>
     </header>

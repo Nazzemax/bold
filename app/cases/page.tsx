@@ -1,22 +1,18 @@
 'use client'
 
 import React from 'react'
-import Header from '../components/layout/header/Header'
-import styles from './Cases.module.scss'
-import Breadcrumb from '../components/ui/breadcrumb/Breadcrumb'
+import Intro from '../components/layout/intro/Intro'
+import bg from '@/public/cases/mainbg.jpeg'
 
 function Cases() {
-  return (
-    <main className={styles.main}>
-      <Header />
-       <div className={styles.intro}>
-            <Breadcrumb />
-            <h1 className={styles.intro__title}>Наша миссия воплощать идеи <br/> в жизнь
-            </h1>
-            <button className={styles.intro__consultation}>Получить консультацию</button>
-       </div>
-    </main>
-  )
+  return <>
+    <Intro
+      title={"Наша миссия воплощать идеи  в жизнь"}
+      actionText="Получить консультацию"
+      backgroundImage={bg} 
+      extraText='От концепции до реализации — мы сопровождаем вас на каждом этапе создания вашего бренда'
+    />
+  </>
 }
 
 export default Cases
