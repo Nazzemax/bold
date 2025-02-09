@@ -24,12 +24,14 @@ import VideoButton from "@/src/components/VideoButton/VideoButton";
 import DiagnosticBanner from "@/src/components/DiagnosticBanner/DiagnosticBanner";
 import PartnershipBanner from "@/src/components/award/PartnershipBanner";
 import MarketingSection from "@/src/components/MarketingSection/MarketingSection";
+import BrandingCarousel from "@/src/components/BrandingCarousel/BrandingCarousel";
 
 
 
 export default function Home() {
   return (
     <div>
+      <BrandingCarousel/>
       <MarketingSection/>
       <VideoButton/>
       <Contacts/>
