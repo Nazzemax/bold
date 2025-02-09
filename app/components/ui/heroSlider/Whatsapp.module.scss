@@ -1,0 +1,82 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.whatsappButton {
+  position: absolute;
+  bottom: toRem(8);
+  right: toRem(8);
+  display: flex;
+  align-items: center;
+
+  &__notification {
+    width: toRem(275);
+    height: toRem(47);
+    position: relative;
+    background-color: white;
+    border-radius: toRem(12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__closeIcon {
+    position: absolute;
+    top: toRem(-10);
+    left: toRem(-10);
+    cursor: pointer;
+  }
+
+  &__text {
+    font-size: toRem(18);
+    font-weight: 500;
+    color: #2a2d35;
+  }
+
+  &__arrowIcon {
+    position: absolute;
+    right: toRem(-10);
+  }
+
+  &__iconWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__pulse {
+    position: absolute;
+    width: toRem(64);
+    height: toRem(64);
+    border-radius: 50%;
+    background-color: green;
+    opacity: 0.75;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  &__whatsappIcon {
+    opacity: 1;
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .whatsappButton {
+    display: none;
+  }
+}

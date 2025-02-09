@@ -21,11 +21,16 @@ interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   const pathname = usePathname();
+
   const [isVisible, setIsVisible] = useState(true);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const scrollPos = useRef(0);
+  const [hasScrolled, setHasScrolled] = useState(window.scrollY >= 120);
+  const scrollPos = useRef(window.scrollY);
 
   useEffect(() => {
+    const initialScrollPos = window.scrollY;
+    setHasScrolled(initialScrollPos >= 120);
+    scrollPos.current = initialScrollPos;
+
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       const visible = scrollPos.current > currentScrollPos;
@@ -33,6 +38,7 @@ const Header: React.FC<HeaderProps> = () => {
       setHasScrolled(currentScrollPos >= 120);
       scrollPos.current = currentScrollPos;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
