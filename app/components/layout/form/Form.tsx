@@ -154,19 +154,19 @@ const Form: React.FC = () => {
     }));
   };
 
-  const handleAgreeChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setPackedInfo((prev) => ({
-      ...prev,
-      agree: e.target.checked,
-    }));
-  };
+  // const handleAgreeChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  //   setPackedInfo((prev) => ({
+  //     ...prev,
+  //     agree: e.target.checked,
+  //   }));
+  // };
 
   return (
     <main className="form-main">
       <div className="form flex justify-center items-center">
         <div className="form-left flex flex-col">
           <h2 className="text-white font-bold">
-            Рассчитайте стоимость услуги{" "}
+            Рассчитайте стоимость услуги
           </h2>
           <span className="form-left-span-1 font-medium text-[#AAADB5]">
             Получите решение для вашего бизнеса!
@@ -564,5 +564,4 @@ const Form: React.FC = () => {
     </main>
   );
 };
-
 export default Form;
