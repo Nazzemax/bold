@@ -1,0 +1,98 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.brandCreate {
+  display: flex;
+  gap: toRem(60);
+  flex-direction: column;
+  padding: toRem(70) toRem(210) toRem(70) toRem(210);
+
+  h2 {
+    font-weight: 700;
+    font-size: toRem(45);
+    color: #2a2d35;
+    line-height: 1.1;
+    width: 70%;
+  }
+  .brandCreate-brandItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: toRem(60);
+  }
+  .brandCreate-brandInfo {
+    padding-top: toRem(30);
+    padding-bottom: toRem(60);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(15);
+
+    h3 {
+      font-weight: 700;
+      font-size: toRem(25);
+      line-height: 1;
+    }
+    span {
+      color: #ff2b44;
+      font-size: toRem(18);
+    }
+    p {
+      font-size: toRem(15);
+      color: #838895;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: toRem(5);
+      li {
+        font-size: toRem(15);
+        color: #838895;
+        border: 1px solid #d1d7e2;
+        border-radius: 8px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 999px) {
+  .brandCreate {
+    gap: toRem(30);
+    padding: toRem(70) toRem(110) toRem(60) toRem(110);
+
+    h2 {
+      width: 90%;
+    }
+    .brandCreate-brandItem {
+      flex-direction: column;
+      gap: toRem(5);
+    }
+  }
+}
+
+@media all and (max-width: 605px) {
+  .brandCreate {
+    gap: toRem(20);
+    padding: toRem(70) toRem(70) toRem(60) toRem(70);
+
+    h2 {
+      font-size: toRem(35);
+    }
+    .brandCreate-brandItem {
+      gap: toRem(0);
+    }
+    .brandCreate-brandInfo {
+      span {
+        font-size: toRem(16);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 435px) {
+  .brandCreate {
+    padding: toRem(70) toRem(50) toRem(60) toRem(50);
+  }
+}

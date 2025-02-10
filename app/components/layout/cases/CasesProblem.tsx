@@ -20,7 +20,9 @@ const CasesProblem: React.FC = () => {
         className="casesProblem-title"
         style={{ textTransform: "uppercase" }}
       >
-        <span>{oneCase[0].title}</span>
+        <span>
+          {oneCase[0].title}
+          </span>
       </div>
       <div className="casesProblem-text">
         {oneCase[0].text.split(".").map(

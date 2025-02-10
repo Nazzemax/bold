@@ -1,0 +1,61 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.casesTarget {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: toRem(10);
+  padding: toRem(70) toRem(210) toRem(70) toRem(210);
+  border-bottom: 1px solid #ecebef;
+  border-top: 1px solid #ecebef;
+
+  span {
+    color: #838895;
+    font-size: toRem(15);
+  }
+  .casesTarget-title {
+    width: 17%;
+  }
+  .casesTarget-text {
+    width: 75%;
+    .casesTarget-text-li {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      gap: toRem(15);
+      margin-bottom: toRem(10);
+      img {
+        margin-top: toRem(7);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 605px) {
+  .casesTarget {
+    flex-direction: column;
+    gap: toRem(20);
+    padding: toRem(70) toRem(110) toRem(60) toRem(110);
+
+    .casesTarget-title {
+      width: 100%;
+    }
+    .casesTarget-text {
+      width: 100%;
+    }
+  }
+}
+
+@media all and (max-width: 499px) {
+  .casesTarget {
+    padding: toRem(70) toRem(40) toRem(60) toRem(40);
+  }
+}
+
+@media all and (max-width: 375px) {
+  .casesTarget {
+    padding: toRem(70) toRem(30) toRem(60) toRem(30);
+  }
+}
