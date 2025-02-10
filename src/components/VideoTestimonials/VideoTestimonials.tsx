@@ -79,19 +79,6 @@ const VideoTestimonials = () => {
         <div className={styles.testimonialContent}>
           {displayedTestimonials.map((testimonial, index) => (
             <div className={styles.testimonialCard} key={index}>
-              {/* <div className={styles.author}>
-                <Image
-                  src={testimonial.avatar}
-                  alt={testimonial.author}
-                  className={styles.avatar}
-                  width={80}
-                  height={80}
-                />
-                <div className={styles.authorDetails}>
-                  <h3 className={styles.authorName}>{testimonial.author}</h3>
-                  <span className={styles.authorRole}>{testimonial.role}</span>
-                </div>
-              </div> */}
               <div className={styles.video}>
                 <button className={styles.playButton}>
                   <Image

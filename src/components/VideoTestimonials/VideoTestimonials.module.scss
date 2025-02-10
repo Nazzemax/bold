@@ -23,6 +23,7 @@
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .header {
@@ -77,12 +78,20 @@
 
 .testimonialContent {
   margin-top: 20px;
+  width: 100%;
 
   .testimonialCard {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    margin: 0 auto;
+    max-width: 1320px;
+    height: 60vh;
+    max-height: 600px;
+    position: relative;
+
+    background: url('../../assents/icon/Frame_1.png') no-repeat center center;
+    -webkit-background-size: cover;
+	  background-size: cover;
 
     .author {
       display: flex;
@@ -111,16 +120,6 @@
     }
 
     .video {
-      background: url('../../assents/icon/Frame_1.png') no-repeat center center;
-      position: relative;
-      background-color: gray;
-      width: 1318px;
-      height: 600px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 
       .playButton {
         background-color: red;
