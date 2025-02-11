@@ -8,8 +8,7 @@ import {
 } from "@/app/components/ui/shadcnui/popover";
 import styles from "./LanguageSelect.module.scss";
 import langIcon from "@/public/cases/lang.svg";
-import arrowDown from "@/public/cases/arrowdown.svg";
-
+import arrowDown from "@/public/header/arrowDown.svg";
 interface LanguageOption {
   code: string;
   label: string;

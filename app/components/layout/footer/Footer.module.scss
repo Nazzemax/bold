@@ -1,0 +1,252 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+.footer {
+  background-color: #fff;
+  &__container {
+    width: 100%;
+    max-width: toRem(1920);
+    margin: 0 auto;
+    padding: toRem(56);
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: toRem(64);
+  }
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(278px, 1fr));
+    column-gap: toRem(20);
+    row-gap: toRem(64);
+  }
+  &__brand {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    img {
+      width: toRem(300);
+      height: toRem(40);
+    }
+  }
+  &__subtitle {
+    color: #838895;
+    font-size: toRem(18);
+    font-weight: 500;
+    line-height: toRem(27);
+    margin: toRem(32) 0;
+  }
+
+  &__heading {
+    color: #2a2d35;
+    font-size: toRem(20);
+    font-weight: 500;
+    line-height: toRem(24);
+    margin-bottom: toRem(16);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(14);
+  }
+
+  &__link {
+    font-size: toRem(18);
+    font-weight: 500;
+    line-height: toRem(27);
+    color: #838895;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #ff2b44;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(32);
+    &-label {
+      color: #838895;
+      font-size: toRem(16);
+      font-weight: 500;
+      line-height: toRem(24);
+      margin-bottom: toRem(8);
+    }
+
+    &-value {
+      color: #2a2d35;
+      font-size: toRem(20);
+      font-weight: 500;
+      line-height: toRem(24);
+    }
+  }
+  &__social {
+    display: flex;
+    gap: toRem(12);
+    img {
+      width: toRem(40);
+      height: toRem(40);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: toRem(16);
+    border-top: toRem(1) solid #d1d7e2;
+    color: #666;
+    gap: toRem(24);
+  }
+
+  &__copyright {
+    color: #838895;
+    font-size: toRem(16);
+    font-weight: 500;
+    line-height: toRem(24);
+  }
+
+  &__credit {
+    margin: 0;
+    font-size: toRem(16);
+    line-height: toRem(24);
+    font-weight: 500;
+    color: #838895;
+    &-link {
+      margin-left: toRem(2);
+      color: #ff2b44;
+      text-decoration: underline;
+    }
+  }
+  &__creditMob {
+    display: none;
+  }
+  &__privacy {
+    color: #838895;
+    text-decoration: underline;
+    font-size: toRem(16);
+    line-height: toRem(24);
+    font-weight: 500;
+    &:hover {
+      color: #ff2b44;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .footer {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      text-wrap: wrap;
+    }
+
+    &__credit {
+      display: none;
+    }
+    &__creditMob {
+      display: inline;
+      margin: 0;
+      font-size: toRem(16);
+      line-height: toRem(24);
+      font-weight: 500;
+      color: #838895;
+      &-link {
+        margin-left: toRem(2);
+        color: #ff2b44;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .footer {
+    &__container {
+      padding: toRem(56) toRem(20);
+    }
+    &__subtitle {
+      font-size: toRem(16);
+    }
+
+    &__link {
+      font-size: toRem(16);
+    }
+    &__contact {
+      &-label {
+        font-size: toRem(16);
+      }
+
+      &-value {
+        font-size: toRem(18);
+      }
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__creditMob {
+      order: 1;
+    }
+    &__copyright {
+      order: 3;
+    }
+    &__privacy {
+      order: 2;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .footer {
+    &__content {
+      margin-bottom: toRem(40);
+    }
+    &__block {
+      grid-template-columns: repeat(auto-fit, minmax(278px, 1fr));
+      gap: 0;
+      & > div:nth-child(1) {
+        order: 4;
+        margin-bottom: toRem(48);
+      }
+      & > div:nth-child(2) {
+        order: 5;
+        margin-bottom: toRem(48);
+      }
+
+      & > div:nth-child(3) {
+        order: 6;
+      }
+
+      & > div:nth-child(4) {
+        order: 2;
+        margin-bottom: toRem(32);
+      }
+
+      & > div:nth-child(5) {
+        order: 1;
+        margin-bottom: toRem(32);
+      }
+
+      & > div:nth-child(6) {
+        order: 3;
+        margin-bottom: toRem(56);
+      }
+    }
+  }
+}
+@media screen and (max-width: 530px) {
+  .footer {
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+}

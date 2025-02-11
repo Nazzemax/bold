@@ -19,14 +19,42 @@
     width: toRem(375);
     padding: toRem(20);
   }
-
+  &__logo {
+    display: flex;
+    align-items: center;
+    max-width: toRem(168);
+  }
   &__title {
-    display: none;
+    display: flex;
+    color: #2a2d35;
+    button {
+      img[src$=".svg"] {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(7%)
+          saturate(1482%) hue-rotate(185deg) brightness(94%) contrast(90%);
+      }
+      img[alt="lang-icon"] {
+        filter: brightness(0) saturate(100%) invert(66%) sepia(11%)
+          saturate(344%) hue-rotate(180deg) brightness(90%) contrast(87%);
+      }
+    }
+  }
+  &__close {
+    position: absolute;
+    right: toRem(20);
+    top: toRem(20);
+    border-radius: toRem(16);
+    background: #f1f3f7;
+    padding: toRem(8);
+    opacity: 0.7;
+    transition: 150ms;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
 .accordion {
-  margin-top: toRem(70);
+  margin-top: toRem(24);
 
   &__item {
     border-bottom: toRem(1) solid #d1d7e2;

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
 import Header from "./components/layout/header/Header";
+import Footer from "./components/layout/footer/Footer";
 
 const cannonade = localFont({
   src: [
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Header />
 
         {children}
+        <Footer/>
       </body>
     </html>
   );

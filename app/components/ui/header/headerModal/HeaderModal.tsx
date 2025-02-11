@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -19,6 +20,9 @@ import styles from "./HeaderModal.module.scss";
 import burgerMenu from "@/public/header/burgerMenu.svg";
 import Link from "next/link";
 import { links } from "@/app/lib/constants/links";
+import Logo from "@/public/mainLogo.svg";
+import LanguageSelect from "../langSelect/LanguageSelect";
+import { X } from "lucide-react";
 
 type Props = {};
 
@@ -32,7 +36,22 @@ const HeaderModal = ({}: Props) => {
       </SheetTrigger>
       <SheetContent side={"right"} className={styles.sheet__content}>
         <SheetHeader>
-          <SheetTitle className={styles.sheet__title}>Меню</SheetTitle>
+          <SheetTitle className={styles.sheet__title}>
+            <Link href={"/"} className={styles.sheet__logo}>
+              <Image
+                height={31}
+                style={{ width: "auto" }}
+                priority
+                src={Logo}
+                alt="Main logo"
+              />
+            </Link>
+            <div className={styles.sheet__lang}></div>
+            <LanguageSelect />
+            <SheetClose className={styles.sheet__close}>
+              <X className="h-8 w-8" />
+            </SheetClose>
+          </SheetTitle>
         </SheetHeader>
         <Accordion type="single" collapsible className={styles.accordion}>
           {links.map((link, idx) =>

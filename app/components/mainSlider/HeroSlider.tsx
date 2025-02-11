@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,6 +11,7 @@ import { Button } from "../ui/shadcnui/button";
 import styles from "./HeroSlider.module.scss";
 import Image from "next/image";
 import arrowIcon from "@/public/heroSlider/Arrow.svg";
+import bgImg from "@/public/heroSlider/img-1.jpg";
 import { Whatsapp } from "../ui/heroSlider/Whatsapp";
 
 interface ISlider {
@@ -48,15 +49,18 @@ const HeroSlider: React.FC<Props> = ({}) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [animationKey, setAnimationKey] = useState<number>(0);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
     setProgress(0);
+    setAnimationKey((prev) => prev + 1);
   }, []);
 
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setProgress(0);
+    setAnimationKey((prev) => prev + 1);
   }, []);
 
   useEffect(() => {
@@ -70,7 +74,7 @@ const HeroSlider: React.FC<Props> = ({}) => {
         }
         return prev + 1;
       });
-    }, 50);
+    }, 80);
 
     return () => clearInterval(interval);
   }, [isPlaying, prevSlide]);
@@ -84,13 +88,17 @@ const HeroSlider: React.FC<Props> = ({}) => {
           api?.on("select", () => {
             setCurrentSlide(api.selectedScrollSnap());
             setIsPlaying(false);
-            setTimeout(() => setIsPlaying(true), 5000);
+            setAnimationKey((prev) => prev + 1);
+            setTimeout(() => setIsPlaying(true), 8000);
           });
         }}
       >
         <CarouselContent className={styles.slider__wrapper}>
           {slides.map((slide, index) => (
-            <CarouselItem key={index} className={styles.slider__item}>
+            <CarouselItem
+              key={`${index}-${animationKey}`}
+              className={styles.slider__item}
+            >
               <div
                 className={styles.slider__background}
                 style={{ backgroundImage: `url(${slide.image})` }}
@@ -104,7 +112,16 @@ const HeroSlider: React.FC<Props> = ({}) => {
                   <Button size="lg" className={styles.slider__btnText}>
                     {slide.buttonText}
                     <span>
-                      <Image src={arrowIcon} alt="" />
+                      <Image
+                        src={arrowIcon}
+                        alt=""
+                        className={styles.slider__arrowImg}
+                      />
+                      <ArrowRight
+                        strokeWidth={3}
+                        size={32}
+                        className={styles.slider__arrow}
+                      />
                     </span>
                   </Button>
                 </div>

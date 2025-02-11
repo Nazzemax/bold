@@ -44,7 +44,6 @@ const Header: React.FC<HeaderProps> = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   return (
     <header
       className={`

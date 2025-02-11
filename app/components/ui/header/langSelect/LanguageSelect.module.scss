@@ -11,15 +11,16 @@
 }
 
 .button {
+  height: toRem(48);
   display: flex;
   align-items: center;
   gap: toRem(8);
   padding: toRem(12) toRem(16);
   border-radius: toRem(16);
   transition: background-color 0.3s ease;
+    
   &:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
+    background: #d2d6de33;
   }
   &__icon {
     width: toRem(24);
@@ -45,7 +46,7 @@
   border-radius: toRem(16);
   box-shadow: 0 toRem(4) toRem(6) rgba(0, 0, 0, 0.1);
   padding: toRem(12) toRem(8);
-  z-index: 10;
+  z-index: 100;
 }
 
 .item {
