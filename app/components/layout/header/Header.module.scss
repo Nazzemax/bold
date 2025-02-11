@@ -3,17 +3,20 @@
 }
 
 .header {
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  top: 0;
+  z-index: 999;
   color: #fff;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 56px 0 56px;
   .container {
     width: 100%;
     max-width: toRem(1808);
     margin: 0 auto;
-
     .top {
-      position: relative;
       z-index: 2;
       padding: toRem(40) 0;
       display: flex;

@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.scss";
+import Header from "./components/layout/header/Header";
 
 const cannonade = localFont({
-  src:[
+  src: [
     {
-      path:'../public/fonts/Cannonade Bold.ttf',
-      weight:'700',
-      style:'normal',
+      path: "../public/fonts/Cannonade Bold.ttf",
+      weight: "700",
+      style: "normal",
     },
     {
-      path:'../public/fonts/Cannonade.ttf',
-      weight:'500',
-      style:'normal',
-    }
-  ]
-})
+      path: "../public/fonts/Cannonade.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,11 +33,8 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body
-        className={`${cannonade.className} antialiased`}
-      >
-        {children}
-      </body>
+      <Header bgColor="black" />
+      <body className={`${cannonade.className} antialiased`}>{children}</body>
     </html>
   );
 }

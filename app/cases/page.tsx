@@ -6,15 +6,17 @@ import Breadcrumb from '../components/ui/breadcrumb/Breadcrumb'
 
 function Cases() {
   return (
+  <>
+  <Header />
     <main className={styles.main}>
-      <Header />
+      
        <div className={styles.intro}>
             <Breadcrumb />
             <h1 className={styles.intro__title}>Наша миссия воплощать идеи <br/> в жизнь
             </h1>
             <button className={styles.intro__consultation}>Получить консультацию</button>
        </div>
-    </main>
+    </main></>
   )
 }
 export default Cases
