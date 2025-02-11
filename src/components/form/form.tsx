@@ -13,7 +13,7 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
   const [email, setEmail] = useState('');
   const [isAgree, setIsAgree] = useState(false);
 
-  const isFormValid = name && phone && email && isAgree;
+  const isFormValid: string | number | boolean = name && phone && email && isAgree;
 
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value);
@@ -68,7 +68,7 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
             onChange={handleCheckboxChange}
           />
           <span>
-            Я согласен на обработку моих данных в соответствии с{' '}
+            Я согласен на обработку моих данных в соответствии с {' '}
             <a href="#" className={style.privacyLink}>
               политикой конфиденциальности
             </a>
