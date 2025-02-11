@@ -3,6 +3,7 @@
 import React from 'react'
 import Intro from '../components/layout/intro/Intro'
 import bg from '@/public/cases/mainbg.jpeg'
+import MapSwitch from '../components/layout/map/MapSwitch'
 
 function Cases() {
   return <>
@@ -12,6 +13,9 @@ function Cases() {
       backgroundImage={bg} 
       extraText='От концепции до реализации — мы сопровождаем вас на каждом этапе создания вашего бренда'
     />
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <MapSwitch/>
   </>
 }
 

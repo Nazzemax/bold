@@ -174,7 +174,9 @@ const MapSwitch: React.FC = () => {
               {mapCondition ? (
                 <p style={{ fontWeight: "700" }}>ул. Матросова, дом 102</p>
               ) : (
-                <p style={{ fontWeight: "700" }}>Яшнободский район, Янгибозор 1</p>
+                <p style={{ fontWeight: "700" }}>
+                  Яшнободский район, Янгибозор 1
+                </p>
               )}
             </div>
           </OverlayView>
