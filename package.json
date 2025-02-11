@@ -11,7 +11,12 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "debounce": "^2.2.0",
+<<<<<<< HEAD
     "framer-motion": "^12.0.8",
+=======
+    "framer-motion": "^12.4.2",
+    "lodash": "^4.17.21",
+>>>>>>> da0008acd1efd19112f28211614c63b4d16ce53d
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -26,6 +31,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+
+    "@types/react-slick": "^0.23.13",
+
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
     "postcss": "^8",
