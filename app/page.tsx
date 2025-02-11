@@ -6,7 +6,8 @@ export default function Home() {
   return (
     <>
       <CasesSlider />
-      <Form />
+      {/* форма будет взята с ветки anna */}
+      {/* <Form /> */}
       <Advantages />
     </>
   );
