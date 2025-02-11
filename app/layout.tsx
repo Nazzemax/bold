@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import localFont from 'next/font/local';
+import "./globals.scss";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const cannonade = localFont({
+  src:[
+    {
+      path:'../public/fonts/Cannonade Bold.ttf',
+      weight:'700',
+      style:'normal',
+    },
+    {
+      path:'../public/fonts/Cannonade.ttf',
+      weight:'500',
+      style:'normal',
+    }
+  ]
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cannonade.className} antialiased`}
       >
         {children}
       </body>
