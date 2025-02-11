@@ -1,55 +1,127 @@
 "use client";
-
-import { useEffect, useRef, useState } from "react";
-import style from "./Map.module.scss";
+import { useEffect, useState } from "react";
+import styles from "./Map.module.scss";
 
 const Map = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [city, setCity] = useState<"bishkek" | "tashkent">("bishkek");
+  const [map, setMap] = useState<any>(null);
+  const [placemark, setPlacemark] = useState<any>(null);
 
+  const locations = {
+    bishkek: { coords: [42.8746, 74.5698], address: "улица Матросова, 102" },
+    tashkent: { coords: [41.2995, 69.2401], address: "улица Амира Темура, 5" },
+  };
+  // const darkTheme = [
+  //   {
+  //     featureType: "all",
+  //     stylers: [
+  //       { hue: "#ff1a00" },
+  //       { invert_lightness: true },
+  //       { saturation: -100 },
+  //       { lightness: 33 },
+  //       { gamma: 0.5 },
+  //     ],
+  //   },
+  //   {
+  //     featureType: "water",
+  //     stylers: [{ color: "#222222" }],
+  //   },
+  // ];
   useEffect(() => {
-    if (!mapContainer.current || isLoaded) return;
+    const loadMap = () => {
+      const script = document.createElement("script");
+      script.src =
+        "https://api-maps.yandex.ru/2.1/?apikey=c2338cb3-55e9-4bf6-9036-50f552414d9c&lang=ru_RU";
+      script.async = true;
+      script.onload = () => {
+        if (window.ymaps) {
+          window.ymaps.ready(() => {
+            const newMap = new window.ymaps.Map("map", {
+              center: locations[city].coords,
+              zoom: 15,
+              controls: ["zoomControl", "fullscreenControl"],
+            });
 
-    const script = document.createElement("script");
-    script.src = "https://maps.api.2gis.ru/2.0/loader.js?pkg=full";
-    script.async = true;
+            newMap.options.set("yandexMapDisablePoiInteractivity", "true");
+            newMap.options.set("background", "#1E1E1E");
+            const groundPane = newMap.panes.get("ground");
+            if (groundPane && groundPane.getElement()) {
+              groundPane.getElement().style.filter = "invert(1)";
+            }
 
-    script.onload = () => {
-      console.log("2GIS API загружен");
-      setIsLoaded(true);
+            const newPlacemark = new window.ymaps.Placemark(
+              locations[city].coords,
+              { balloonContent: locations[city].address },
+              { preset: "islands#nightCircleIcon" }
+            );
+
+            newMap.geoObjects.add(newPlacemark);
+            setMap(newMap);
+            setPlacemark(newPlacemark);
+          });
+        }
+      };
+
+      document.body.appendChild(script);
     };
 
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [isLoaded]);
-
-  useEffect(() => {
-    if (!isLoaded || !mapContainer.current) return;
-
-    const checkDG = setInterval(() => {
-      if ((window as any).DG) {
-        clearInterval(checkDG);
-        console.log("DG успешно инициализирован");
-
-        const DG = (window as any).DG;
-        const map = DG.map(mapContainer.current, {
-          center: [42.8746, 74.5698], // Бишкек
-          zoom: 13,
+    if (!window.ymaps) {
+      loadMap();
+    } else {
+      window.ymaps.ready(() => {
+        const newMap = new window.ymaps.Map("map", {
+          center: locations[city].coords,
+          zoom: 15,
+          controls: ["zoomControl", "fullscreenControl"],
         });
 
-        DG.marker([42.8746, 74.5698]).addTo(map).bindPopup("Бишкек");
-      } else {
-        console.log("Ожидание загрузки DG...");
-      }
-    }, 500);
+        newMap.options.set("yandexMapDisablePoiInteractivity", "true");
+        newMap.options.set("background", "#1E1E1E");
+        const groundPane = newMap.panes.get("ground");
+        if (groundPane && groundPane.getElement()) {
+          groundPane.getElement().style.filter = "invert(1)";
+        }
 
-    return () => clearInterval(checkDG);
-  }, [isLoaded]);
+        const newPlacemark = new window.ymaps.Placemark(
+          locations[city].coords,
+          { balloonContent: locations[city].address },
+          { preset: "islands#nightCircleIcon" }
+        );
 
-  return <div className={style.mapContainer} ref={mapContainer}></div>;
+        newMap.geoObjects.add(newPlacemark);
+        setMap(newMap);
+        setPlacemark(newPlacemark);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (map && placemark) {
+      map.setCenter(locations[city].coords, 15);
+      placemark.geometry.setCoordinates(locations[city].coords);
+      placemark.properties.set("balloonContent", locations[city].address);
+    }
+  }, [city]);
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.buttons}>
+        <button
+          className={city === "bishkek" ? styles.active : ""}
+          onClick={() => setCity("bishkek")}
+        >
+          Бишкек
+        </button>
+        <button
+          className={city === "tashkent" ? styles.active : ""}
+          onClick={() => setCity("tashkent")}
+        >
+          Ташкент
+        </button>
+      </div>
+      <div id="map" className={styles.map}></div>
+    </div>
+  );
 };
 
 export default Map;
