@@ -1,6 +1,4 @@
 
-
-
 import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
@@ -25,12 +23,14 @@ import DiagnosticBanner from "@/src/components/DiagnosticBanner/DiagnosticBanner
 import PartnershipBanner from "@/src/components/award/PartnershipBanner";
 import MarketingSection from "@/src/components/MarketingSection/MarketingSection";
 import BrandingCarousel from "@/src/components/BrandingCarousel/BrandingCarousel";
+import Header from "./components/layout/header/Header";
 
 
 
 export default function Home() {
   return (
     <div>
+      <Header/>
       <BrandingCarousel/>
       <MarketingSection/>
       <VideoButton/>
