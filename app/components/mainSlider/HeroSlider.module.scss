@@ -53,6 +53,7 @@
     text-align: start;
   }
   &__title {
+    font-family: 'Cannonade Bold', sans-serif;
     font-size: toRem(72);
     font-weight: 700;
     margin-bottom: toRem(40);
@@ -244,24 +245,24 @@
     }
 
     &__title {
-      font-size: toRem(32);
+      font-size: toRem(36);
       line-height: toRem(39.6);
       margin-bottom: toRem(24);
+      text-align: left;
     }
     &__description {
       font-size: toRem(18);
       line-height: toRem(25.2);
+      text-align: left;
     }
     &__button {
       position: absolute;
-
       display: flex;
       justify-content: center;
       align-items: center;
       top: 83%;
       border-radius: toRem(16);
       background-color: rgba(255, 255, 255, 0.2);
-
       &_prev {
         left: toRem(20);
       }
