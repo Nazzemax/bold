@@ -6,9 +6,8 @@ export default function Home() {
   return (
     <div className="">
       <HeroSlider />
-      {/* <div className="">ee</div> */}
-      {/* <Challenges /> */}
-      {/* <Partners/> */}
+      <Challenges />
+      <Partners/>
     </div>
   );
 }
