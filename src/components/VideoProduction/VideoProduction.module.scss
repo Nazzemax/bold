@@ -109,26 +109,57 @@
 
 
 @media (max-width: 768px) {
+  .title {
+    font-size: toRem(32);
+    width: toRem(335);
+    text-align: left;
+    margin-bottom: toRem(40);
+  }
+
   .card {
-    flex-direction: column;
-    text-align: center;
-    gap: toRem(40);
+    flex-direction: column-reverse;
+    gap: toRem(20);
   }
 
   .videoWrapper {
     max-width: 100%;
+    width: 335px;
     iframe {
-      height: toRem(300);
+      height: toRem(250);
     }
   }
 
-  .text {
+  .text li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+  .cardTitle {
+    font-size: toRem(26);
+    text-align: left;
+    width: 335px;
+  }
+
+  .cardDescription {
+    font-size: toRem(16);
+    text-align: left;
+  }
+
+  .tagsContainer {
     max-width: 100%;
   }
 
-  .title {
-    font-size: toRem(48);
-    text-align: center;
+  .li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+
+  .Button {
+    justify-content: flex-start;
+    margin-top: 30px;
   }
 }
 

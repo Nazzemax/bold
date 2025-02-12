@@ -1,0 +1,158 @@
+@function toRem($value) {
+    @return ($value / 16) * 1rem;
+  }
+  body {
+    font-family: 'Cannonade', sans-serif;
+  }
+  
+  .serviceSection {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(40);
+    // padding: toRem(50) toRem(30);
+    max-width: toRem(1328);
+    margin: 0 auto;
+  
+    .title {
+        display: flex;
+      font-size: toRem(68);
+      font-weight: 700;
+      color: #2a2d35;
+    }
+    .BlogTitle{
+        display: flex;
+        gap: 30px;
+    }
+    .BlogTitle p{
+        display: flex;
+        color: #838895;
+        font-size: 18px;
+        font-weight: 500;
+        width: 100%;
+        max-width: 650px;
+        align-items: center;
+    }
+  
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(90);
+      
+    }
+  
+    .serviceItem {
+      display: flex;
+      align-items: center;
+      gap: toRem(40);
+      margin-bottom:50px ;
+  
+      &:nth-child(odd) {
+        flex-direction: row;
+      }
+  
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      
+    }
+  
+    .image {
+      width: toRem(648);
+      height: auto;
+      border-radius: toRem(16);
+    }
+  
+    .textContent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: toRem(10);
+    }
+    .highlightText {
+        font-size: toRem(24);
+        font-weight: 600;
+        color: #ff2b44; // Красный цвет
+        margin-top: toRem(5);
+      }
+  
+    .serviceTitle {
+        color: #2A2D35;
+      font-size: toRem(40);
+      font-weight: 700;
+    }
+  
+    .description {
+      font-size: toRem(18);
+      color: #838895;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .serviceSection {
+      padding: toRem(40) toRem(20);
+    }
+  
+    .serviceItem {
+      flex-direction: column !important;
+      gap: toRem(20);
+      text-align: center;
+    }
+  
+    .image {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .serviceSection .textContent{
+        gap: 15px;
+    }
+    .serviceSection .title {
+      font-size: toRem(32); /* Уменьшенный размер */
+      width: 100%;
+      text-align: left; /* Выравнивание по центру */
+      margin-bottom: toRem(20);
+    }
+    .serviceSection .image{
+        width: 335px;
+        height: 190px;
+        text-align: left;
+        
+    }
+    .textContent .highlightText {
+        font-size: toRem(18);
+        font-weight: 600;
+        color: #ff2b44; // Красный цвет
+        margin-top: toRem(5);
+        text-align: left;
+      }
+  
+    .serviceSection .serviceTitle {
+      font-size: toRem(28);
+      text-align: left;
+    }
+  
+    .serviceSection .description {
+      font-size: toRem(16);
+      text-align: left;
+      margin-bottom: 15px;
+    }
+  
+    .serviceSection .BlogTitle {
+      flex-direction: column;
+      gap: toRem(10);
+      align-items: center;
+    }
+  
+    .serviceSection .BlogTitle p {
+      font-size: toRem(16);
+      width: 100%;
+      text-align: left;
+    }
+    
+  }
+  

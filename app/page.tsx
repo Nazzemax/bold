@@ -22,6 +22,13 @@ import PartnershipBanner from "@/src/components/award/PartnershipBanner";
 import MarketingSection from "@/src/components/MarketingSection/MarketingSection";
 import BrandingCarousel from "@/src/components/BrandingCarousel/BrandingCarousel";
 import Header from "./components/layout/header/Header";
+import VideoProduction from "@/src/components/VideoProduction/VideoProduction";
+import ServiceSection from "@/src/UI/ServiceSection/ServiceSection";
+import { servicesData1 } from "@/src/data/servicesData";
+import ServiceSection2 from "@/src/UI/ServiseSection2/ServiseSection2";
+import { servicesData2 } from "@/src/data/servicesData2";
+import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
+import { servicesData3 } from "@/src/data/servicesData3";
 
 export default function Home() {
   return (
@@ -65,6 +72,12 @@ export default function Home() {
       <DiagnosticBanner />
       {/* блок 3 на странице CRM (официальные партнёры) */}
       <PartnershipBanner />
+      {/* <DiagnosticBanner/> */}
+      {/* <ReviewsSlider/> */}
+      <VideoProduction/>
+      <ServiceSection {...servicesData1} />;
+      <ServiceSection2 {...servicesData2} />;
+      <ServiceSection3 {...servicesData3} />;
     </div>
   );
 }
