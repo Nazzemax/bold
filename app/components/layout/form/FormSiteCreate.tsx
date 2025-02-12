@@ -17,13 +17,8 @@ interface Country {
 
 const typeBusiness: string[] = ["B2B", "B2C"];
 
-const services: string[] = [
-  "Брендинг",
-  "SMM-продвижение",
-  "Продакшн",
-  "Дизайн",
-  "Контекстная реклама",
-  "Таргетированная реклама",
+const siteType: string[] = [
+ "Лендинг", "UX/UI-дизайн"
 ];
 
 interface ContactInfo {
@@ -40,7 +35,7 @@ interface TextLeft {
 
 const textLeft: TextLeft = {
   title: "Рассчитайте стоимость услуги",
-  text: "Получите решение для вашего бизнеса!",
+  text: "Оставьте контакты для связи, и мы перезвоним вам",
   phoneNumbers: { bishkek: "+996 999 50 44 44", tashkent: "+998 909 36 09 36" },
   emailLeft: "info@boldbrands.kg",
 };
@@ -55,7 +50,7 @@ const countries: Country[] = [
 // Валидация для первого шага
 const stepOneSchema = z.object({
   type: z.string().min(1, "Выберите тип бизнеса"),
-  service: z.array(z.string()).min(1, "Выберите услугу"),
+  siteType: z.array(z.string()).min(1, "Выберите тип сайта"),
 });
 
 // Валидация для второго шага
@@ -71,7 +66,7 @@ const stepTwoSchema = z.object({
 type StepOneValues = z.infer<typeof stepOneSchema>;
 type StepTwoValues = z.infer<typeof stepTwoSchema>;
 
-const Form: React.FC = () => {
+const FormSiteCreate: React.FC = () => {
   const [order, setOrder] = useState(true); // Управление шагами формы
   const [stepOneData, setStepOneData] = useState<StepOneValues | null>(null); // Хранение данных 1-го шага
 
@@ -81,10 +76,10 @@ const Form: React.FC = () => {
 
   const [selectedOptionsType, setSelectedOptionsType] = useState<string[]>([]);
   const [isOpenType, setIsOpenType] = useState<boolean>(false);
-  const [selectedOptionsService, setSelectedOptionsService] = useState<
+  const [selectedOptionsSiteType, setSelectedOptionsSiteType] = useState<
     string[]
   >([]);
-  const [isOpenService, setIsOpenService] = useState<boolean>(false);
+  const [isOpenSiteType, setIsOpenSiteType] = useState<boolean>(false);
 
   // Форма первого шага
   const {
@@ -97,7 +92,7 @@ const Form: React.FC = () => {
     formState: { errors: errorsStepOne },
   } = useForm<StepOneValues>({
     resolver: zodResolver(stepOneSchema),
-    defaultValues: { type: "", service: [] },
+    defaultValues: { type: "", siteType: [] },
   });
 
   // Форма второго шага
@@ -138,23 +133,23 @@ const Form: React.FC = () => {
   };
 
   // Выбор услуги
-  const handleSelectService = (option: string): void => {
-    setSelectedOptionsService((prev: string[]) => {
+  const handleSelectSiteType = (option: string): void => {
+    setSelectedOptionsSiteType((prev: string[]) => {
       const updated: string[] = prev.includes(option)
         ? prev.filter((item: string) => item !== option)
         : [...prev, option];
 
-      setValueStepOne("service", updated);
+      setValueStepOne("siteType", updated);
       return updated;
     });
   };
 
   // Удаление услуги
-  const handleRemoveService = (option: string): void => {
-    setSelectedOptionsService((prev: string[]) => {
+  const handleRemoveSiteType = (option: string): void => {
+    setSelectedOptionsSiteType((prev: string[]) => {
       const updated: string[] = prev.filter((item: string) => item !== option);
       console.log("Удаляем:", option, "Оставшиеся:", updated);
-      setValueStepOne("service", updated);
+      setValueStepOne("siteType", updated);
       return updated;
     });
   };
@@ -185,7 +180,7 @@ const Form: React.FC = () => {
     console.log("Отправленные данные:", fullFormData);
 
     // Очистка обеих форм
-    resetStepOne({ type: "", service: [] });
+    resetStepOne({ type: "", siteType: [] });
     resetStepTwo({
       name: "",
       phoneNumber: countryCode,
@@ -194,7 +189,7 @@ const Form: React.FC = () => {
     });
 
     setSelectedOptionsType([]);
-    setSelectedOptionsService([]);
+    setSelectedOptionsSiteType([]);
 
     setOrder(true);
   };
@@ -204,7 +199,7 @@ const Form: React.FC = () => {
       <div className="form flex justify-center items-center">
         <div className="form-left flex flex-col">
           <h2 className="text-white font-bold leading-[1.1]">{textLeft.title}</h2>
-          <span className="form-left-span-1 font-medium text-[#AAADB5]">
+          <span className="form-left-span-1 font-medium text-[#AAADB5] form-freeConsultation">
             {textLeft.text}
           </span>
 
@@ -370,10 +365,10 @@ const Form: React.FC = () => {
                 )}
               </div>
 
-              {/* Services */}
+              {/* site Type */}
               <div className="relative w-full max-w-md">
                 <label className="text-[#696B74] form-input-text-top">
-                  Какая услуга вам нужна?
+                Выберите тип сайта
                 </label>
                 <div
                   className={`form-typeBusiness flex flex-row justify-between border border-t-0 border-l-0 border-r-0 bg-[#18181A] text-white p-2 cursor-pointer ${
@@ -381,10 +376,10 @@ const Form: React.FC = () => {
                       ? "border-b-[#FF566A]"
                       : "border-b-[#696B74]"
                   }`}
-                  onClick={() => setIsOpenService(!isOpenService)}
+                  onClick={() => setIsOpenSiteType(!isOpenSiteType)}
                 >
                   <div className="form-service flex flex-wrap gap-2">
-                    {selectedOptionsService.map((option, index) => (
+                    {selectedOptionsSiteType.map((option, index) => (
                       <span
                         key={index}
                         className="form-typeBusines-span bg-[#414141] text-white px-2 py-1 rounded flex items-center gap-1"
@@ -395,7 +390,7 @@ const Form: React.FC = () => {
                           className="text-[#696B74]"
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleRemoveService(option);
+                            handleRemoveSiteType(option);
                           }}
                         >
                           &times;
@@ -415,17 +410,17 @@ const Form: React.FC = () => {
                     height={20}
                   />
                 </div>
-                {isOpenService && (
+                {isOpenSiteType && (
                   <div className="absolute w-full bg-white text-[#2A2D35] mt-1 rounded-xl shadow-lg max-h-40 overflow-y-auto z-10">
-                    {services.map((option, index) => (
+                    {siteType.map((option, index) => (
                       <label
                         key={index}
                         className="flex items-center p-4 cursor-pointer hover:bg-[#F1F3F7]"
                       >
                         <input
                           type="checkbox"
-                          checked={selectedOptionsService.includes(option)}
-                          onChange={() => handleSelectService(option)}
+                          checked={selectedOptionsSiteType.includes(option)}
+                          onChange={() => handleSelectSiteType(option)}
                           className="mr-2 w-5 h-5 border border-gray-400 rounded appearance-none checked:bg-[#FF2B44] checked:border-[#FF2B44] checked:flex checked:items-center checked:justify-center before:content-['✔'] before:text-white before:text-sm before:font-bold before:hidden checked:before:block"
                         />
                         {option}
@@ -436,9 +431,9 @@ const Form: React.FC = () => {
                 <span className="form-input-text-bottom text-[#AAADB5]">
                   Мы адаптируем стратегию под ваши цели и платформы
                 </span>
-                {errorsStepOne.service && (
+                {errorsStepOne.siteType && (
                   <p style={{ color: "#FF566A" }}>
-                    {errorsStepOne.service.message}
+                    {errorsStepOne.siteType.message}
                   </p>
                 )}
               </div>
@@ -688,4 +683,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default FormSiteCreate;

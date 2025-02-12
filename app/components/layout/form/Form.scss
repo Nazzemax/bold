@@ -1,6 +1,10 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
 .form {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   background-image: url("/form/formBackGround.svg");
   background-color: black;
   background-size: cover;
@@ -9,12 +13,19 @@
   gap: 2.5rem;
   margin: 0;
   padding: 0;
+  padding-top: toRem(110);
+  padding-bottom: toRem(110);
+
 }
 
 .form-left {
   width: 37vw;
   padding-top: 4rem;
   gap: 1.25rem;
+}
+
+.form-h2-formVideo{
+  width: 38vw;
 }
 
 .form-left h2 {
@@ -101,6 +112,27 @@
 #form-checkbox-input {
   width: 2vh;
   height: 2vh;
+}
+
+.form-input-flag {
+  padding: 0.65rem;
+  padding-right: 0;
+}
+
+.form-input-error-icon {
+  left: 93%;
+}
+
+.form-input-error-icon-1 {
+  left: 83.2%;
+}
+
+.form-input-error-icon-2 {
+  left: 83%;
+}
+
+.form-freeConsultation{
+  width: 60%;
 }
 
 @media all and (max-width: 1340px) {
@@ -204,6 +236,9 @@
   .form-right {
     padding: 4vh;
   }
+  .form-freeConsultation{
+    width: 90%;
+  }
 }
 
 @media all and (max-width: 500px) {
@@ -211,8 +246,11 @@
     flex-direction: column;
     justify-content: start;
     gap: 0;
-    height: 50rem;
-    h2{
+    // height: 50rem;
+    padding-top: toRem(40);
+    padding-bottom: toRem(40);
+
+    h2 {
       font-size: 4vh;
     }
   }
@@ -247,10 +285,10 @@
   #form-left-phone-2 {
     padding-left: 4.3vh;
   }
-  #form-left-phone{
+  #form-left-phone {
     padding-top: 0.8rem;
   }
-  .form-left-span-2{
+  .form-left-span-2 {
     font-size: 1.5vh;
   }
   .form-left-phone-1-1 {
@@ -280,7 +318,7 @@
   #form-checkbox-button {
     flex-direction: column;
     align-items: start;
-    span{
+    span {
       font-size: 1.6vh;
     }
   }
@@ -463,7 +501,7 @@
 
 @media all and (max-width: 375px) {
   .form {
-    h2{
+    h2 {
       font-size: 4vh;
     }
   }
@@ -479,7 +517,7 @@
   #form-left-phone-1 {
     font-size: 0.75vh;
   }
-  #form-left-phone{
+  #form-left-phone {
     padding-top: 2vh;
   }
   .form-input-text-bottom {
@@ -510,11 +548,11 @@
     }
   }
   #form-checkbox-button {
-    span{
+    span {
       font-size: 1.4vh;
     }
   }
-  .form-right-span-3{
+  .form-right-span-3 {
     font-size: 2vh;
   }
 }

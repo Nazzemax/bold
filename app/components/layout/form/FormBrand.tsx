@@ -17,14 +17,7 @@ interface Country {
 
 const typeBusiness: string[] = ["B2B", "B2C"];
 
-const services: string[] = [
-  "Брендинг",
-  "SMM-продвижение",
-  "Продакшн",
-  "Дизайн",
-  "Контекстная реклама",
-  "Таргетированная реклама",
-];
+const services: string[] = ["Нейминг", "Дизайн логотипа"];
 
 interface ContactInfo {
   bishkek: string;
@@ -39,8 +32,8 @@ interface TextLeft {
 }
 
 const textLeft: TextLeft = {
-  title: "Рассчитайте стоимость услуги",
-  text: "Получите решение для вашего бизнеса!",
+  title: "Узнайте стоимость разработки бренда",
+  text: "Оставьте контакты для связи, и мы перезвоним вам",
   phoneNumbers: { bishkek: "+996 999 50 44 44", tashkent: "+998 909 36 09 36" },
   emailLeft: "info@boldbrands.kg",
 };
@@ -71,7 +64,7 @@ const stepTwoSchema = z.object({
 type StepOneValues = z.infer<typeof stepOneSchema>;
 type StepTwoValues = z.infer<typeof stepTwoSchema>;
 
-const Form: React.FC = () => {
+const FormBrand: React.FC = () => {
   const [order, setOrder] = useState(true); // Управление шагами формы
   const [stepOneData, setStepOneData] = useState<StepOneValues | null>(null); // Хранение данных 1-го шага
 
@@ -203,8 +196,10 @@ const Form: React.FC = () => {
     <main className="form-main">
       <div className="form flex justify-center items-center">
         <div className="form-left flex flex-col">
-          <h2 className="text-white font-bold leading-[1.1]">{textLeft.title}</h2>
-          <span className="form-left-span-1 font-medium text-[#AAADB5]">
+          <h2 className="text-white font-bold leading-[1.1]">
+            {textLeft.title}
+          </h2>
+          <span className="form-left-span-1 font-medium text-[#AAADB5] form-freeConsultation">
             {textLeft.text}
           </span>
 
@@ -373,7 +368,7 @@ const Form: React.FC = () => {
               {/* Services */}
               <div className="relative w-full max-w-md">
                 <label className="text-[#696B74] form-input-text-top">
-                  Какая услуга вам нужна?
+                Выберите услуги
                 </label>
                 <div
                   className={`form-typeBusiness flex flex-row justify-between border border-t-0 border-l-0 border-r-0 bg-[#18181A] text-white p-2 cursor-pointer ${
@@ -688,4 +683,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default FormBrand;
