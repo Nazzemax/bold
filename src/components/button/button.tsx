@@ -3,11 +3,15 @@ import styles from './button.module.scss';
 import iconButton from '../../assents/icon/Frame_268.png'
 import Image from 'next/image';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isValid: string | boolean;
+
+
+interface ButtonProps {
+  disabled?: boolean;
+  isValid?: boolean;
 }
 
-const Button: FC<ButtonProps> = () => {
+const Button: React.FC<ButtonProps> =  ({disabled, isValid}) => {
+
   return (
     <button className={styles.button}>
       <span className={styles.button__text}>Отправить</span>

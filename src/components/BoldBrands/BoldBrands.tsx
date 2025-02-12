@@ -37,7 +37,7 @@ const statsData = [
   ],
 ];
 
-const BoldBrands = ({ backgroundImage }) => {
+const BoldBrands = ({  }) => {
   return (
     <section
     

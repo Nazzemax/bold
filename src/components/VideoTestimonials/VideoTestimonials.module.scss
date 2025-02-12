@@ -1,27 +1,28 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
 .videoTestimonials {
-  background-color: black;
   color: white;
   width: 100%;
-  border-radius: 10px;
-  padding: 30px;
+  border-radius: toRem(10);
+  padding: toRem(30);
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url('../../../public/Frame\ 48096139.png') no-repeat center/cover;
-  background-size: cover;
 }
 
 .container {
-  max-width: 1328px;
+  max-width: toRem(1328);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: toRem(20);
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -30,118 +31,222 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
   width: 100%;
 
   .title {
-    font-size: 68px;
+    font-size: toRem(68);
     font-weight: 700;
-    color: white;
-    text-align: justify;
+    color: #2A2D35;
+    text-align: left;
   }
 
   .pagination {
     display: flex;
     align-items: center;
-    gap: 10px;
-    width: auto;
-    height: 48px;
+    gap: toRem(10);
+    width: toRem(180);
+    color: #2A2D35;
 
     .arrowLeft,
     .arrowRight {
       background-color: transparent;
-      border: 1px solid white;
+      border: 1px solid #2A2D35;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: toRem(30);
+      height: toRem(30);
       cursor: pointer;
-      color: white;
-      font-size: 20px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    span {
-      font-size: 18px;
-      font-weight: 500;
-      text-align: center;
-      color: white;
+      color: #2A2D35;
+      font-size: toRem(16);
     }
   }
 }
 
 .testimonialContent {
-  margin-top: 20px;
+  margin-top: toRem(20);
   width: 100%;
+  max-width: toRem(1328);
 
   .testimonialCard {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 1320px;
-    height: 60vh;
-    max-height: 600px;
+    align-items: flex-start;
+    width: 100%;
     position: relative;
 
-    background: url('../../assents/icon/Frame_1.png') no-repeat center center;
-    -webkit-background-size: cover;
-	  background-size: cover;
+    .videoWrapper {
+      position: relative;
+      width: 100%;
+      height: toRem(600); /* Уменьшена высота */
+      border-radius: toRem(10);
+      overflow: hidden;
 
-    .author {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
 
-      .avatar {
-        border-radius: 50%;
-        margin-right: 15px;
+      .videoPlaceholder {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
-      .authorDetails {
-        display: flex;
-        flex-direction: column;
-
-        .authorName {
-          font-size: 20px;
-          font-weight: bold;
-        }
-
-        .authorRole {
-          font-size: 16px;
-          color: gray;
-        }
+      .video {
+        width: 100%;
+        height: 100%;
+        border-radius: toRem(10);
+        
       }
-    }
-
-    .video {
 
       .playButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         background-color: red;
         border-radius: 50%;
-        width: 80px;
-        height: 80px;
+        width: toRem(60);
+        height: toRem(60);
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
-        border: none;
+      }
 
-        img {
-          width: 40px;
-          height: 40px;
-        }
+      .playButton img {
+        width: toRem(30);
+        height: toRem(30);
       }
     }
 
-    .testimonialTitle {
-      font-size: 18px;
-      margin-top: 10px;
+    /* Блок с клиентом - теперь поверх видео */
+    .clientInfo {
+      position: absolute;
+      top: toRem(20);
+      left: toRem(20);
+      display: flex;
+      align-items: center;
+      gap: toRem(8);
+      background: rgba(0, 0, 0, 0.6); /* Затемненный фон */
+      padding: toRem(8) toRem(12);
+      border-radius: toRem(8);
+      z-index: 2; /* Поднимаем над видео */
+
+      .avatar {
+        border-radius: 50%;
+        width: toRem(40);
+        height: toRem(40);
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        .name {
+          font-size: toRem(18);
+          font-weight: bold;
+        }
+
+        .role {
+          font-size: toRem(14);
+          color: #d1d7e2;
+        }
+      }
+    }
+  }
+}
+
+/* 📌 Медиа-запросы для телефонов */
+@media (max-width: 768px) {
+  .videoTestimonials {
+    padding: toRem(20);
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .title {
+      font-size: toRem(32);
+    }
+
+    .pagination {
+      width: auto;
+      gap: toRem(5);
+    }
+  }
+
+  .testimonialContent {
+    width: 100%;
+
+    .testimonialCard {
+      .videoWrapper {
+        height: toRem(300);
+      }
+
+      .playButton {
+        width: toRem(50);
+        height: toRem(50);
+      }
+
+      .playButton img {
+        width: toRem(25);
+        height: toRem(25);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .videoTestimonials {
+    padding: toRem(15);
+  }
+
+  .header {
+    .title {
+      font-size: toRem(32);
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .pagination {
+      justify-content: center;
+    }
+  }
+
+  .testimonialContent {
+    .testimonialCard {
+      align-items: center;
+      text-align: center;
+
+      .clientInfo {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background: transparent;
+        padding: 0;
+        position: absolute;
+        top: toRem(10);
+        left: toRem(10);
+        z-index: 3; /* Максимально подняли */
+      }
+
+      .text p {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .videoWrapper {
+        height: toRem(250);
+      }
+
+      .playButton {
+        width: toRem(40);
+        height: toRem(40);
+      }
+
+      .playButton img {
+        width: toRem(20);
+        height: toRem(20);
+      }
     }
   }
 }
