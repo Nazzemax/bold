@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
@@ -15,11 +15,53 @@ import icon from '@/public/Arrow.png'
 
 import { useRef } from "react";
 
+function formatTextWithParagraphs(text: string, maxLinesBeforeBreak: number = 4): string[] {
+  const lines = text.split("\n").map(line => line.trim()).filter(line => line.length > 0);
+  let formattedLines: string[] = [];
+  
+  for (let i = 0; i < lines.length; i++) {
+    formattedLines.push(lines[i]);
+    if ((i + 1) % maxLinesBeforeBreak === 0) {
+      formattedLines.push(""); // Adds a blank space (acts like a break)
+    }
+  }
+
+  return formattedLines;
+}
+
+const truncateText = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) return text;
+  let trimmed = text.slice(0, maxLength);
+  const lastSpaceIndex = trimmed.lastIndexOf(' ');
+  return lastSpaceIndex > 0 ? trimmed.slice(0, lastSpaceIndex) : trimmed;
+};
+
+const MOBILE_BREAKPOINT = 768;
+const MOBILE_MAX_LENGTH = 280;
+
 import Modal from "../../UI/Model/Modal"; // Подключаем модалку
 
 const Reviews = () => {
   const [selectedReview, setSelectedReview] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+    return () => { document.body.style.overflow = "auto"; };
+  }, [isModalOpen]);
 
   const openModal = (review) => {
     setSelectedReview(review);
@@ -42,14 +84,31 @@ const Reviews = () => {
       stars: 5,
       text: `ОсОО "ОсОО “Алматинские конфеты” — «Рахат» выражает искреннюю благодарность коллективу и руководству ОсОО «Болд Брендс Интернешнл».
       Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
-      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к`, // Короткий текст
+      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели...`, // Короткий текст
       fullText: `ОсОО "Алматинские конфеты" — "Рахат" выражает искреннюю благодарность коллективу и руководству ОсОО "Болд Брендс Интернетшансы".
         Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
         Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к впечатляющим результатам, которые мы очень ценим.
         Команда выражает наилучшие пожелания вашему коллективу, желая дальнейшего процветания, эффективной работы, целей, творческого вдохновения и успешного завершения всех задач.
         Надеемся на продолжение нашего плодотворного сотрудничества и уверены в дальнейших успехах и достижениях в бизнесе.`, // Полный текст
     },
-    // Другие отзывы
+
+    {
+      id: 2,
+      name: "Дмитриев Дмитрий",
+      position: "Директор",
+      company: '',
+      logo: logoEllipse,
+      stars: 5,
+      text: `ОсОО "ОсОО “Алматинские конфеты” — «Рахат» выражает искреннюю благодарность коллективу и руководству ОсОО «Болд Брендс Интернешнл».
+      Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
+      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели...`, // Короткий текст
+      fullText: `ОсОО "Алматинские конфеты" — "Рахат" выражает искреннюю благодарность коллективу и руководству ОсОО "Болд Брендс Интернетшансы".
+        Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
+        Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к впечатляющим результатам, которые мы очень ценим.
+        Команда выражает наилучшие пожелания вашему коллективу, желая дальнейшего процветания, эффективной работы, целей, творческого вдохновения и успешного завершения всех задач.
+        Надеемся на продолжение нашего плодотворного сотрудничества и уверены в дальнейших успехах и достижениях в бизнесе.`, // Полный текст
+    },
+    
   ];
 
   return (
@@ -62,10 +121,12 @@ const Reviews = () => {
 
         <div className={styles.sliderSection}>
           <Swiper
-            
-            navigation={false}
+            ref={swiperRef}
+            modules={[Navigation]} 
+            navigation={{ nextEl: `.${styles["swiper-button-next"]}`, prevEl: `.${styles["swiper-button-prev"]}` }}
             spaceBetween={20}
             slidesPerView={1}
+            autoplay
             className={styles.swiperContainer}
           >
             {reviews.map((review) => (
@@ -92,33 +153,41 @@ const Reviews = () => {
                       </div>
                     </div>
                   </div>
-                  <p className={styles.text}>{review.text.split("\n").map((paragraph, index) => (
-            <p key={index}>{paragraph.trim()}</p>
-          ))}</p>
+                  <div className={styles.text}>{formatTextWithParagraphs(review.text).map((line, index) => (
+        <p key={index} >{line}</p> 
+      ))}
+          </div>
                   <button className={styles.readMore} onClick={() => openModal(review)}>
                     Читать все
                     <Image src={icon} alt={'icon'} className={styles.logoicon} />
                   </button>
-                  
+               
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+
+
           <div className={styles.customNavigation}>
-        <button className={styles.prevButton} onClick={() => swiperRef.current.swiper.slidePrev()}>
-          <Image src={arrowLeft} alt="Previous" className={styles.arrowIcon} width={16} height={16} />
-        </button>
-        <button className={styles.nextButton} onClick={() => swiperRef.current.swiper.slideNext()}>
-          <Image src={arrowRight} alt="Next" className={styles.arrowIcon} width={16} height={16} />
-          </button>
-      </div>
+                    <button className={styles["swiper-button-prev"]}>
+                      <Image src={arrowLeft} alt="Previous" className={styles.arrowIcon} width={10} height={15}  />
+                    </button>
+                    <button className={styles["swiper-button-next"]} >
+                      <Image src={arrowRight} alt="Next" className={styles.arrowIcon} width={10} height={15} />
+                      </button>
+                  </div>
         </div>
       </div>
       
 
       {/* Модальное окно */}
-      <Modal isOpen={isModalOpen} onClose={closeModal} review={selectedReview} />
+      <div style={{ overflowY: "auto", maxHeight: "90vh" }}>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}  review={selectedReview} />
+      </div>
     </div>
+
+    
   );
 };
 

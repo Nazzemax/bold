@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "skipDefaultLibCheck": true,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -20,7 +22,12 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/swiper"
+    ],
+    "types": ["swiper"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
