@@ -174,11 +174,10 @@ body {
 
   /* Контент в колонку */
   .content {
-
-    align-items: flex-start;
+    
+    align-items: center;
     width: 100%;
     gap: 15px;
-    
   }
 
   /* Карточка "Наша философия" */
@@ -188,9 +187,6 @@ body {
     height: auto;
     padding: 15px;
     gap: 30px;
-    .img{
-      width: 335px;
-    }
 
     .icon {
       width: 60px;
@@ -201,15 +197,8 @@ body {
         height: 100%;
         object-fit: contain;
       }
-      // .image {
-      //   width: 100%;
-      //   display: flex;
-      //   justify-content: flex-start;
-      // }
-    
-      
     }
-    
+
     .text h2 {
       font-size: 28px !important;
       margin-bottom: 15px;
@@ -224,5 +213,16 @@ body {
   }
 
   /* Картинка */
-  
+  .image {
+    width: 375px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 335px;
+    min-height: 323px;
+    border-radius: 8px;
+  }
 }
