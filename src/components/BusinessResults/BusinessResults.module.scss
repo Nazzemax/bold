@@ -1,167 +1,228 @@
-
 body {
-    font-family: 'Cannonade', sans-serif;
-  }
+  font-family: 'Cannonade', sans-serif;
+}
+
+/* ==== Основной контейнер ==== */
 .BusinessResults {
-    width: 100%; 
-    padding: 80px 0; 
-    background-color: #f9f9f9; 
-    overflow: hidden;
-   
+  width: 100%;
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
 
-    .container {
-        
-        
-        max-width: 1328px; 
-        height: auto;
-        margin: 0 auto; 
-        
-        
-      }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-  
-      h1 {
-        font-size: 68px;
-        font-weight: 700;
-        margin: 0;
-        color: #2A2D35;
-      }
-  
-      p {
-        padding-top: 30px;
-        font-weight: 500;
-        font-size: 18px;
-        margin: 0;
-        color: #838895;
-        max-width: 421px;
-        height: 108px;
-        text-align: justify;
-      }
+  .container {
+    max-width: 1328px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* ==== Заголовок ==== */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 68px;
+      font-weight: 700;
+      margin: 0;
+      color: #2A2D35;
     }
-  
-    .content {
-      display: flex;
-      margin-top: 20px;
-  
-      .philosophy {
 
-        width: 648px;
-        height: 404px;
-        flex: 1;
-        display: block;
-        align-items: flex-start;
-        padding: 43px 0px 0px 31px ;
-        // background-color: #fff;
-        border: 1px solid #EAEAEA; 
-        border-radius: 12px; 
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
-        
-  
-        .icon {
-          flex-shrink: 0;
-          font-size: 40px;
-          color: #e74c3c;
-          margin-right: 20px;
-        }
-  
-        .text {
-          h2 {
-            color: #2A2D35;
-            font-size: 40px;
-            font-weight: 700;
-            margin: 0;
-          }
-  
-          p {
-            width: 536px;
-            height: 81px;
-            font-size: 18px;
-            color: #838895;
-            margin: 0;
-          }
-        }
-      }
-  
-      .image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        padding: 0px 20px 20px 20px;
-  
-        img {
-          max-width: 648px;
-          height: 404px;
-          border-radius: 8px;
-        }
-        @media (max-width: 375px) {
-          .BusinessResults {
-            padding: 20px;
-          }
-          .container{
-            width: 100%;
-            .header{
-              display: none;
-              height: auto;
-            }
-          }
-          
-        }
-      }
+    p {
+      padding-top: 30px;
+      font-weight: 500;
+      font-size: 18px;
+      margin: 0;
+      color: #838895;
+      max-width: 421px;
+      text-align: justify;
     }
   }
 
-  @media (max-width: 375px) {
-    .BusinessResults {
-      padding: 20px;
-    }
-  
-    .container {
-      width: 100%;
-    }
-  
-    /* ==== Скрываем заголовок на мобильных, как на фото ==== */
-    .header {
-      flex-wrap: wrap;
-    }
-  
-    /* ==== Делаем контент вертикальным ==== */
-    .content {
-      display: flex;
-      flex-direction: column; /* Переключаем в столбец */
-      align-items: flex-start; /* Выравниваем по левому краю */
-      gap: 15px; /* Добавляем отступы между блоками */
-    }
-  
+  /* ==== Контентный блок ==== */
+  .content {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    gap: 20px;
+
     /* ==== Карточка "Наша философия" ==== */
     .philosophy {
-      width: 100% !important; /* Делаем карточку адаптивной */
-      max-width: 100%; /* Ограничиваем ширину */
-      height: auto !important; /* Убираем фиксированную высоту */
-      padding: 15px; /* Уменьшаем отступы */
-    }
-  
-    /* ==== Текст внутри карточки ==== */
-    .philosophy .text {
-      text-align: left;
-    }
-  
-    /* ==== Картинка ==== */
-    .image {
-      width: 100%;
+      width: 648px;
+      flex: 1;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+      border: 1px solid #EAEAEA;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      background-color: white;
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .text {
+        h2 {
+          color: #2A2D35;
+          font-size: 40px;
+          font-weight: 700;
+          margin: 0;
+        }
+
+        p {
+          font-size: 18px;
+          color: #838895;
+          margin: 0;
+          max-width: 536px;
+        }
+      }
     }
-  
-    .image img {
-      max-width: 100%;
-      height: auto !important; /* Делаем изображение адаптивным */
-      border-radius: 8px;
+
+    /* ==== Изображение ==== */
+    .image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+
+      img {
+        max-width: 648px;
+        height: auto;
+        border-radius: 8px;
+      }
     }
   }
+}
+
+/* ==== 📌 **АДАПТИВНОСТЬ** ==== */
+@media (max-width: 768px) {
+  .BusinessResults {
+    padding: 40px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* ==== Делаем контент вертикальным ==== */
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .philosophy {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .image {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ** ==== */
+@media (max-width: 375px) {
+  .BusinessResults {
+    padding: 0px;
+
+    .container {
+      width: 100%;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      line-height: 35px;
+    }
+
+    .header p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-align: left;
+    }
+  }
+
+  /* Скрываем заголовок на мобильных */
+  .header {
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  /* Контент в колонку */
+  .content {
+    
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  /* Карточка "Наша философия" */
+  .philosophy {
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+    padding: 15px;
+    gap: 30px;
+
+    .icon {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .text h2 {
+      font-size: 28px !important;
+      margin-bottom: 15px;
+      line-height: 32px;
+      text-align: left;
+    }
+
+    .text p {
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+
+  /* Картинка */
+  .image {
+    width: 375px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 335px;
+    min-height: 323px;
+    border-radius: 8px;
+  }
+}
