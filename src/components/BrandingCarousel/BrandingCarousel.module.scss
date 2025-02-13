@@ -1,45 +1,121 @@
-
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
 
 .container {
-    text-align: center;
-    padding: 40px;
-    width: 100%;
-    background-color: #fff;
+  text-align: center;
+  padding: toRem(40);
+  width: 100%;
+  background-color: #fff;
+}
+
+.TitleBlog {
+  width: 100%;
+  max-width: toRem(1328);
+  min-height: toRem(295);
+  margin: 0 auto;
+  padding: 0 toRem(20);
+}
+
+.subtitle {
+  font-size: toRem(24);
+  color: #838895;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: toRem(68);
+  font-weight: 700;
+  margin: toRem(10) 0;
+  color: #2A2D35;
+}
+
+.description {
+  font-size: toRem(24);
+  color: #838895;
+  max-width: toRem(710);
+  margin: 0 auto toRem(20);
+}
+
+.carousel {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .container {
+    padding: toRem(20);
   }
-  .TitleBlog{
-    width: 100%;
-    max-width: 1328px;
-    min-height: 295px;
-    margin: 0 auto;
+  .image{
+    gap: 10px;
   }
-  .subtitle {
-    font-size: 24px;
-    color: #838895;
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-  
+
   .title {
-    font-size: 68px;
-    font-weight: 700;
-    margin: 10px 0;
-    color: #2A2D35;
+    font-size: toRem(42); /* Уменьшаем размер заголовка */
+    text-align: left;
   }
-  
+
   .description {
-    font-size: 24px;
-    color: #838895;
-    max-width: 710px;
-    margin: 0 auto 20px;
+    font-size: toRem(18); /* Уменьшаем размер текста */
+    max-width: 100%;
+    text-align: left;
   }
-  
+
   .carousel {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  
-  .slide {
+    max-width: 100%;
+    overflow-x: auto; /* Делаем прокрутку */
+    white-space: nowrap;
     display: flex;
-    justify-content: center;
+    gap: toRem(10);
+    padding: toRem(10) 0;
   }
-  
+
+  .slide {
+    flex: 0 0 auto;
+    width: toRem(250); /* Фиксированная ширина картинок */
+  }
+}
+
+@media (max-width: 480px) {
+  .TitleBlog{
+    padding: 0;
+  }
+  .container {
+    padding: toRem(15);
+    max-width: 375px;
+    padding: 10px;
+    
+  }
+
+  .title {
+    font-size: toRem(32);
+    text-align: left;
+    width: 100%;
+    min-height: 105px;
+    line-height: 35px;
+  }
+  .subtitle{
+    text-align: left;
+    font-size: toRem(16);
+  }
+
+  .description {
+    font-size: toRem(16);
+    text-align: left;
+  }
+
+  .carousel {
+    gap: toRem(5);
+  }
+
+  .slide {
+    max-width: toRem(200); /* Еще меньше для маленьких экранов */
+  }
+}
