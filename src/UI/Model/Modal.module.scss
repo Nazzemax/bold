@@ -21,8 +21,9 @@ body {
     background: #ffffff;
     padding: 24px;
     border-radius: 32px;
-    width: 560px;
-    max-width: 90%;
+    max-width: 560px;
+    min-width: 375px;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -30,6 +31,17 @@ body {
     overflow-y: auto;
     height: 680px; /* Ограничиваем высоту окна */
     overflow: visible;
+
+    @media all and (max-width:768px) {
+        max-width: 480px;
+        top:0;
+        left: -150px;
+    }
+
+    @media all and (max-width:480px) {
+        max-width: 335px;
+        left: -210px;
+    }
 }
 
 /* Кнопка закрытия */
@@ -81,6 +93,10 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: #1f2937;
+
+    @media all and (max-width:768px) {
+        font-size: 20px;
+    }
 }
 
 /* Должность */
