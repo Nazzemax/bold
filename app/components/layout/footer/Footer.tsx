@@ -27,15 +27,6 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 Bold Brands International ваш внешний отдел маркетинга
               </p>
             </div>
-            <p className={styles.footer__credit}>
-              Веб-дизайн —
-              <a
-                href="https://aidarsopubekov.framer.ai"
-                className={styles["footer__credit-link"]}
-              >
-                aidarsopubekov.framer.ai
-              </a>
-            </p>
           </div>
           <div className={styles.footer__block}>
             <div className={styles.footer__column}>
@@ -161,15 +152,6 @@ const Footer: React.FC<FooterProps> = ({}) => {
         <div className={styles.footer__bottom}>
           <p className={styles.footer__copyright}>
             © 2024 Bold Brands International. Все права защищены
-          </p>
-          <p className={styles.footer__creditMob}>
-            Веб-дизайн —
-            <a
-              href="https://aidarsopubekov.framer.ai"
-              className={styles["footer__credit-link"]}
-            >
-              aidarsopubekov.framer.ai
-            </a>
           </p>
           <Link href="/privacy" className={styles.footer__privacy}>
             Политика конфиденциальности

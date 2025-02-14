@@ -1,0 +1,142 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.advantages {
+  width: 100%;
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: toRem(150) toRem(20);
+
+  background-image: url("../../../public/advantages/advantages-bg.svg");
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  &__container {
+    max-width: toRem(1280);
+    margin: 0 auto;
+  }
+  &__text {
+    margin-bottom: toRem(32);
+  }
+  &__title {
+    font-size: toRem(68);
+    font-weight: 700;
+    margin-bottom: toRem(16);
+    line-height: toRem(74.8);
+  }
+  &__subtitle {
+    font-size: toRem(24);
+    font-weight: 500;
+  }
+
+  &__circles {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(31);
+  }
+  &__col1 {
+    display: flex;
+    justify-content: end;
+    gap: toRem(32);
+  }
+  &__col2 {
+    display: flex;
+    justify-content: start;
+    gap: toRem(32);
+  }
+  &__circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: toRem(422);
+    }
+  }
+  &__cirlceText {
+    position: absolute;
+    width: toRem(227);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+  }
+  &__circleTitle {
+    font-size: toRem(64);
+    font-weight: 700;
+    line-height: toRem(70.4);
+  }
+  &__circleSubtitle {
+    font-size: toRem(18);
+    font-weight: 500;
+    line-height: toRem(27);
+    color: #aaadb5;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .advantages {
+    padding: toRem(100) toRem(20);
+
+    &__title {
+      font-size: toRem(58);
+    }
+    &__subtitle {
+      font-size: toRem(22);
+    }
+
+    &__circleTitle {
+      font-size: toRem(60);
+    }
+    &__circleSubtitle {
+      font-size: toRem(18);
+    }
+  }
+}
+@media screen and (max-width: 924px) {
+  .advantages {
+    &__cirlceText {
+      text-align: center;
+    }
+    &__col1 {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(20);
+    }
+    &__col2 {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(20);
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .advantages {
+    &__title {
+      font-size: toRem(32);
+      line-height: toRem(35.2);
+    }
+    &__subtitle {
+      font-size: toRem(18);
+      line-height: toRem(25.2);
+    }
+
+    &__circleTitle {
+      font-size: toRem(40);
+      line-height: toRem(44);
+    }
+    &__circleSubtitle {
+      font-size: toRem(16);
+
+      line-height: toRem(24);
+    }
+    &__cirlceText {
+      width: toRem(227);
+    }
+    &__circle {
+      img {
+        max-width: toRem(335);
+      }
+    }
+  }
+}

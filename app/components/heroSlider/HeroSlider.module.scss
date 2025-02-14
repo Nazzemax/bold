@@ -53,7 +53,7 @@
     text-align: start;
   }
   &__title {
-    font-family: 'Cannonade Bold', sans-serif;
+    font-family: "Cannonade Bold", sans-serif;
     font-size: toRem(72);
     font-weight: 700;
     margin-bottom: toRem(40);
@@ -277,7 +277,6 @@
   }
 }
 
-//
 @keyframes fadeIn {
   from {
     opacity: 0;
