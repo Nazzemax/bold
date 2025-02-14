@@ -1,3 +1,12 @@
+@function toRem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+// Define breakpoints
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
 .CasesSlider {
   display: flex;
   flex-direction: column;
@@ -10,6 +19,275 @@
     align-items: center;
 
     .titles {
+      @function toRem($px) {
+        @return calc($px / 16) * 1rem;
+      }
+
+      .CasesSlider {
+        display: flex;
+        flex-direction: column;
+        max-width: 70vw;
+        margin: 200px auto;
+
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .titles {
+            flex: 1;
+            .subtitle {
+              color: #838895;
+              font-size: 24px;
+            }
+            .title {
+              font-size: 68px;
+              line-height: 1.2;
+              font-weight: 700;
+            }
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: red;
+            span {
+              word-break: break-word;
+            }
+          }
+        }
+
+        // Slider styles for larger screens
+        .slider {
+          width: calc(100vw - 15vw);
+          margin-left: auto;
+          height: auto;
+          overflow: hidden;
+
+          .slide {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .tags {
+              width: 100%;
+              height: 320px;
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              gap: 10px;
+              border-radius: 15px;
+              padding: 5px 20px;
+
+              .tag {
+                background-color: #414141;
+                align-self: flex-start;
+                opacity: 0.5;
+                color: #fff;
+                padding: 5px 10px;
+                margin: 10px 0;
+                border-radius: 10px;
+                display: flex;
+                gap: 5px;
+              }
+            }
+
+            .social {
+              display: flex;
+              gap: 10px;
+
+              div {
+                flex-shrink: 1;
+                max-width: 50%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                color: #838895;
+                padding: 5px 10px;
+                margin: 10px 0;
+                gap: 5px;
+                border: 1px solid #838895;
+                border-radius: 5px;
+
+                span {
+                  width: 200px;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                }
+              }
+            }
+
+            .caseInfo {
+              h3 {
+                font-weight: 700;
+                font-size: 28px;
+              }
+              .box {
+                width: 10px;
+                height: 10px;
+                background-color: #bcbcbc;
+                margin-right: 15px;
+                display: inline-block;
+              }
+              p {
+                display: inline;
+                color: #838895;
+                margin-right: 15px;
+              }
+            }
+          }
+        }
+
+        // Static layout for mobile (when slider is not used)
+        .staticCases {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .staticCard {
+          width: 100%;
+          max-width: 335px;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid #e0e0e0;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+          .tags {
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            gap: 10px;
+            border-radius: 15px;
+            padding: 5px 20px;
+          }
+
+          .tagWrapper {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            top: 0;
+            left: 24px;
+          }
+
+          .social {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 5px 10px;
+            margin: 10px 0;
+            border: 1px solid #838895;
+            border-radius: 5px;
+
+            div {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              span {
+                width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+
+          .caseInfo {
+            padding: 20px 0 20px;
+            h3 {
+              font-weight: 700;
+              font-size: 28px;
+            }
+            .box {
+              width: 10px;
+              height: 10px;
+              background-color: #bcbcbc;
+              margin-right: 15px;
+              display: inline-block;
+            }
+            p {
+              display: inline;
+              color: #838895;
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: $breakpoint-lg) {
+        .CasesSlider {
+          max-width: 90vw;
+          margin: 150px auto;
+          .info {
+            .titles {
+              .title {
+                font-size: 37px;
+              }
+            }
+          }
+          .slider {
+            .slide {
+              .tags {
+                height: auto;
+                padding: 5px 10px;
+                .tag {
+                  padding: 5px 8px;
+                  margin: 8px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        .CasesSlider {
+          margin: 100px auto;
+          .info {
+            .titles {
+              .title {
+                font-size: 36px;
+              }
+            }
+          }
+          .slider {
+            .slide {
+              .social {
+                flex-direction: column;
+                div {
+                  max-width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        .CasesSlider {
+          margin: 80px auto;
+          .info {
+            .titles {
+              .title {
+                font-size: 28px;
+              }
+            }
+          }
+        }
+      }
+
       flex: 1;
       .subtitle {
         color: #838895;
@@ -27,18 +305,16 @@
       align-items: center;
       text-decoration: none;
       color: red;
-
       span {
         word-break: break-word;
       }
     }
   }
 
+  // Slider styles for larger screens
   .slider {
-    width: calc(
-      100vw - 15vw
-    ); // 100vw минус левый отступ (70vw / 2 = 35vw -> 100vw - 35vw = 65vw)
-    margin-left: auto; // Прижимает правый край слайдера к правому краю экрана
+    width: calc(100vw - 15vw);
+    margin-left: auto;
     height: auto;
     overflow: hidden;
 
@@ -48,6 +324,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .tags {
         width: 100%;
         height: 320px;
@@ -69,10 +346,14 @@
           gap: 5px;
         }
       }
+
       .social {
         display: flex;
         gap: 10px;
         div {
+          flex-shrink: 1;
+          max-width: 50%;
+          width: 100%;
           display: flex;
           align-items: center;
           color: #838895;
@@ -89,6 +370,7 @@
           }
         }
       }
+
       .caseInfo {
         h3 {
           font-weight: 700;
@@ -105,6 +387,148 @@
           display: inline;
           color: #838895;
           margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  // Static layout for mobile (when slider is not used)
+  .staticCases {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .staticCard {
+    width: 100%;
+    max-width: 335px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .tags {
+      width: 100%;
+      height: 320px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      gap: 10px;
+      border-radius: 15px;
+      padding: 5px 20px;
+    }
+
+    .tagWrapper {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      top: 0;
+      left: 24px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 5px 10px;
+      margin: 10px 0;
+      border: 1px solid #838895;
+      border-radius: 5px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        span {
+          width: 200px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .caseInfo {
+      padding: 20px 0 20px;
+      h3 {
+        font-weight: 700;
+        font-size: 28px;
+      }
+      .box {
+        width: 10px;
+        height: 10px;
+        background-color: #bcbcbc;
+        margin-right: 15px;
+        display: inline-block;
+      }
+      p {
+        display: inline;
+        color: #838895;
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: $breakpoint-lg) {
+  .CasesSlider {
+    max-width: 90vw;
+    margin: 150px auto;
+    .info {
+      .titles {
+        .title {
+          font-size: 37px;
+        }
+      }
+    }
+    .slider {
+      .slide {
+        .tags {
+          padding: 5px 10px;
+          .tag {
+            padding: 5px 8px;
+            margin: 8px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .CasesSlider {
+    margin: 100px auto;
+    .info {
+      .titles {
+        .title {
+          font-size: 36px;
+        }
+      }
+    }
+    .slider {
+      .slide {
+        .social {
+          flex-direction: column;
+          div {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .CasesSlider {
+    margin: 80px auto;
+    .info {
+      .titles {
+        .title {
+          font-size: 28px;
         }
       }
     }
