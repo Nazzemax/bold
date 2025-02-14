@@ -39,13 +39,7 @@ const Advantages: React.FC<Props> = ({
         <div className={styles.advantages__circles}>
           <div className={styles.advantages__col1}>
             <div className={styles.advantages__circle}>
-              <Image
-                src={circle1}
-                width={422}
-                height={422}
-                layout="responsive"
-                alt="circle1"
-              />
+              <Image src={circle1} width={422} height={422} alt="circle1" />
               <div
                 style={advantageStyle}
                 className={styles.advantages__cirlceText}
@@ -59,13 +53,7 @@ const Advantages: React.FC<Props> = ({
               </div>
             </div>
             <div className={styles.advantages__circle}>
-              <Image
-                src={circle2}
-                width={422}
-                height={422}
-                layout="responsive"
-                alt="circle2"
-              />
+              <Image src={circle2} width={422} height={422} alt="circle2" />
               <div
                 style={advantageStyle}
                 className={styles.advantages__cirlceText}
@@ -81,13 +69,7 @@ const Advantages: React.FC<Props> = ({
           </div>
           <div className={styles.advantages__col2}>
             <div className={styles.advantages__circle}>
-              <Image
-                src={circle3}
-                width={422}
-                height={422}
-                layout="responsive"
-                alt="circle3"
-              />
+              <Image src={circle3} width={422} height={422} alt="circle3" />
               <div
                 style={advantageStyle}
                 className={styles.advantages__cirlceText}
@@ -101,13 +83,7 @@ const Advantages: React.FC<Props> = ({
               </div>
             </div>
             <div className={styles.advantages__circle}>
-              <Image
-                src={circle4}
-                width={422}
-                height={422}
-                layout="responsive"
-                alt="circle4"
-              />
+              <Image src={circle4} width={422} height={422} alt="circle4" />
               <div
                 style={advantageStyle}
                 className={styles.advantages__cirlceText}
