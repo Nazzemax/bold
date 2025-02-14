@@ -148,11 +148,11 @@ export default function CasesSlider({}: Props) {
               <div className={styles.social}>
                 <div>
                   <Image src={insta.src} alt="insta" height={20} width={20} />
-                  <span>+10,5K подписчиков в Instagram</span>
+                  <span>+10,5K подписчиков...</span>
                 </div>
                 <div>
                   <Image src={tiktok.src} alt="tiktok" height={20} width={20} />
-                  <span>1,5 млн просмотров в TikTok</span>
+                  <span>1,5 млн просмотров...</span>
                 </div>
               </div>
               <div className={styles.caseInfo}>
@@ -173,8 +173,9 @@ export default function CasesSlider({}: Props) {
           speed={3000}
           freeMode={true}
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
+            320: { slidesPerView: 3 }, // Теперь на мобильных будет 3 карточки
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 3 },
             1024: { slidesPerView: 3 },
           }}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -200,11 +201,11 @@ export default function CasesSlider({}: Props) {
               <div className={styles.social}>
                 <div>
                   <Image src={insta.src} alt="insta" height={20} width={20} />
-                  <span>+10,5K подписчиков в Instagram</span>
+                  <span>+10,5K подписчиков в...</span>
                 </div>
                 <div>
                   <Image src={tiktok.src} alt="tiktok" height={20} width={20} />
-                  <span>1,5 млн просмотров в TikTok</span>
+                  <span>1,5 млн просмотров...</span>
                 </div>
               </div>
               <div className={styles.caseInfo}>
