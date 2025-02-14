@@ -1,0 +1,64 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.sheet {
+  &__trigger {
+    display: none;
+    height: toRem(48);
+    padding: toRem(8);
+    border-radius: toRem(16);
+    background: #d2d6de33;
+    img {
+      width: toRem(32);
+      height: toRem(32);
+    }
+  }
+
+  &__content {
+    width: toRem(375);
+    padding: toRem(20);
+  }
+
+  &__title {
+    display: none;
+  }
+}
+
+.accordion {
+  margin-top: toRem(70);
+
+  &__item {
+    border-bottom: toRem(1) solid #d1d7e2;
+    padding: toRem(12);
+  }
+  &__itemMenu {
+    border-bottom: toRem(1) solid #d1d7e2;
+  }
+  &__link {
+    font-size: toRem(18);
+    font-weight: 700;
+    color: #2a2d35;
+  }
+  &__sublink {
+    font-size: toRem(18);
+    font-weight: 500;
+    color: #2a2d35;
+    padding: toRem(12) toRem(32);
+    border-bottom: toRem(1) solid #d1d7e2;
+
+    &:first-child {
+      border-top: toRem(1) solid #d1d7e2;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sheet__trigger {
+    display: block;
+  }
+}

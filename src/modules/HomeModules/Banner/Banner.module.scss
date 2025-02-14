@@ -1,0 +1,239 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.banner {
+}
+
+.slider {
+  height: 100vh;
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+  }
+  &__item {
+    height: 100%;
+    position: relative;
+  }
+  &__background {
+    position: absolute;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    inset: toRem(0);
+  }
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    background: linear-gradient(
+      to right,
+      rgba(13, 13, 13, 0.9),
+      rgba(13, 13, 13, 0)
+    );
+    background-color: rgb(0 0 0 / 0.4);
+  }
+  &__container {
+    width: 100%;
+    max-width: toRem(1328);
+    text-align: start;
+  }
+  &__title {
+    font-family: "Cannonade Bold", sans-serif;
+    font-size: toRem(72);
+    font-weight: 700;
+    margin-bottom: toRem(40);
+    line-height: toRem(79.2);
+  }
+  &__description {
+    font-size: toRem(24);
+    font-weight: 500;
+    line-height: toRem(33);
+    color: #aaadb5;
+    margin-bottom: toRem(56);
+  }
+  &__btnText {
+    max-width: 100%;
+    height: toRem(56);
+    background: #ff2b44;
+    border-radius: toRem(16);
+    color: white;
+    font-size: toRem(18);
+    font-weight: 500;
+    padding-right: toRem(8);
+    padding-left: toRem(16);
+
+    &:hover {
+      background: #ff2b44;
+    }
+    span {
+      width: toRem(40);
+      height: toRem(40);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: toRem(12);
+      background: white;
+      border-radius: toRem(12);
+    }
+  }
+
+  // ==========================
+  &__controls {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__progress_bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: toRem(12);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(229, 231, 235, 0.5);
+  }
+
+  &__progress {
+    height: 100%;
+    background-color: rgb(239, 68, 68);
+    transition: width 50ms;
+  }
+
+  &__button {
+    position: absolute;
+    width: toRem(64);
+    height: toRem(64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    border-radius: toRem(16);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    transition: 0.1s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+    &_prev {
+      left: toRem(56);
+    }
+
+    &_next {
+      right: toRem(56);
+    }
+  }
+}
+@media screen and (max-width: 1800px) {
+  .slider {
+    &__title {
+      font-size: toRem(56);
+    }
+
+    &__container {
+      max-width: toRem(1000);
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slider {
+    &__title {
+      font-size: toRem(42);
+      font-weight: 700;
+      margin-bottom: toRem(20);
+      line-height: toRem(60);
+    }
+    &__description {
+      font-size: toRem(20);
+      font-weight: 500;
+      line-height: toRem(33);
+      color: #aaadb5;
+    }
+
+    &__container {
+      max-width: toRem(600);
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .slider {
+    &__button {
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 80%;
+      border-radius: toRem(16);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    &__container {
+      padding: 0 toRem(20);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .slider {
+    &__title {
+      font-size: toRem(37);
+      font-weight: 700;
+      margin-bottom: toRem(20);
+      line-height: toRem(60);
+    }
+    &__description {
+      font-size: toRem(20);
+      font-weight: 500;
+      line-height: toRem(33);
+      color: #aaadb5;
+    }
+
+    &__container {
+      max-width: toRem(600);
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .slider {
+    &__title {
+      font-size: toRem(36);
+      line-height: toRem(39.6);
+      margin-bottom: toRem(24);
+      text-align: left;
+    }
+    &__description {
+      font-size: toRem(18);
+      line-height: toRem(25.2);
+      text-align: left;
+    }
+    &__button {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 80%;
+      border-radius: toRem(16);
+      background-color: rgba(255, 255, 255, 0.2);
+      &_prev {
+        left: toRem(20);
+      }
+
+      &_next {
+        left: toRem(108);
+      }
+    }
+    &__container {
+      padding: 0 toRem(20);
+    }
+  }
+}

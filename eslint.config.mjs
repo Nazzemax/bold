@@ -25,6 +25,7 @@ export default function config () {[
           ignoreRestSiblings: true, // Игнорировать остаточные переменные
         },
       ],
+      'import/no-unresolved': ['error', { ignore: ['.scss$'] }],
     },
   },
 ]}

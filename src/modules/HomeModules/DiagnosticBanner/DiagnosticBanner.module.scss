@@ -1,0 +1,103 @@
+body {
+    font-family: "Cannonade", sans-serif;
+  }
+  
+  .diagnosticBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 32px;
+    padding: 50px 40px;
+    position: relative;
+    width: 100%;
+    max-width: 1888px;
+    height: 579px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .gridOverlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.05) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    border-radius: 20px;
+    pointer-events: none;
+  }
+  
+  .diagnosticContent {
+    max-width: 1328px;
+    height: 279px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .diagnosticContent h2 {
+    color: #ffffff;
+    font-size: 68px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .diagnosticContent p {
+    color: #aaadb5;
+    font-size: 24px;
+    margin-bottom: 24px;
+    max-width: 1328px;
+    text-align: center;
+  }
+  
+
+  .diagnosticBtn {
+    background-color: #e3001b;
+    width: 255px;
+    height: 56px;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 16px;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; 
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2);
+    position: relative;
+    gap: 12px;
+  
+    &:hover {
+      background-color: #c40016;
+    }
+  }
+  
+
+  .arrowContainer {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: auto; 
+    position: absolute;
+    right: 8px; 
+    .iconimage {
+        width: 5px;
+        height: 10px;
+      }
+  }
+  
+
+  
+  

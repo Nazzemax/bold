@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
-import Header from "./components/layout/header/Header";
+import { Header } from "@/src/modules/Header/Header";
+import { Footer } from "@/src/modules/Footer/Footer";
+
 
 const cannonade = localFont({
   src: [
@@ -33,8 +35,11 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <Header bgColor="black" />
-      <body className={`${cannonade.className} antialiased`}>{children}</body>
+      <body className={`${cannonade.className} antialiased`}>
+        <Header />
+        <main>{children}</main>
+        <Footer/>
+      </body>
     </html>
   );
 }

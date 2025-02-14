@@ -1,0 +1,120 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease;
+  color: #fff;
+  background: transparent;
+  z-index: 50;
+  &__scrolled {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #2a2d35;
+    button {
+      img[src$=".svg"] {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(7%)
+          saturate(1482%) hue-rotate(185deg) brightness(94%) contrast(90%);
+      }
+      img[alt="lang-icon"] {
+        filter: brightness(0) saturate(100%) invert(66%) sepia(11%)
+          saturate(344%) hue-rotate(180deg) brightness(90%) contrast(87%);
+      }
+    }
+  }
+  &__container {
+    width: 100%;
+    max-width: toRem(1920);
+    margin: 0 auto;
+    padding: toRem(22.5) toRem(56);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    img {
+      width: 100%;
+    }
+  }
+  &__navList {
+    display: flex;
+    gap: toRem(24);
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      font-size: toRem(18);
+      font-weight: 500;
+      padding: toRem(12) toRem(16);
+      border-radius: toRem(16);
+      transition: all 0.2s;
+      &:hover {
+        background: #d2d6de33;
+      }
+    }
+  }
+
+  &__menu {
+    width: toRem(342);
+    border: toRem(1) solid #d1d7e2;
+    padding: toRem(12);
+    border-radius: toRem(16);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+    a {
+      display: flex;
+      gap: toRem(16);
+      align-items: center;
+      padding: toRem(8) toRem(10);
+      &:hover {
+        background: #d2d6de33;
+      }
+    }
+  }
+
+  &__menuLink {
+    img {
+      width: toRem(20);
+      height: toRem(20);
+    }
+    span {
+      font-size: toRem(18);
+      font-weight: 500;
+      line-height: toRem(27);
+      min-width: toRem(265);
+    }
+  }
+  &__linkActive {
+    background: #d2d6de33;
+  }
+  &__block {
+    display: flex;
+    justify-content: center;
+    gap: toRem(6);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    &__container {
+      padding: toRem(18.5) toRem(20);
+    }
+    &__nav {
+      display: none;
+    }
+    &__logo {
+      img {
+        max-width: toRem(168);
+      }
+    }
+  }
+  .btnTrigger {
+    display: block;
+  }
+}
+
