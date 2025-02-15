@@ -29,16 +29,16 @@ export default function Home() {
   return (
     <div className="">
       <HeroSlider />
-      <Challenges />
-      <Partners />
-      <Advantages
+      {/* <Challenges /> */}
+      {/* <Partners /> */}
+      {/* <Advantages
         title={"Bold Brands International "}
         subtitle={
           "совместно создаём прочную основу и уверенное будущее для вашей компании"
         }
         subtitleStyle={{ color: "#FF2B44" }}
         advantages={advantages}
-      />
+      /> */}
     </div>
   );
 }
