@@ -28,9 +28,14 @@ const advantages = [
 export default function Home() {
   return (
     <div className="">
-      <HeroSlider />
+      {/* Все адаптировано */}
+      {/* 1 блок 1 страница */}
+      {/* <HeroSlider /> */}
+      {/* 5 блок 1 страница */}
       {/* <Challenges /> */}
+      {/* 10 блок 1 страница */}
       {/* <Partners /> */}
+      {/* 4 блок 1 страница */}
       {/* <Advantages
         title={"Bold Brands International "}
         subtitle={
