@@ -27,7 +27,7 @@ const advantages = [
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="w-full">
       <HeroSlider />
       <Challenges />
       <Partners />

@@ -18,8 +18,6 @@ const Challenges: React.FC<ChallengesProps> = () => {
         </h1>
 
         <div className={styles.challenges__cards}>
-          {/* 1 */}
-
           <div className={styles.challenges__col1}>
             <div className={styles.challenges__card}>
               <div className={styles.challenges__cardIcon}>
@@ -60,7 +58,6 @@ const Challenges: React.FC<ChallengesProps> = () => {
               <span className={styles.challenges__LeftCircle}></span>
             </div>
           </div>
-          {/* 2 */}
           <div className={styles.challenges__col2}>
             <div className={styles.challenges__card}>
               <div className={styles.challenges__cardIcon}>
@@ -101,7 +98,6 @@ const Challenges: React.FC<ChallengesProps> = () => {
               <span className={styles.challenges__LeftCircle}></span>
             </div>
           </div>
-          {/* 3 */}
           <div className={styles.challenges__col3}>
             <div className={styles.challenges__card}>
               <div className={styles.challenges__cardIcon}>
