@@ -36,9 +36,8 @@ export default function RootLayout({
       </head>
       <body className={`${cannonade.className} antialiased`}>
         <Header />
-
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
