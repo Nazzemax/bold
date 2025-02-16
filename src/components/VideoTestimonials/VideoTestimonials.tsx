@@ -53,7 +53,9 @@ const VideoTestimonials = () => {
     <div className={styles.videoTestimonials}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Видеоотзывы от наших <br/> клиентов</h2>
+          <h2 className={styles.title}>
+            Видеоотзывы от наших <br /> клиентов
+          </h2>
           <div className={styles.pagination}>
             <button
               className={styles.arrowLeft}
@@ -94,12 +96,7 @@ const VideoTestimonials = () => {
               </div> */}
               <div className={styles.video}>
                 <button className={styles.playButton}>
-                  <Image
-                    src={Polygon_4}
-                    alt="Play"
-                    width={40}
-                    height={40}
-                  />
+                  <Image src={Polygon_4} alt="Play" width={40} height={40} />
                 </button>
               </div>
               <p className={styles.testimonialTitle}>{testimonial.title}</p>

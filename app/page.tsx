@@ -20,19 +20,21 @@ import Carousel from "@/src/components/Carousel/Carousel";
 export default function Home() {
   return (
     <div>
-      <Contacts/>
-      <Cases/>
+      {/* <Contacts/> */}
+      {/* <Cases/> */}
       <VideoTestimonials/>
       
-      <ReviewsSlider/>
+      {/* <ReviewsSlider/>
       <Team/>
       <ApproachSection/>
       <BusinessResults/>
       <HowWeWork/>
       <Seo/>
-      <CarouselBlog/>
+      <CarouselBlog/> */}
+
       {/* <CRMIntegration/> */}
-      <Carousel />
+
+      {/* <Carousel /> */}
     </div>
     
   );
