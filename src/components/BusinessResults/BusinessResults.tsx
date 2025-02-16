@@ -34,6 +34,7 @@ const BusinessResults: React.FC = () => {
         </div>
         <div className={styles.image}>
           <Image
+          className={styles.img}
             src= {imageResults}
             alt="Команда объединяет руки"
           />

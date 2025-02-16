@@ -40,7 +40,7 @@ body {
   
     .questionItem {
         width: 800px;
-      background-color: #f9fafb;
+      background-color: #FFFFFF;
       border-radius: 12px;
       padding: 1.5rem;
       cursor: pointer;
@@ -49,7 +49,7 @@ body {
       overflow: hidden;
   
       &:hover {
-        background-color: #f3f4f6;
+        background-color: #FFFFFF;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
   
@@ -94,6 +94,10 @@ body {
           max-height: 100px; /* Высота для открытого состояния */
           padding-top: 1rem;
         }
+      }
+      .icon{
+        width: 48px;
+        height: 48px;
       }
     }
   }

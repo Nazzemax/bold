@@ -4,7 +4,6 @@ import style from "./Contacts.module.scss";
 import Image from 'next/image';
 import icon1 from '../assents/icon/Frame_239.png'
 import icon2 from '../assents/icon/Frame_241.png'
-import Button from "./button/button";
 import Form from "./form/form";
 
 const Contacts: React.FC = () => {

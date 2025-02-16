@@ -1,13 +1,14 @@
-"use client";
-import React, { ChangeEvent, useState } from "react";
-import styles from "./Cases.module.scss";
-import Image from "next/image";
-import iconBlog from "@/public/caseItem.png";
-import insta from "@/public/image/social.png";
-import tiktok from "@/public/image/tiktok.png";
-import search from "@/public/image/Vector.png";
-import { debounce } from "lodash";
-import { truncateText } from "@/app/utils/truncateText";
+"use client"
+import React, { ChangeEvent, useState, useEffect, useCallback } from 'react';
+import styles from './Cases.module.scss';
+import Image from 'next/image';
+import iconBlog from '@/public/caseItem.png';
+import insta from '@/public/image/social.png';
+import tiktok from '@/public/image/tiktok.png';
+import search from '@/public/image/Vector.png';
+import { truncateText } from '@/app/utils/truncateText';
+import { debounce } from 'lodash';
+
 
 const categories = [
   { id: 1, name: "SMM", active: true },
@@ -85,18 +86,39 @@ const cases = [
 function Cases() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // Устанавливаем количество карточек на странице
-  const totalPages = Math.ceil(cases.length / itemsPerPage);
 
-  const [selectedTag, setSelectedTag] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredCases = cases.filter((caseItem) => {
-    const matchesTag = selectedTag ? caseItem.tags.includes(selectedTag) : true;
-    const matchesSearch =
-      searchQuery === "" ||
-      caseItem.title.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesTag && matchesSearch;
-  });
+  const [selectedTag, setSelectedTag] = useState('');  
+  const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
+
+  const debouncedSearch = useCallback(
+    debounce((searchQuery:string) => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 500),
+    []
+  );
+
+
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setSearchQuery(value);
+    debouncedSearch(value); 
+  };
+
+// Используем debouncedSearchQuery вместо searchQuery
+const filteredCases = cases.filter((caseItem) => {
+  const matchesTag = selectedTag ? caseItem.tags.includes(selectedTag) : true;
+  const matchesSearch =
+    debouncedSearchQuery === '' ||
+    caseItem.title.toLowerCase().includes(debouncedSearchQuery.toLowerCase());
+
+  return matchesTag && matchesSearch;
+});
+
+const totalPages = Math.ceil(filteredCases.length / itemsPerPage);
+const shouldShowPagination = totalPages > 1;
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
@@ -122,14 +144,6 @@ function Cases() {
       setSelectedTag(tagName);
     }
   };
-
-  // Create the debounced version of the search handler
-  const handleSearchChange = debounce(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setSearchQuery(event.target.value);
-    },
-    500
-  ); // 500ms debounce delay
 
   return (
     <div className={styles.pageWrapper}>
@@ -196,28 +210,36 @@ function Cases() {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-        <div className={styles.pagination}>
-          <button
-            className={styles.paginationButton}
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-          >
-            &#8249;
-          </button>
-          <span>
-            {String(currentPage).padStart(2, "0")} /{" "}
-            {String(totalPages).padStart(2, "0")}
-          </span>
-          <button
-            className={styles.paginationButton}
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-          >
-            &#8250;
-          </button>
-        </div>
+          </div>
+        ))}
+      </div>
+      <div className={styles.pagination}>
+  {/* Кнопка "назад" (отключается на первой странице) */}
+  <button
+    className={styles.paginationButton}
+    onClick={handlePrevPage}
+    disabled={currentPage === 1}
+  >
+    &#8249;
+  </button>
+
+  {/* Отображение текущей страницы / общего количества страниц */}
+  {totalPages > 1 && (
+    <span>
+      {String(currentPage).padStart(2, '0')} / {String(totalPages).padStart(2, '0')}
+    </span>
+  )}
+
+  {/* Кнопка "вперед" (отключается на последней странице) */}
+  <button
+    className={styles.paginationButton}
+    onClick={handleNextPage}
+    disabled={currentPage === totalPages}
+  >
+    &#8250;
+  </button>
+</div>
+
       </div>
     </div>
   );
