@@ -1,0 +1,138 @@
+body {
+  font-family: 'Cannonade', sans-serif;
+}
+
+.howWeWork {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1328px;
+  margin: 0 auto;
+}
+
+/* Заголовок и кнопка */
+.titleBlog {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.heading {
+  font-size: 68px;
+  font-weight: 700;
+  color: #212121;
+  text-align: left;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+/* Сетка карточек */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Карточка шага */
+.stepCard {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* На планшетах и мобильных картинка уходит вверх */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Иконка */
+.icon_blog {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Выравниваем влево */
+
+  @media (max-width: 1024px) {
+    width: 80px;
+    height: 80px;
+    justify-content: flex-start;
+  }
+}
+
+/* Текстовый блок */
+.textContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  max-width: 60%;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* Заголовок */
+.stepTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 0.5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+    text-align: left;
+  }
+}
+
+/* Описание */
+.stepDescription {
+  font-weight: 500;
+  font-size: 18px;
+  color: #666;
+  line-height: 27px;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+/* Номер шага */
+.stepNumber {
+  color: #A9AFBF;
+  font-weight: 500;
+  font-size: 18px;
+}

@@ -1,0 +1,89 @@
+.advantages {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+}
+
+.background-img {
+  max-width: 200vh;
+  position: relative;
+  bottom: 15vh;
+}
+
+.advantages-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 1vw;
+  font-size: large;
+  padding: 5vh;
+  padding-right: 15vw;
+}
+
+.text-1 {
+  color: white;
+  font-weight: 700;
+  font-size: 6vh;
+}
+
+.circles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.circles-1 img {
+  padding-right: 1vw;
+  max-width: 35vh;
+}
+
+.circles-1 {
+  display: flex;
+  padding-left: 15vw;
+  margin-bottom: 3vh;
+}
+
+.circles-2 img {
+  padding-right: 1vw;
+  max-width: 35vh;
+}
+
+.circles-2 {
+  display: flex;
+}
+
+@media (min-width: 375px) {
+  .circles-1 img {
+    max-width: 17vh;
+  }
+  .circles-2 img {
+    max-width: 17vh;
+  }
+  .text-1 {
+    font-size: 5vw;
+  }
+  .text {
+    font-size: 2vw;
+    padding: 4vw;
+  }
+  .background-img {
+    position: relative;
+    bottom: 5vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .circles-1 img {
+    max-width: 47vh;
+  }
+  .circles-2 img {
+    max-width: 47vh;
+  }
+}
