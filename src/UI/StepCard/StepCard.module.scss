@@ -11,6 +11,44 @@ body {
   max-width: 1328px;
   margin: 0 auto;
 }
+.button {
+  width: 360px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2A2D35;
+  border: 1px solid #2A2D35;
+  border-radius: 42px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #F5F7FA;
+  }
+
+  .arrow {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 1024px) { /* Планшеты */
+    width: 100%;
+  }
+
+  @media (max-width: 768px) { /* Телефоны */
+    width: 100%;
+  }
+}
 
 /* Заголовок и кнопка */
 .titleBlog {

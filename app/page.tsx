@@ -32,11 +32,15 @@ import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
 import { crmBenefits, howWeWorkSteps } from "@/src/data/stepsData";
+import ExamplePage from "@/src/UI/ExamplePage/ExamplePage";
 
 export default function Home() {
   return (
     <div>
       <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"/>
+      <ExamplePage/>
+      <PartnershipBanner/>
+      <ServiceSection2 {...servicesData2} />;
       {/* <Headers /> */}
       {/* блок 1 на странице брендинга (слайдер) */}
       {/* <BrandingCarousel /> */}
@@ -80,7 +84,7 @@ export default function Home() {
       {/* <ReviewsSlider/> */}
       <VideoProduction />
       <ServiceSection {...servicesData1} />;
-      {/* <ServiceSection2 {...servicesData2} />; */}
+      
       <ServiceSection3 {...servicesData3} />;
     </div>
 

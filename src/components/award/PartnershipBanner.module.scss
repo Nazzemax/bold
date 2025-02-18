@@ -11,6 +11,15 @@
     height: 638px;
     margin: 0 auto;
     overflow: hidden;
+
+    @media (max-width: 1024px) {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 30px 15px;
+    }
 }
 
 .gridOverlay {
@@ -32,6 +41,13 @@
     position: relative;
     z-index: 10;
     gap: 8px;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
 }
 
 .leftContent {
@@ -40,6 +56,12 @@
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
+
+    @media (max-width: 1024px) {
+        margin-right: 0;
+        text-align: center;
+        align-items: center;
+    }
 }
 
 .heading {
@@ -48,6 +70,15 @@
     color: #ffffff;
     line-height: 1.2;
     text-align: center;
+
+    @media (max-width: 1024px) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 1.2;
+    }
 }
 
 .badge {
@@ -66,6 +97,12 @@
     letter-spacing: 1px;
     white-space: nowrap;
     margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        width: 160px;
+        height: 36px;
+    }
 }
 
 .imageWrapper {
@@ -75,6 +112,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1024px) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media (max-width: 768px) {
+        width: 320px;
+        height: 320px;
+    }
 }
 
 .backgroundCircle {
@@ -89,13 +136,14 @@
     z-index: 2;
     width: 475px;
     height: 338px;
-}
 
-.rightBadge {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    @media (max-width: 1024px) {
+        width: 360px;
+        height: 260px;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 220px;
+    }
 }
