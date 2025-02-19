@@ -1,6 +1,8 @@
 import researchIcon from "@/src/assents/icon/stepsResearch1.png";
+import researchIcon1 from "@/src/assents/icon/research1.png";
 import strategyIcon from "@/src/assents/icon/customerStrategy.png";
 import dataIcon from "@/src/assents/icon/stepsResearch.png";
+import dataIcon1 from "@/src/assents/icon/research3.png";
 import analyticsIcon from "@/src/assents/icon/analytics_1.png";
 import dataAnalyticsIcon from "@/src/assents/icon/data_analytics_1.png";
 
@@ -71,4 +73,36 @@ export const crmBenefits = [
     number: "04",
     icon: dataAnalyticsIcon,
   },
+];export const crmBenefits2 = [
+  {
+    id: 1,
+    title: "Ориентация на измеримый результат",
+    description: "В центре внимания — ключевые показатели: рост выручки, снижение стоимости привлечения клиента, повышение ROI",
+    number: "01",
+    icon: researchIcon1,
+  },
+  {
+    id: 2,
+    title: "Комплексный подход",
+    description: "Мы не просто запускаем рекламу: мы выстраиваем целую систему продвижения, чтобы охватить аудиторию на всех этапах воронки продаж.",
+    number: "02",
+    icon: strategyIcon,
+  },
+  {
+    id: 3,
+    title: "Гибкость и адаптация",
+    description: "Быстро реагируем на изменения рынка и оптимизируем стратегии, чтобы вы всегда оставались на шаг впереди конкурентов.",
+    number: "03",
+    icon: dataIcon1,
+  },
+  {
+    id: 4,
+    title: "Технологические решения",
+    description: "Используем передовые инструменты аналитики и автоматизации, даём прозрачную статистику и детальные отчёты, благодаря чему вам легко контролировать бюджет и оценивать эффективность.",
+    number: "04",
+    icon: dataAnalyticsIcon,
+  },
 ];
+
+
+

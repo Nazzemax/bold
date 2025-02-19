@@ -1,158 +1,276 @@
 @function toRem($value) {
-    @return ($value / 16) * 1rem;
-  }
-  body {
-    font-family: 'Cannonade', sans-serif;
-  }
-  
-  .serviceSection {
+  @return ($value / 16) * 1rem;
+}
+
+body {
+  font-family: 'Cannonade', sans-serif;
+}
+
+/* ==== Основной контейнер ==== */
+.serviceSection {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(40);
+  max-width: toRem(1328);
+  margin: 0 auto;
+  padding: toRem(50) toRem(30);
+
+  /* Заголовок */
+  .title {
     display: flex;
-    flex-direction: column;
-    gap: toRem(40);
-    // padding: toRem(50) toRem(30);
-    max-width: toRem(1328);
-    margin: 0 auto;
-  
-    .title {
-        display: flex;
-      font-size: toRem(68);
-      font-weight: 700;
-      color: #2a2d35;
+    font-size: toRem(68);
+    font-weight: 700;
+    color: #2a2d35;
+
+    @media (max-width: 1024px) { /* Планшеты */
+      font-size: toRem(50);
     }
-    .BlogTitle{
-        display: flex;
-        gap: 30px;
+
+    @media (max-width: 768px) { /* Телефоны */
+      font-size: toRem(40);
     }
-    .BlogTitle p{
-        display: flex;
-        color: #838895;
-        font-size: 18px;
-        font-weight: 500;
-        width: 100%;
-        max-width: 650px;
-        align-items: center;
+
+    @media (max-width: 480px) { /* Маленькие экраны */
+      font-size: toRem(32);
+      text-align: left;
     }
-  
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: toRem(90);
-      
-    }
-  
-    .serviceItem {
-      display: flex;
-      align-items: center;
-      gap: toRem(40);
-      margin-bottom:50px ;
-  
-      &:nth-child(odd) {
-        flex-direction: row;
+  }
+
+  /* Подзаголовок и текст */
+  .BlogTitle {
+    display: flex;
+    gap: toRem(30);
+    align-items: flex-start;
+    justify-content: space-between;
+
+    p {
+      color: #838895;
+      font-size: toRem(18);
+      font-weight: 500;
+      max-width: 650px;
+
+      @media (max-width: 768px) {
+        font-size: toRem(16);
       }
-  
-      &:nth-child(even) {
-        flex-direction: row-reverse;
+
+      @media (max-width: 480px) {
+        font-size: toRem(14);
+        text-align: left;
+        max-width: 100%;
       }
-      
     }
-  
-    .image {
-      width: toRem(648);
-      height: auto;
-      border-radius: toRem(16);
-    }
-  
-    .textContent {
-      flex: 1;
-      display: flex;
+
+    @media (max-width: 768px) { /* Телефоны */
       flex-direction: column;
       gap: toRem(10);
+      align-items: center;
     }
-    .highlightText {
-        font-size: toRem(24);
-        font-weight: 600;
-        color: #ff2b44; // Красный цвет
-        margin-top: toRem(5);
-      }
-  
-    .serviceTitle {
-        color: #2A2D35;
-      font-size: toRem(40);
-      font-weight: 700;
-    }
-  
-    .description {
-      font-size: toRem(18);
-      color: #838895;
-      font-weight: 500;
-      line-height: 1.5;
+
+    @media (max-width: 480px) { /* Маленькие экраны */
+      align-items: flex-start;
     }
   }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .serviceSection {
-      padding: toRem(40) toRem(20);
+
+  /* Контейнер с услугами */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(90);
+  }
+
+  /* Карточка услуги */
+  .serviceItem {
+    display: flex;
+    align-items: center;
+    gap: toRem(40);
+    margin-bottom: 50px;
+
+    &:nth-child(odd) {
+      flex-direction: row;
     }
-  
-    .serviceItem {
-      flex-direction: column !important;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 1024px) { /* Планшеты */
       gap: toRem(20);
-      text-align: center;
     }
-  
-    .image {
+
+    @media (max-width: 768px) { /* Телефоны */
+      flex-direction: column;
+      text-align: center;
+      gap: toRem(20);
+    }
+
+    @media (max-width: 480px) { /* Маленькие экраны */
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  /* Изображение */
+  .image {
+    width: toRem(648);
+    height: auto;
+    border-radius: toRem(16);
+
+    @media (max-width: 1024px) { /* Планшеты */
+      width: toRem(500);
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
       width: 100%;
+      max-width: 500px;
+    }
+
+    @media (max-width: 480px) { /* Маленькие экраны */
+      width: 100%;
+      max-width: 335px;
       height: auto;
     }
   }
-  
-  @media (max-width: 480px) {
-    .serviceSection .textContent{
-        gap: 15px;
+
+  /* Текстовый контент */
+  .textContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+
+    @media (max-width: 768px) {
+      text-align: center;
     }
-    .serviceSection .title {
-      font-size: toRem(32); /* Уменьшенный размер */
-      width: 100%;
-      text-align: left; /* Выравнивание по центру */
-      margin-bottom: toRem(20);
+
+    @media (max-width: 480px) {
+      text-align: left;
     }
-    .serviceSection .image{
-        width: 335px;
-        height: 190px;
-        text-align: left;
-        
+  }
+
+  /* Красный выделенный текст */
+  .highlightText {
+    font-size: toRem(24);
+    font-weight: 600;
+    color: #ff2b44; // Красный цвет
+    margin-top: toRem(5);
+
+    @media (max-width: 768px) {
+      font-size: toRem(20);
     }
-    .textContent .highlightText {
-        font-size: toRem(18);
-        font-weight: 600;
-        color: #ff2b44; // Красный цвет
-        margin-top: toRem(5);
-        text-align: left;
-      }
-  
-    .serviceSection .serviceTitle {
+
+    @media (max-width: 480px) {
+      font-size: toRem(18);
+    }
+  }
+
+  /* Заголовок услуги */
+  .serviceTitle {
+    color: #2A2D35;
+    font-size: toRem(40);
+    font-weight: 700;
+
+    @media (max-width: 1024px) {
+      font-size: toRem(34);
+    }
+
+    @media (max-width: 768px) {
+      font-size: toRem(30);
+    }
+
+    @media (max-width: 480px) {
       font-size: toRem(28);
       text-align: left;
     }
-  
-    .serviceSection .description {
-      font-size: toRem(16);
-      text-align: left;
-      margin-bottom: 15px;
-    }
-  
-    .serviceSection .BlogTitle {
-      flex-direction: column;
-      gap: toRem(10);
-      align-items: center;
-    }
-  
-    .serviceSection .BlogTitle p {
-      font-size: toRem(16);
-      width: 100%;
-      text-align: left;
-    }
-    
   }
-  
+
+  /* Описание */
+  .description {
+    font-size: toRem(18);
+    color: #838895;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @media (max-width: 1024px) {
+      font-size: toRem(16);
+    }
+
+    @media (max-width: 768px) {
+      font-size: toRem(16);
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: toRem(14);
+      text-align: left;
+    }
+  }
+}
+
+/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (480-768px)** ==== */
+@media (max-width: 768px) {
+  .serviceSection {
+    padding: toRem(40) toRem(20);
+  }
+
+  .serviceItem {
+    flex-direction: column !important;
+    gap: toRem(20);
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 480px)** ==== */
+@media (max-width: 480px) {
+  .serviceSection .textContent {
+    gap: 15px;
+  }
+
+  .serviceSection .title {
+    font-size: toRem(32);
+    width: 100%;
+    text-align: left;
+    margin-bottom: toRem(20);
+  }
+
+  .serviceSection .image {
+    width: 335px;
+    height: 190px;
+    text-align: left;
+  }
+
+  .textContent .highlightText {
+    font-size: toRem(18);
+    font-weight: 600;
+    color: #ff2b44;
+    margin-top: toRem(5);
+    text-align: left;
+  }
+
+  .serviceSection .serviceTitle {
+    font-size: toRem(28);
+    text-align: left;
+  }
+
+  .serviceSection .description {
+    font-size: toRem(16);
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .serviceSection .BlogTitle {
+    flex-direction: column;
+    gap: toRem(10);
+    align-items: center;
+  }
+
+  .serviceSection .BlogTitle p {
+    font-size: toRem(16);
+    width: 100%;
+    text-align: left;
+  }
+}

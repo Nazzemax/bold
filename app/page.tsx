@@ -31,16 +31,24 @@ import { servicesData2 } from "@/src/data/servicesData2";
 import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
-import { crmBenefits, howWeWorkSteps } from "@/src/data/stepsData";
-import ExamplePage from "@/src/UI/ExamplePage/ExamplePage";
+import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
+import ExamplePage, { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
+import Results from "@/src/components/Results/Results";
 
 export default function Home() {
   return (
     <div>
-      <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"/>
-      <ExamplePage/>
+      <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  />
+      <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
+      <StepCard title="Комплексное маркетинговое сопровождение" steps={crmBenefits} buttonText="Получить консультацию"  />
+      <Results/>
+      
+      <ExamplePage1 />
+      <ExamplePage2 />
       <PartnershipBanner/>
       <ServiceSection2 {...servicesData2} />;
+      <ServiceSection {...servicesData1} />;
+
       {/* <Headers /> */}
       {/* блок 1 на странице брендинга (слайдер) */}
       {/* <BrandingCarousel /> */}
@@ -61,7 +69,7 @@ export default function Home() {
       {/* зигзаг-блок 1 на странице SMM */}
       <ApproachSection />
       {/* блок 1 на странице о нас */}
-      <BusinessResults />
+     
       {/* блок 2 на странице контекстной рекламы */}
       {/* <HowWeWork /> */}
       {/* блок частозадаваемых вопросов на странице SEO оптимизации */}
@@ -83,7 +91,7 @@ export default function Home() {
       {/* <DiagnosticBanner/> */}
       {/* <ReviewsSlider/> */}
       <VideoProduction />
-      <ServiceSection {...servicesData1} />;
+      
       
       <ServiceSection3 {...servicesData3} />;
     </div>

@@ -1,0 +1,147 @@
+@function toRem($value) {
+    @return ($value / 16) * 1rem;
+}
+
+.resultsSection {
+    background-color: #000;
+    padding: toRem(60) toRem(20);
+    position: relative;
+    overflow: hidden;
+    background-image: url('/image/Union.png'); /* Путь к фону */
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain; /* Чтобы фон адаптировался */
+
+    @media (max-width: 1024px) { /* Планшеты */
+        background-size: cover;
+        background-position: center;
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.container {
+    max-width: toRem(1328);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.title {
+    font-size: toRem(68);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: toRem(40);
+
+    @media (max-width: 1024px) { /* Планшеты */
+        font-size: toRem(48);
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        font-size: toRem(32);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(40);
+    padding: toRem(40);
+    position: relative;
+
+    @media (max-width: 1024px) { /* Планшеты */
+        grid-template-columns: 1fr;
+        gap: toRem(30);
+        padding: toRem(15);
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        grid-template-columns: 1fr;
+        gap: toRem(25);
+        padding: toRem(8);
+    }
+}
+
+.resultItem {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+    padding: toRem(20);
+    position: relative;
+
+    /* Добавляем отступ перед границей */
+    padding-bottom: toRem(5);
+
+    @media (max-width: 1024px) { /* Планшеты */
+        padding-bottom: toRem(25); /* Увеличиваем отступ в адаптиве */
+        margin: 5px;
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        padding-bottom: toRem(30); /* Еще больше увеличиваем на телефонах */
+        margin: 5px;
+    }
+
+    /* Границы только на десктопе */
+    &:nth-child(odd) {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    &:nth-child(even) {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Только нижняя граница на мобильных */
+    @media (max-width: 1024px) { /* Планшеты */
+        &:nth-child(odd),
+        &:nth-child(even) {
+            border-left: none;
+            border-bottom: 3px solid rgba(105, 107, 116, 1);
+        }
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        &:nth-child(odd),
+        &:nth-child(even) {
+            border-left: none;
+            border-bottom: 3px solid rgba(105, 107, 116, 1);
+        }
+    }
+
+    /* Убираем нижнюю границу у последнего элемента */
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.number {
+    font-size: toRem(24);
+    font-weight: 700;
+    color: #ff2d2d;
+
+    @media (max-width: 1024px) { /* Планшеты */
+        font-size: toRem(20);
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        font-size: toRem(24);
+    }
+}
+
+.text {
+    font-size: toRem(24);
+    color: #FFFFFF;
+    line-height: 1.5;
+    margin-bottom: toRem(10); /* Отступ перед границей */
+
+    @media (max-width: 1024px) { /* Планшеты */
+        font-size: toRem(22);
+        margin-bottom: toRem(15); /* Увеличиваем отступ */
+    }
+
+    @media (max-width: 768px) { /* Телефоны */
+        font-size: toRem(18);
+        margin-bottom: toRem(10); /* Еще больше отступ */
+    }
+}
