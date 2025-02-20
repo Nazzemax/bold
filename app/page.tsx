@@ -34,12 +34,20 @@ import StepCard from "@/src/UI/StepCard/StepCard";
 import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
 import ExamplePage, { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
+import CRM from '@/app/pages/Page1/CRM'
+import CMS from "@/app/pages/Page1/CMS";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  />
-      <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
+      {/* <Link href='/crm'>
+      <CRM/>
+      </Link> */}
+      
+      <CMS/>
+      {/* <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  /> */}
+      {/* <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
       <StepCard title="Комплексное маркетинговое сопровождение" steps={crmBenefits} buttonText="Получить консультацию"  />
       <Results/>
       
@@ -47,7 +55,7 @@ export default function Home() {
       <ExamplePage2 />
       <PartnershipBanner/>
       <ServiceSection2 {...servicesData2} />;
-      <ServiceSection {...servicesData1} />;
+      
 
       {/* <Headers /> */}
       {/* блок 1 на странице брендинга (слайдер) */}
@@ -61,23 +69,23 @@ export default function Home() {
       {/* блок 7 на галвной странице (слайдер о помощзи другим бизнесам) */}
       {/* <Cases /> */}
       {/* блок видео отзывов на страницах услуг */}
-      <VideoTestimonials />
+      {/* <VideoTestimonials /> */}
       {/* блок 10 на главной тсранице (слайдер отзывов клиентов) */}
       {/* <ReviewsSlider /> */}
       {/* блок 3 на старнице о нас (фреймы команды) */}
       {/* <Team /> */}
       {/* зигзаг-блок 1 на странице SMM */}
-      <ApproachSection />
+      {/* <ApproachSection /> */}
       {/* блок 1 на странице о нас */}
      
       {/* блок 2 на странице контекстной рекламы */}
       {/* <HowWeWork /> */}
       {/* блок частозадаваемых вопросов на странице SEO оптимизации */}
-      <Seo />
+      {/* <Seo /> */}
       {/* блок 2 (слайдер продающегося контента) страница SMM */}
-      <CarouselBlog />
+      {/* <CarouselBlog />
       {/* зигзаг-блок 4 на странице CRM */}
-      <CRMIntegration />
+      {/* <CRMIntegration /> */} */}
       {/* блок 9 на главной странице (слайдер партнёры) */}
       {/* <Carousel /> */}
       {/* блок 3 на главной странице (кружки-часики) */}
@@ -87,13 +95,13 @@ export default function Home() {
       {/* блок 6 на галвной странице (диагностика) */}
       {/* <DiagnosticBanner /> */}
       {/* блок 3 на странице CRM (официальные партнёры) */}
-      <PartnershipBanner />
+      {/* <PartnershipBanner /> */}
       {/* <DiagnosticBanner/> */}
       {/* <ReviewsSlider/> */}
-      <VideoProduction />
+      {/* <VideoProduction />
       
       
-      <ServiceSection3 {...servicesData3} />;
+      <ServiceSection3 {...servicesData3} />; */} */}
     </div>
 
   );
