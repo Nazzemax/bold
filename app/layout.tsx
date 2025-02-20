@@ -33,9 +33,9 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body
-        className={`${cannonade.className} antialiased`}
-      >
+
+      <body className={`${cannonade.className} antialiased`}>
+        {/* <Header /> */}
         {children}
       </body>
     </html>

@@ -1,5 +1,5 @@
 
-import Cases from "@/src/components/Cases/Cases";
+// import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
 import VideoTestimonials from "@/src/components/VideoTestimonials/VideoTestimonials";
@@ -32,7 +32,7 @@ import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
 import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
-import ExamplePage, { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
+import  { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
 
 export default function Home() {

@@ -37,8 +37,8 @@ const Section: React.FC<SectionProps> = ({ title, items }) => {
               <div className={styles.text}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
-                <p className={styles.cardDescription2}>{item.points}</p>
-                <p className={styles.cardDescription3}>{item.points1}</p>
+               {item.points && <p className={styles.cardDescription2}>{item.points}</p> }
+               {item.points1 && <p className={styles.cardDescription3}>{item.points1}</p> }
               </div>
             </div>
           ))}

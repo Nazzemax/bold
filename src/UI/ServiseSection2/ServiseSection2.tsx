@@ -23,7 +23,7 @@ const ServiceSection2: React.FC<ServiceSectionProps> = ({ sectionTitle, services
             <img src={service.imageUrl} alt={service.title} className={styles.image} />
             <div className={styles.textContent}>
               <h3 className={styles.serviceTitle}>{service.title}</h3>
-              <p className={styles.description}>{service.description}</p>
+             {service?.description && <p className={styles.description}>{service.description}</p> }
 
               {/* Добавляем условие, если есть tags */}
               {service.tags && service.tags.length > 0 && (
