@@ -131,7 +131,7 @@ export default function CasesSlider({}: Props) {
             <div key={index} className={styles.staticCard}>
               <div
                 className={styles.tags}
-                style={{ backgroundImage: `url(${caseItem.image.src})` }}
+                style={{ backgroundImage: `url(${caseItem.image.src})`, height:'200px' }}
               >
                 {caseItem.tags.map((tag, tagIndex) => (
                   <div key={tagIndex} className={styles.tag}>
@@ -173,10 +173,11 @@ export default function CasesSlider({}: Props) {
           speed={3000}
           freeMode={true}
           breakpoints={{
-            320: { slidesPerView: 3 }, // Теперь на мобильных будет 3 карточки
-            640: { slidesPerView: 3 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3 },
+            320: { slidesPerView: 1 }, // Теперь на мобильных будет 3 карточки
+            576: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 2 },
+            1280: { slidesPerView: 3 },
           }}
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         >
