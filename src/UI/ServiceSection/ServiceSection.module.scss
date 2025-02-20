@@ -1,104 +1,130 @@
 @function toRem($value) {
-    @return ($value / 16) * 1rem;
-  }
-  body {
-    font-family: 'Cannonade', sans-serif;
-  }
+  @return calc($value / 16) * 1rem;
+}
+
+body {
+  font-family: 'Cannonade', sans-serif;
+}
+
+.serviceSection {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(40);
   
-  .serviceSection {
+  max-width: toRem(1328);
+  padding: 0 toRem(20);
+  margin: 0 auto;
+
+  .title {
+    font-size: toRem(42);
+    font-weight: 700;
+    color: #2a2d35;
+  }
+
+  .container {
     display: flex;
     flex-direction: column;
+    gap: toRem(90);
+  }
+
+  .serviceItem {
+    display: flex;
+    align-items: center;
     gap: toRem(40);
+
+    &:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .image {
+    flex: 1 1 0;
+    max-width: toRem(648);
+    min-width: toRem(335);
+    width: 100%;
+    height: auto;
+    border-radius: toRem(16);
+  }
+
+  .textContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+  }
+
+  .serviceTitle {
+    color: #2A2D35;
+    font-size: toRem(40);
+    font-weight: 700;
+    @media screen and (max-width: 993px) {
+      font-size: toRem(30);
+    }
+    @media screen and (max-width: 866px) {
+      font-size: toRem(28);
+      line-height: toRem(33.89);
+    }
+  }
+
+  .description {
+    font-size: toRem(18);
+    color: #838895;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+/* Mobile styles for resolutions less than 830px */
+@media (max-width: 830px) {
+  .serviceSection {
+    padding: toRem(40) toRem(20);
     
-    max-width: toRem(1328);
-    margin: 0 auto;
-  
     .title {
-      font-size: toRem(42);
+      max-width: toRem(648);
+      font-size: toRem(32);
+      line-height: toRem(35.2);
       font-weight: 700;
       color: #2a2d35;
     }
-  
-    .container {
-      display: flex;
+    
+    /* Using a more specific selector to override the odd/even flex-direction rules */
+    .container .serviceItem {
       flex-direction: column;
-      gap: toRem(90);
-    }
-  
-    .serviceItem {
-      display: flex;
-      align-items: center;
-      gap: toRem(40);
-  
-      &:nth-child(odd) {
-        flex-direction: row;
-      }
-  
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-      }
-
-    }
-  
-    .image {
-      width: toRem(648);
-      height: auto;
-      border-radius: toRem(16);
-    }
-  
-    .textContent {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: toRem(10);
-    }
-  
-    .serviceTitle {
-        color: #2A2D35;
-      font-size: toRem(40);
-      font-weight: 700;
-    }
-  
-    .description {
-      font-size: toRem(18);
-      color: #838895;
-      font-weight: 500;
-      line-height: 1.5;
-    }
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 768px) {
-    .serviceSection {
-      padding: toRem(40) toRem(20);
-    }
-  
-    .serviceItem {
-      flex-direction: column !important;
       gap: toRem(20);
-      text-align: center;
-    }
-  
-    .image {
-      width: 100%;
-      height: auto;
+      text-align: left;
+
+      .textContent,
+      .image {
+        width: 100%;
+      }
+      
+      /* Reorder textContent to come before the image */
+      .textContent {
+        order: -1;
+        max-width: toRem(640);
+      }
     }
   }
-  
-  @media (max-width: 480px) {
-    .title {
-      font-size: toRem(28);
-      text-align: left;
-    }
-  
-    .serviceTitle {
-      font-size: toRem(18);
-      text-align: left;
-    }
-  
-    .description {
-      font-size: toRem(14);
-      text-align: left;
-    }
+}
+
+@media (max-width: 480px) {
+  .title {
+    
+    font-size: toRem(28);
+    text-align: left;
   }
-  
+
+  .serviceTitle {
+    font-size: toRem(18);
+    text-align: left;
+  }
+
+  .description {
+    font-size: toRem(14);
+    text-align: left;
+  }
+}
