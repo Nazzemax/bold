@@ -1,5 +1,5 @@
 body {
-  font-family: 'Cannonade', sans-serif;
+  font-family: "Cannonade", sans-serif;
 }
 
 /* ==== Основной контейнер ==== */
@@ -28,7 +28,7 @@ body {
       font-size: 68px;
       font-weight: 700;
       margin: 0;
-      color: #2A2D35;
+      color: #2a2d35;
     }
 
     p {
@@ -57,7 +57,7 @@ body {
       flex-direction: column;
       align-items: flex-start;
       padding: 30px;
-      border: 1px solid #EAEAEA;
+      border: 1px solid #eaeaea;
       border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       background-color: white;
@@ -78,7 +78,7 @@ body {
 
       .text {
         h2 {
-          color: #2A2D35;
+          color: #2a2d35;
           font-size: 40px;
           font-weight: 700;
           margin: 0;
@@ -99,7 +99,6 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      
 
       img {
         max-width: 648px;
@@ -150,9 +149,11 @@ body {
   }
 
   .image {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+
   }
 
   .image img {
@@ -165,26 +166,25 @@ body {
 @media (max-width: 768px) {
   .BusinessResults {
     padding: 40px 20px;
-  
 
-  .container {
-    padding: 0;
-  }
+    .container {
+      padding: 0;
+    }
 
-  .header {
-    h1 {
-      font-size: 32px;
-      line-height: 42px;
+    .header {
+      h1 {
+        font-size: 32px;
+        line-height: 42px;
+      }
+    }
+
+    .header p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: left;
     }
   }
-
-  .header p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: left;
-  }
-}
 
   /* Контент в колонку */
   .content {

@@ -85,7 +85,7 @@ export default function Home() {
       {/* блок 2 (слайдер продающегося контента) страница SMM */}
       {/* <CarouselBlog />
       {/* зигзаг-блок 4 на странице CRM */}
-      {/* <CRMIntegration /> */} */}
+      {/* <CRMIntegration /> */} 
       {/* блок 9 на главной странице (слайдер партнёры) */}
       {/* <Carousel /> */}
       {/* блок 3 на главной странице (кружки-часики) */}
@@ -101,7 +101,7 @@ export default function Home() {
       {/* <VideoProduction />
       
       
-      <ServiceSection3 {...servicesData3} />; */} */}
+      <ServiceSection3 {...servicesData3} />; */} 
     </div>
 
   );
