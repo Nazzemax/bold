@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import styles from "./BusinessResults.module.scss";
 import Image from "next/image";
 
@@ -8,7 +9,8 @@ interface BusinessResultsProps {
   philosophyTitle: string;
   philosophyText: string;
   icon: string;
-  image: string;
+  image?: string;
+  videoUrl?: string;
 }
 
 const BusinessResults: React.FC<BusinessResultsProps> = ({
@@ -18,7 +20,10 @@ const BusinessResults: React.FC<BusinessResultsProps> = ({
   philosophyText,
   icon,
   image,
+  videoUrl,
 }) => {
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+
   return (
     <div className={styles.BusinessResults}>
       <div className={styles.container}>
@@ -36,8 +41,36 @@ const BusinessResults: React.FC<BusinessResultsProps> = ({
               <p>{philosophyText}</p>
             </div>
           </div>
-          <div className={styles.image}>
-            <Image src={image} alt="Изображение" className={styles.img} />
+
+          {/* Видео с картинкой-заглушкой */}
+          <div className={styles.media}>
+            {isVideoVisible ? (
+              <iframe
+                width="100%"
+                height="315"
+                src={videoUrl}
+                title="YouTube Video Player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className={styles.video}
+              ></iframe>
+            ) : (
+              <div className={styles.videoPlaceholder} onClick={() => setIsVideoVisible(true)}>
+                <Image src={image} alt="Видео превью" className={styles.img} />
+                <div className={styles.playButton}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="64"
+                    height="64"
+                    fill="red"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

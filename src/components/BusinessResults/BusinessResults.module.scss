@@ -1,3 +1,7 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
 body {
   font-family: "Cannonade", sans-serif;
 }
@@ -5,17 +9,16 @@ body {
 /* ==== Основной контейнер ==== */
 .BusinessResults {
   width: 100%;
-  padding: 80px 0;
+  padding: toRem(80) toRem(20);
   background-color: #f9f9f9;
   overflow: hidden;
 
   .container {
-    max-width: 1328px;
-    height: auto;
+    max-width: toRem(1328);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: toRem(20);
   }
 
   /* ==== Заголовок ==== */
@@ -25,19 +28,19 @@ body {
     align-items: center;
 
     h1 {
-      font-size: 68px;
+      font-size: toRem(68);
       font-weight: 700;
       margin: 0;
       color: #2a2d35;
     }
 
     p {
-      padding-top: 30px;
+      padding-top: toRem(30);
       font-weight: 500;
-      font-size: 18px;
+      font-size: toRem(18);
       margin: 0;
       color: #838895;
-      max-width: 421px;
+      max-width: toRem(421);
       text-align: justify;
     }
   }
@@ -45,26 +48,28 @@ body {
   /* ==== Контентный блок ==== */
   .content {
     display: flex;
-    margin-top: 20px;
+    margin-top: toRem(20);
     justify-content: space-between;
-    gap: 20px;
+    gap: toRem(20);
 
     /* ==== Карточка "Наша философия" ==== */
     .philosophy {
-      width: 648px;
+      width: 100%;
+      max-width: toRem(648);
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 30px;
-      border: 1px solid #eaeaea;
-      border-radius: 12px;
+      padding: toRem(50);
+      border: 1px solid #EAEAEA;
+      border-radius: toRem(12);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       background-color: white;
+      
 
       .icon {
-        width: 80px;
-        height: 80px;
+        width: toRem(80);
+        height: toRem(80);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -78,42 +83,90 @@ body {
 
       .text {
         h2 {
-          color: #2a2d35;
-          font-size: 40px;
+          color: #2A2D35;
+          font-size: toRem(40);
           font-weight: 700;
           margin: 0;
         }
 
         p {
-          font-size: 18px;
+          font-size: toRem(18);
           color: #838895;
           margin: 0;
-          max-width: 536px;
+          max-width: toRem(536);
         }
       }
     }
+    .media {
+      position: relative;
+      
+      height: auto;
+      width: 100%;
+      max-width: 648px;
+      border-radius: 24px;
+      .video {
+        width: 100%;
+        height: toRem(350);
+        border-radius: toRem(8);
+      }
+    }
 
-    /* ==== Изображение ==== */
-    .image {
+    /* ==== Видео-контейнер ==== */
+    .videoContainer {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+      cursor: pointer;
+      max-width: toRem(648);
+      border-radius: toRem(8);
+      overflow: hidden;
+
+      
 
       img {
-        max-width: 648px;
+        width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: toRem(8);
+      }
+    }
+
+    /* ==== Кнопка Play ==== */
+    .playButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ff0000; /* Красный цвет кнопки */
+      border: 5px solid #ffffff; /* Белая граница */
+      border-radius: 50%;
+      width: toRem(80);
+      height: toRem(80);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+
+      svg {
+        fill: #ffffff; /* Белая иконка Play */
+        width: toRem(36);
+        height: toRem(36);
       }
     }
   }
 }
 
-/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ (768px - 1024px)** ==== */
+/* ==== 📌 Адаптив для планшетов (768px - 1024px) ==== */
 @media (max-width: 1024px) {
   .BusinessResults {
-    padding: 60px 20px;
-  }
+    padding: toRem(60) toRem(20);
+  
 
   .container {
     width: 100%;
@@ -122,197 +175,166 @@ body {
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: toRem(10);
 
     h1 {
-      font-size: 32px;
-      line-height: 58px;
+      font-size: toRem(40);
+      line-height: toRem(50);
     }
 
     p {
-      font-size: 16px;
+      font-size: toRem(16);
       max-width: 100%;
       text-align: left;
     }
   }
+  }
 
-  /* Контент в столбик */
   .content {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: toRem(20);
   }
 
-  .philosophy {
+  .philosophy,
+  .videoContainer {
     width: 100%;
-    padding: 20px;
+    max-width: toRem(500);
   }
 
-  .image {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  .playButton {
+    width: toRem(60);
+    height: toRem(60);
 
-  }
-
-  .image img {
-    max-width: 100%;
-    height: auto;
+    svg {
+      width: toRem(30);
+      height: toRem(30);
+    }
   }
 }
 
-/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)** ==== */
+/* ==== 📌 Адаптив для телефонов (до 768px) ==== */
 @media (max-width: 768px) {
   .BusinessResults {
-    padding: 40px 20px;
+    padding: toRem(40) toRem(20);
+  }
 
     .container {
       padding: 0;
     }
 
-    .header {
-      h1 {
-        font-size: 32px;
-        line-height: 42px;
-      }
-    }
-
-    .header p {
-      font-size: 16px;
-      font-weight: 500;
-      line-height: 24px;
-      text-align: left;
-    }
+  .header h1 {
+    font-size: toRem(32);
+    line-height: toRem(42);
   }
 
-  /* Контент в колонку */
+  .header p {
+    font-size: toRem(16);
+    line-height: toRem(24);
+    text-align: left;
+  }
+
   .content {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 15px;
+    gap: toRem(15);
   }
 
-  /* Карточка "Наша философия" */
   .philosophy {
     width: 100%;
-    max-width: 375px;
-    height: auto;
-    padding: 15px;
-    gap: 20px;
-
-    .icon {
-      width: 60px;
-      height: 60px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .text h2 {
-      font-size: 28px !important;
-      margin-bottom: 15px;
-      line-height: 32px;
-      text-align: left;
-    }
-
-    .text p {
-      font-size: 16px;
-      text-align: left;
-    }
+    max-width: toRem(375);
+    padding: toRem(15);
+    gap: toRem(20);
   }
 
-  /* Картинка */
-  .image {
+  .videoContainer {
     width: 100%;
-    display: flex;
     justify-content: center;
   }
 
-  .image img {
-    width: 100%;
-    max-width: 335px;
-    min-height: 323px;
-    border-radius: 8px;
+  .playButton {
+    width: toRem(50);
+    height: toRem(50);
+
+    svg {
+      width: toRem(25);
+      height: toRem(25);
+    }
   }
 }
 
-/* ==== 📌 **АДАПТИВНОСТЬ ДЛЯ СУЖЕННЫХ МОБИЛЬНЫХ ЭКРАНОВ (до 375px)** ==== */
+/* ==== 📌 Адаптив для мобильных устройств (до 375px) ==== */
 @media (max-width: 375px) {
   .BusinessResults {
-    padding: 20px;
-  }
+    padding: toRem(20);
+  
 
   .container {
     width: 100%;
   }
 
   .header h1 {
-    font-size: 32px;
-    line-height: 35px;
+    font-size: toRem(28);
+    line-height: toRem(32);
   }
 
   .header p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
+    font-size: toRem(14);
+    line-height: toRem(20);
     text-align: left;
   }
 
-  /* Контент в колонку */
   .content {
     align-items: center;
     width: 100%;
-    gap: 10px;
-  }
+    gap: toRem(10);
+  
 
-  /* Карточка "Наша философия" */
+  /* ✅ Перенесено внутрь .philosophy */
   .philosophy {
     width: 100%;
-    max-width: 335px;
-    height: auto;
-    padding: 10px;
-    gap: 15px;
-
-    .icon {
-      width: 50px;
-      height: 50px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    max-width: toRem(335);
+    padding: toRem(10);
+    gap: toRem(20);
+    .icon{
+      width: 80px;
+      height: 80px;
+    }
+    .text {
+      padding-bottom: 10px;
+      h2 {
+        color: #2A2D35;
+        font-size: toRem(32);
+        font-weight: 700;
+        line-height: 35px;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      p{
+        font-size: toRem(16);
       }
     }
-
-    .text h2 {
-      font-size: 24px !important;
-      margin-bottom: 10px;
-      line-height: 28px;
-      text-align: left;
-    }
-
-    .text p {
-      font-size: 14px;
-      text-align: left;
+    
     }
   }
+}
+    
+  
 
-  /* Картинка */
-  .image {
+  .videoContainer {
     width: 100%;
-    display: flex;
     justify-content: center;
   }
 
-  .image img {
-    width: 100%;
-    max-width: 100%;
-    min-height: auto;
-    border-radius: 8px;
+  .playButton {
+    width: toRem(40);
+    height: toRem(40);
+
+    svg {
+      width: toRem(20);
+      height: toRem(20);
+    }
   }
 }
+

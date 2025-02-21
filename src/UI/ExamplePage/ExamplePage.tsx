@@ -2,6 +2,8 @@ import React from "react";
 import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
 import imageResults from "@/public/image/image79.png";
 import iconBrain from "@/public/image/Frame793369.png";
+import iconBrain1 from "@/public/image/Frame79336.png";
+import videoThumbnail from "@/public/image/video-thumbnail.png";
 
 export const ExamplePage1 = () => {
   return (
@@ -31,5 +33,21 @@ export const ExamplePage2 = () => {
         image={imageResults}
       />
     </div>
+  );
+};
+
+export const ExamplePage3 = () => {
+  return (
+    <div>
+    <BusinessResults
+      title="Креатив, который выделяет ваш бренд"
+      description="С более чем 10-летним опытом в видеопродакшн, наша команда профессионалов создает видеоролики, которые не только привлекают внимание, но и эффективно достигают ваших бизнес-целей."
+      philosophyTitle="В Bold Brands мы уверены:"
+      philosophyText="Качественный видеоконтент — это ключ к успешному продвижению вашего бизнеса."
+      icon={iconBrain1}
+      image={videoThumbnail} // Здесь передаем превью-картинку
+      videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // Видео YouTube
+    />
+  </div>
   );
 };

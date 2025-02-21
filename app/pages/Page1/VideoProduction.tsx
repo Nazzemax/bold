@@ -34,14 +34,16 @@ import StepCard from "@/src/UI/StepCard/StepCard";
 import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
 import ExamplePage, { ExamplePage1, ExamplePage2, ExamplePage3 } from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
+import VideoPlayButton from "@/src/components/VideoButton/VideoButton";
 
-export default function CMS() {
+export default function VideoProductionPage() {
   return (
     <div>
-    <ExamplePage2 />
-      <ServiceSection {...servicesData1} />;
-      <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
-      <Results/>
+      
+      <ExamplePage3 />
+      <VideoPlayButton/>
+      <VideoProduction/>
+      <VideoTestimonials/>
       <Form/>
       
       

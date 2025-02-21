@@ -32,20 +32,22 @@ import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
 import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
-import  { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
+import ExamplePage, { ExamplePage1, ExamplePage2, ExamplePage3 } from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
 import CRM from '@/app/pages/Page1/CRM'
 import CMS from "@/app/pages/Page1/CMS";
 import Link from "next/link";
+import VideoProductionPage from "./pages/Page1/VideoProduction";
 
 export default function Home() {
   return (
     <div>
+      <VideoProductionPage/>
       {/* <Link href='/crm'>
-      <CRM/>
+      // <CRM/>
       </Link> */}
       
-      <CMS/>
+      {/* <CMS/> */}
       {/* <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  /> */}
       {/* <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
       <StepCard title="Комплексное маркетинговое сопровождение" steps={crmBenefits} buttonText="Получить консультацию"  />
