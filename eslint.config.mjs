@@ -13,4 +13,20 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 ];
 
-export default eslintConfig;
+const config = [
+  {
+    ...eslintConfig,
+    rules: {
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_', // Игнорировать переменные, начинающиеся с "_"
+          varsIgnorePattern: '^_', // Игнорировать переменные, начинающиеся с "_"
+          ignoreRestSiblings: true, // Игнорировать остаточные переменные
+        },
+      ],
+    },
+  },
+];
+
+export default config;

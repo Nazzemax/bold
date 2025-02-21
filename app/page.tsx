@@ -1,10 +1,14 @@
-import Header from "./components/layout/header/Header";
+import Advantages from "./components/layout/advantages/Advantages";
+import CasesSlider from "./components/layout/cases-slider/CasesSlider";
+import Form from "./components/layout/form/Form";
 
 export default function Home() {
   return (
-   <>
-    <Header bgColor="black"/>
-
-   </>
+    <>
+      <CasesSlider />
+      {/* форма будет взята с ветки anna */}
+      {/* <Form /> */}
+      <Advantages />
+    </>
   );
 }

@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import Header from '../components/layout/header/Header'
 import styles from './Cases.module.scss'
@@ -18,5 +17,4 @@ function Cases() {
     </main>
   )
 }
-
 export default Cases

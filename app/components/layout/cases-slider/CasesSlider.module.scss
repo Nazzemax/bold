@@ -1,0 +1,112 @@
+.CasesSlider {
+  display: flex;
+  flex-direction: column;
+  max-width: 70vw;
+  margin: 200px auto;
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .titles {
+      flex: 1;
+      .subtitle {
+        color: #838895;
+        font-size: 24px;
+      }
+      .title {
+        font-size: 68px;
+        line-height: 1.2;
+        font-weight: 700;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: red;
+
+      span {
+        word-break: break-word;
+      }
+    }
+  }
+
+  .slider {
+    width: calc(
+      100vw - 15vw
+    ); // 100vw минус левый отступ (70vw / 2 = 35vw -> 100vw - 35vw = 65vw)
+    margin-left: auto; // Прижимает правый край слайдера к правому краю экрана
+    height: auto;
+    overflow: hidden;
+
+    .slide {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .tags {
+        width: 100%;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        gap: 10px;
+        border-radius: 15px;
+        padding: 5px 20px;
+        .tag {
+          background-color: #414141;
+          align-self: flex-start;
+          opacity: .5;
+          color: #fff;
+          padding: 5px 10px;
+          margin: 10px 0;
+          border-radius: 10px;
+          display: flex;
+          gap: 5px;
+        }
+      }
+      .social{
+        display: flex;
+        gap: 10px;
+        div{
+          display: flex;
+          align-items: center;
+          color: #838895;
+          padding: 5px 10px;
+          margin: 10px 0;
+          gap: 5px;
+          border: 1px solid #838895;
+          border-radius: 5px;
+          span{
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .caseInfo{
+        h3{
+          font-weight: 700;
+          font-size: 28px;
+        }
+        .box{
+          width: 10px;
+          height: 10px;
+          background-color: #bcbcbc;
+          margin-right: 15px;
+          display: inline-block;
+        }
+        p{
+          display: inline;
+          color: #838895;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
