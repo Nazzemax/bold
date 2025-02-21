@@ -1,0 +1,26 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 260px;
+  border-radius: 8px;
+  background-color: rgba(65, 65, 65, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  color: white;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &__icon {
+    min-width: 20px;
+  }
+
+  &__text {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

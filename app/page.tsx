@@ -1,7 +1,14 @@
-import Advantages from "./components/advantages/Advantages";
-import Challenges from "./components/challenges/Challenges";
-import HeroSlider from "./components/heroSlider/HeroSlider";
-import Partners from "./components/partners/Partners";
+import Banner from "@/features/home/ui/banner/Banner";
+import Challenges from "@/features/home/ui/challenges/Challenges";
+import Partners from "@/widgets/partners/Partners";
+import VideoPlayButton from "@/widgets/videoButton/VideoButton";
+import Advantages from "@/widgets/advantages/Advantages";
+import { Services } from "@/features/home/ui/services/Services";
+import { DiagnosticBanner } from "@/features/home/ui/diagnosticBanner/DiagnosticBanner";
+import MarketingSection from "@/features/home/ui/marketingSection/MarketingSection";
+import { Award } from "@/features/home/ui/award/Award";
+import { FormContactUs } from "@/widgets/Forms/FormContactUs";
+// import { Reviews } from "@/widgets/reviewsSlider/ReviewsSlider";
 
 const advantages = [
   {
@@ -28,52 +35,24 @@ const advantages = [
 export default function Home() {
   return (
     <div className="">
-      {/* Все адаптировано */}
-      {/* 1 блок 1 страница */}
-      {/* <HeroSlider /> */}
-      {/* 5 блок 1 страница */}
-      {/* <Challenges /> */}
-      {/* 10 блок 1 страница */}
-      {/* <Partners /> */}
-      {/* 4 блок 1 страница */}
-      {/* <Advantages
+      <Banner />
+      <MarketingSection />
+      <VideoPlayButton />
+      <Advantages
         title={"Bold Brands International "}
         subtitle={
           "совместно создаём прочную основу и уверенное будущее для вашей компании"
         }
         subtitleStyle={{ color: "#FF2B44" }}
         advantages={advantages}
-      /> */}
+      />
+      <Challenges />
+      <Services />
+      <DiagnosticBanner />
+      <Award />
+      <Partners />
+      {/* <Reviews/> */}
+      <FormContactUs />
     </div>
   );
 }
-
-// Готовый Компонент для Страницы Услуги
-
-{
-  /* <Advantages
-  subtitle={"O‘z-o‘zidan so‘zlaydigan raqamlar"}
-  subtitleStyle={{ color: "#AAADB5" }}
-  advantages={advantages}
-  advantageStyle={{ flexDirection: "column-reverse" }}
-/> */
-}
-
-// const advantages = [
-//   {
-//     title: "150+",
-//     subtitle: "Muvaffaqiyatli SMM kampaniyalari",
-//   },
-//   {
-//     title: "600%",
-//     subtitle: "Reklamadan olingan ROI: gacha",
-//   },
-//   {
-//     title: "+80%",
-//     subtitle: "Mijozlarning o‘rtacha ariza o‘sishi:",
-//   },
-//   {
-//     title: "1,5+",
-//     subtitle: "million organik kontent ko‘rishlar soni",
-//   },
-// ];

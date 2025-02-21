@@ -1,0 +1,140 @@
+@function toRem($value) {
+  @return calc($value / 16) * 1rem;
+}
+
+.services {
+  &__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: toRem(40) toRem(16);
+    text-align: center;
+
+    background-image: url("../../../../public/services/UnionBg.png");
+
+    background-position: center 250%;
+    background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      padding: toRem(64) toRem(16);
+    }
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 768px) {
+      background-size: cover;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: #1a202c;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1328px;
+    margin: 20px auto;
+    padding: 0 20px;
+
+    @media (min-width: 768px) {
+      margin: 40px auto;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// ServiceItem
+
+.card {
+  border: 1px solid #e5e7eb;
+  max-width: 421px;
+  min-height: 525px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    border-radius: 16px 16px 0 0;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  &__badges {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  &__badge {
+    border: 1.5px solid #d1d7e2;
+    padding: 6px 8px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #838895;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    max-width: 150px;
+    padding: 8px;
+    color: #ff2b44;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f3f4f6;
+      border-radius: 8px;
+    }
+  }
+}
