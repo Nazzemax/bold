@@ -45,8 +45,8 @@ export const ExamplePage3 = () => {
       philosophyTitle="В Bold Brands мы уверены:"
       philosophyText="Качественный видеоконтент — это ключ к успешному продвижению вашего бизнеса."
       icon={iconBrain1}
-      image={videoThumbnail} // Здесь передаем превью-картинку
-      videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // Видео YouTube
+      image={videoThumbnail} 
+      videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" 
     />
   </div>
   );

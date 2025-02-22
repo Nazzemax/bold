@@ -42,7 +42,8 @@ import VideoProductionPage from "./pages/Page1/VideoProduction";
 export default function Home() {
   return (
     <div>
-      <VideoProductionPage/>
+      
+      {/* <VideoProductionPage/> */}
       {/* <Link href='/crm'>
       // <CRM/>
       </Link> */}
@@ -100,10 +101,13 @@ export default function Home() {
       {/* <PartnershipBanner /> */}
       {/* <DiagnosticBanner/> */}
       {/* <ReviewsSlider/> */}
-      {/* <VideoProduction />
+      {/* /* <VideoProduction /> */}
       
       
-      <ServiceSection3 {...servicesData3} />; */} 
+      <ServiceSection3 {...servicesData3} />; 
+      <Form/>
+       <BrandingCarousel/>
+      
     </div>
 
   );
