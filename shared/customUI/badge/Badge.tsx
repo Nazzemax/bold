@@ -1,4 +1,4 @@
-import { cn } from "@/shared/lib/utils";
+import { cn } from "@/shared/utils/utils";
 import Image from "next/image";
 
 import styles from "./Badge.module.scss";

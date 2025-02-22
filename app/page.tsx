@@ -1,14 +1,14 @@
-import Banner from "@/features/home/ui/banner/Banner";
-import Challenges from "@/features/home/ui/challenges/Challenges";
+import Banner from "@/features/home/components/banner/Banner";
+import Challenges from "@/features/home/components/challenges/Challenges";
 import Partners from "@/widgets/partners/Partners";
 import VideoPlayButton from "@/widgets/videoButton/VideoButton";
 import Advantages from "@/widgets/advantages/Advantages";
-import { Services } from "@/features/home/ui/services/Services";
-import { DiagnosticBanner } from "@/features/home/ui/diagnosticBanner/DiagnosticBanner";
-import MarketingSection from "@/features/home/ui/marketingSection/MarketingSection";
-import { Award } from "@/features/home/ui/award/Award";
+import MarketingSection from "@/features/home/components/marketingSection/MarketingSection";
+import { Award } from "@/features/home/components/award/Award";
 import { FormContactUs } from "@/widgets/Forms/FormContactUs";
-// import { Reviews } from "@/widgets/reviewsSlider/ReviewsSlider";
+import { Services } from "@/features/home/components/Services2/Services";
+import DiagnosticBanner from "@/features/home/components/diagnosticBanner/DiagnosticBanner";
+import { Reviews } from "@/widgets/reviewsSlider/ReviewsSlider";
 
 const advantages = [
   {
@@ -35,9 +35,16 @@ const advantages = [
 export default function Home() {
   return (
     <div className="">
+      {/* Нужно Переделать  */}
       <Banner />
+
+      {/* Нужен Адаптив */}
       <MarketingSection />
+
+      {/* Нужен Адаптив */}
       <VideoPlayButton />
+
+      {/* Готово полностю */}
       <Advantages
         title={"Bold Brands International "}
         subtitle={
@@ -46,12 +53,26 @@ export default function Home() {
         subtitleStyle={{ color: "#FF2B44" }}
         advantages={advantages}
       />
+
+      {/* Готово полностю  */}
       <Challenges />
+
+      {/*  Нужно переписать на scss   */}
       <Services />
+
+      {/* Готово полностю  */}
       <DiagnosticBanner />
+
+      {/* Готово полностю  */}
       <Award />
+
+      {/* Готово полностю  */}
       <Partners />
-      {/* <Reviews/> */}
+
+      {/* Нужно улучшить  */}
+      <Reviews />
+
+      {/* Готово полностю  */}
       <FormContactUs />
     </div>
   );

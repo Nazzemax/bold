@@ -1,17 +1,17 @@
 .wrapper {
-  padding: 0 16px;
+  margin: 0 16px;
 }
+
 .diagnosticBanner {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #000;
   border-radius: 32px;
-  padding: 50px 40px;
+  padding: 150px 0; 
   position: relative;
   width: 100%;
-  max-width: 1888px;
-  height: 579px;
+  max-height: 579px;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
@@ -32,7 +32,7 @@
 
 .diagnosticContent {
   max-width: 1328px;
-  height: 279px;
+  min-height: 279px;
   position: relative;
   z-index: 10;
 }
@@ -43,6 +43,20 @@
   font-weight: 700;
   margin-bottom: 12px;
   text-align: center;
+  @media screen and (max-width: 1024px) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
+  @media screen and (max-width: 552px) {
+    font-size: 37px;
+    max-width: 520px;
+  }
+  @media screen and (max-width: 536px) {
+    font-size: 32px;
+    max-width: 303px;
+  }
 }
 
 .diagnosticContent p {
@@ -51,14 +65,27 @@
   margin-bottom: 24px;
   max-width: 1328px;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 645px) {
+    font-size: 16px;
+    max-width: 500px;
+    line-height: 24px;
+  }
+  @media screen and (max-width: 536px) {
+    margin: auto;
+    max-width: 300px;
+    margin-bottom: 48px;
+  }
 }
 
 .diagnosticBtn {
   background-color: #e3001b;
-  width: 255px;
+  min-width: 255px;
   height: 56px;
   color: white;
-  padding: 14px 24px;
+  padding: 21px 60px 21px 16px;
   border-radius: 16px;
   font-size: 18px;
   display: inline-flex;

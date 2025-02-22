@@ -1,12 +1,19 @@
+import { Map } from "@/features/contacts/components/Map/Map";
+import { FormContactUs } from "@/widgets/Forms/FormContactUs";
+import React from "react";
 
-import React from 'react'
-
-type Props = {}
+type Props = {};
 
 const ContactsPage: React.FC<Props> = ({}) => {
-     return (
-       <div>ContactsPage</div>
-     )
-}
+  return (
+    <div>
+      {/* Пойдет */}
+      <FormContactUs />
 
-export default ContactsPage
+      {/* Требует правки */}
+      <Map />
+    </div>
+  );
+};
+
+export default ContactsPage;

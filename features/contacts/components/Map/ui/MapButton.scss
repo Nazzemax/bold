@@ -1,0 +1,18 @@
+.map-buttons-container {
+  position: absolute;
+  top: 2.5rem;
+  left: 3.5rem;
+  z-index: 10;
+}
+
+@media (min-width: 375px) and (max-width: 639px) {
+  .map-button-text {
+    font-size: 0.7rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+  .map-buttons-container {
+    top: 2rem;
+    left: 2rem;
+  }
+}

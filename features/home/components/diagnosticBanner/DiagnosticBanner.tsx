@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./DiagnosticBanner.module.scss";
 import { CustomButton } from "@/shared/customUI/customButton/CustomButton";
 
-export const DiagnosticBanner: React.FC = () => {
+const DiagnosticBanner: React.FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.diagnosticBanner}>
@@ -20,3 +20,5 @@ export const DiagnosticBanner: React.FC = () => {
     </div>
   );
 };
+
+export default DiagnosticBanner;

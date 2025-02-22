@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./Modal.module.scss";
 import Image from "next/image";
-// import logoEllipse from "@/app/assets/icons/temporarelyReviewLogo.png";
+import logoEllipse from "@/public/icons/temporarelyReviewLogo.png";
 
 type ModalProps = {
   isOpen: boolean;
@@ -24,13 +24,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, review }) => {
         <button className={styles.closeButton} onClick={onClose}></button>
 
         <div className={styles.header}>
-          {/* <Image
+          <Image
             src={logoEllipse}
             alt="Company Logo"
             width={50}
             height={50}
             className={styles.logo}
-          /> */}
+          />
           <div>
             <h2 className={styles.name}>{review.name}</h2>
             <p className={styles.position}>{review.position}</p>

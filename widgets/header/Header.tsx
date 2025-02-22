@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 import { links } from "@/shared/constants/links";
 import LanguageSelect from "@/shared/customUI/langSelect/LanguageSelect";
 import HeaderModal from "@/shared/customUI/headerModal/HeaderModal";
+import { ChevronDown } from "lucide-react";
 
 interface HeaderProps {}
 
@@ -80,11 +81,15 @@ const Header: React.FC<HeaderProps> = () => {
                 <NavigationMenu key={`${item.name}-${item.href}`}>
                   <NavigationMenuList>
                     <NavigationMenuItem>
-                      <Link href={item.href}>
-                        <NavigationMenuTrigger>
-                          {item.name}
-                        </NavigationMenuTrigger>
-                      </Link>
+                      <NavigationMenuTrigger>
+                        <Link href={item.href} className="flex gap-1">
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            className="relative top-[1px] ml-1 h-6 w-6 transition duration-300 group-data-[state=open]:rotate-180"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </NavigationMenuTrigger>
                       <NavigationMenuContent className={styles.header__menu}>
                         {item.menu.map((subitem) => (
                           <Link

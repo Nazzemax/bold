@@ -1,23 +1,51 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./ReviewsSlider.module.scss";
 import Image from "next/image";
-import arrowRight from "@/app/assets/icons/arrowright.png";
-import arrowLeft from "@/app/assets/icons/arrowleft.png";
-import icon from "@/app/assets/icons/rightRedArrow.png";
+
+import arrowLeft from "@/public/icons/arrowleft.png";
+import arrowRight from "@/public/icons/arrowright.png";
+import icon from "@/public/icons/rightRedArrow.png";
+
 import { useRef } from "react";
 import Modal from "./ui/Modal/Modal";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
+import { Navigation } from "swiper/modules";
+import useMobileDetection from "@/shared/hooks/useMobileDetection";
+import {
+  formatTextWithParagraphs,
+  truncateText,
+} from "@/shared/utils/helpers/helpers";
 
 export const Reviews = () => {
-  const [selectedReview, setSelectedReview] = useState(null);
+  const [selectedReview, setSelectedReview] = useState<Review | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (review: any) => {
+  const isMobile = useMobileDetection();
+
+  interface Review {
+    id: number;
+    name: string;
+    position: string;
+    company: string;
+    logo: string;
+    stars: number;
+    text: string;
+    fullText: string;
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalOpen]);
+
+  const openModal = (review: Review) => {
     setSelectedReview(review);
     setIsModalOpen(true);
   };
@@ -26,38 +54,42 @@ export const Reviews = () => {
     setIsModalOpen(false);
     setSelectedReview(null);
   };
-
-  const swiperRef = useRef<any>(null);
+  const swiperRef = useRef(null);
 
   const reviews = [
     {
       id: 1,
       name: "Дмитриев Дмитрий",
       position: "Директор",
-      company: "Mldova",
+      company: "",
       logo: "https://images.thevoicemag.ru/upload/img_cache/c7a/c7ae074b6741f615d469eedea6f3a573_cropped_666x833.webp",
-      stars: 1,
+      stars: 5,
       text: `ОсОО "ОсОО “Алматинские конфеты” — «Рахат» выражает искреннюю благодарность коллективу и руководству ОсОО «Болд Брендс Интернешнл».
       Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
-      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к`, // Короткий текст
+      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели...`, // Короткий текст
       fullText: `ОсОО "Алматинские конфеты" — "Рахат" выражает искреннюю благодарность коллективу и руководству ОсОО "Болд Брендс Интернетшансы".
         Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
         Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к впечатляющим результатам, которые мы очень ценим.
         Команда выражает наилучшие пожелания вашему коллективу, желая дальнейшего процветания, эффективной работы, целей, творческого вдохновения и успешного завершения всех задач.
         Надеемся на продолжение нашего плодотворного сотрудничества и уверены в дальнейших успехах и достижениях в бизнесе.`, // Полный текст
     },
+
     {
       id: 2,
-      name: "Трамп",
-      position: "Президент латиносов",
-      company: "Russian Federation",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5raGTMXxhTTYKnCDIPnylVVTdrG6AAdK_UA&s",
+      name: "Дмитриев Дмитрий",
+      position: "Директор",
+      company: "",
+      logo: "https://images.thevoicemag.ru/upload/img_cache/c7a/c7ae074b6741f615d469eedea6f3a573_cropped_666x833.webp",
       stars: 5,
-      text: `Да штоб негры сдохли все."
+      text: `ОсОО "ОсОО “Алматинские конфеты” — «Рахат» выражает искреннюю благодарность коллективу и руководству ОсОО «Болд Брендс Интернешнл».
+      Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
+      Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели...`, // Короткий текст
+      fullText: `ОсОО "Алматинские конфеты" — "Рахат" выражает искреннюю благодарность коллективу и руководству ОсОО "Болд Брендс Интернетшансы".
         Мы выражаем нашу глубокую признательность за успешное сотрудничество с вашей компанией.
-        Ваша профессиональная некомпетентность, пофигизм и либеральность разрушили Америку мать! Ёп вашу мать!`, // Полный текст
+        Ваша профессиональная компетентность, ответственность, оперативность и индивидуальный подход к клиенту привели к впечатляющим результатам, которые мы очень ценим.
+        Команда выражает наилучшие пожелания вашему коллективу, желая дальнейшего процветания, эффективной работы, целей, творческого вдохновения и успешного завершения всех задач.
+        Надеемся на продолжение нашего плодотворного сотрудничества и уверены в дальнейших успехах и достижениях в бизнесе.`, // Полный текст
     },
-    // Другие отзывы
   ];
 
   return (
@@ -70,13 +102,19 @@ export const Reviews = () => {
             доверие.
           </p>
         </div>
+
         <div className={styles.sliderSection}>
           <Swiper
-            navigation={false}
+            ref={swiperRef}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: `.${styles["swiper-button-next"]}`,
+              prevEl: `.${styles["swiper-button-prev"]}`,
+            }}
             spaceBetween={20}
             slidesPerView={1}
+            autoplay
             className={styles.swiperContainer}
-            ref={swiperRef}
           >
             {reviews.map((review) => (
               <SwiperSlide key={review.id} className={styles.swiperSl}>
@@ -84,7 +122,11 @@ export const Reviews = () => {
                   <div className={styles.stars}>
                     {Array.from({ length: 5 }, (_, index) => (
                       <div key={index}>
-                        {index < review.stars ? <FaStar size={40}/> : <CiStar size={40}/>}
+                        {index < review.stars ? (
+                          <FaStar size={30} />
+                        ) : (
+                          <CiStar size={30} />
+                        )}
                       </div>
                     ))}
                   </div>
@@ -92,10 +134,10 @@ export const Reviews = () => {
                     <div className={styles.blog_header}>
                       <Image
                         src={review.logo}
-                        width={60}
-                        height={60}
                         alt={`${review.company} logo`}
                         className={styles.logo}
+                        width={40}
+                        height={40}
                       />
                       <div className={styles.bog_info}>
                         <h3 className={styles.name}>{review.name}</h3>
@@ -104,8 +146,11 @@ export const Reviews = () => {
                     </div>
                   </div>
                   <div className={styles.text}>
-                    {review.text.split("\n").map((paragraph, index) => (
-                      <span key={index}>{paragraph.trim()}</span>
+                    {" "}
+                    {formatTextWithParagraphs(
+                      truncateText(review.fullText, isMobile)
+                    ).map((line, index) => (
+                      <p key={index}>{line}</p>
                     ))}
                   </div>
                   <button
@@ -123,44 +168,38 @@ export const Reviews = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+
           <div className={styles.customNavigation}>
-            <button
-              className={styles.prevButton}
-              onClick={() => {
-                if (swiperRef.current) swiperRef.current.swiper.slidePrev();
-              }}
-            >
+            <button className={styles["swiper-button-prev"]}>
               <Image
                 src={arrowLeft}
                 alt="Previous"
                 className={styles.arrowIcon}
-                width={16}
-                height={16}
+                width={10}
+                height={15}
               />
             </button>
-            <button
-              className={styles.nextButton}
-              onClick={() => {
-                if (swiperRef.current) swiperRef.current.swiper.slideNext();
-              }}
-            >
+            <button className={styles["swiper-button-next"]}>
               <Image
                 src={arrowRight}
                 alt="Next"
                 className={styles.arrowIcon}
-                width={16}
-                height={16}
+                width={10}
+                height={15}
               />
             </button>
           </div>
         </div>
       </div>
+
       {/* Модальное окно */}
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        review={selectedReview}
-      />
+      <div style={{ overflowY: "auto", maxHeight: "90vh" }}>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          review={selectedReview}
+        />
+      </div>
     </div>
   );
 };

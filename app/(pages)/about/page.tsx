@@ -1,10 +1,11 @@
 import { SecondBanner } from "@/widgets/secondBanner/SecondBanner";
-import bgImg from "../../../public/cases/aboutUsCaseBg.jpg";
+import bgImg from "../../../public/about/bg-image.png";
 import BusinessResults from "@/widgets/businessResults/BusinessResults";
 import Advantages from "@/widgets/advantages/Advantages";
 import Partners from "@/widgets/partners/Partners";
-import { TeamSection } from "@/features/about/ui/Team/TeamSection";
+import { TeamSection } from "@/features/about/components/Team/TeamSection";
 import { Form } from "@/widgets/Forms/Form";
+import { Reviews } from "@/widgets/reviewsSlider/ReviewsSlider";
 
 const advantages = [
   {
@@ -32,11 +33,16 @@ type Props = {};
 const AboutPage: React.FC<Props> = ({}) => {
   return (
     <div>
+      {/* Нужно исправить + адаптив*/}
       <SecondBanner
         bgImg={bgImg}
         title="Мы меняем представление о маркетинге в Центральной Азии"
       />
+
+      {/* Нужен адаптив */}
       <BusinessResults />
+
+      {/* Готово полностю */}
       <Advantages
         title={"Bold Brands International "}
         subtitle={
@@ -45,9 +51,17 @@ const AboutPage: React.FC<Props> = ({}) => {
         subtitleStyle={{ color: "#FF2B44" }}
         advantages={advantages}
       />
+
+      {/* Нужно улучшить качество фото */}
       <TeamSection />
 
+      {/* Готово полностю */}
       <Partners />
+
+      {/* Требует правки */}
+      <Reviews />
+
+      {/* Требует правки */}
       <Form />
     </div>
   );
