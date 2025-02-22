@@ -4,10 +4,9 @@
  * @param {number} maxLength - The maximum number of characters to display.
  * @returns {string} - The truncated text with ellipsis if necessary.
  */
-export const truncateText = (text: string, maxLength: number = 48): string => {
-    if (text.length > maxLength) {
-      return text.slice(0, maxLength) + "...";
-    }
-    return text;
-  };
-  
+export const truncateText = (text: string, maxLength: number = 44): string => {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  }
+  return text;
+};

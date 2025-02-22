@@ -61,11 +61,10 @@ body {
       flex-direction: column;
       align-items: flex-start;
       padding: toRem(50);
-      border: 1px solid #EAEAEA;
+      border: 1px solid #eaeaea;
       border-radius: toRem(12);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
       background-color: white;
-      
 
       .icon {
         width: toRem(80);
@@ -83,7 +82,7 @@ body {
 
       .text {
         h2 {
-          color: #2A2D35;
+          color: #2a2d35;
           font-size: toRem(40);
           font-weight: 700;
           margin: 0;
@@ -99,7 +98,7 @@ body {
     }
     .media {
       position: relative;
-      
+
       height: auto;
       width: 100%;
       max-width: 648px;
@@ -122,8 +121,6 @@ body {
       max-width: toRem(648);
       border-radius: toRem(8);
       overflow: hidden;
-
-      
 
       img {
         width: 100%;
@@ -163,31 +160,31 @@ body {
 }
 
 /* ==== 📌 Адаптив для планшетов (768px - 1024px) ==== */
-@media (max-width: 1024px) {
+@media (max-width: 1089px) {
   .BusinessResults {
     padding: toRem(60) toRem(20);
-  
 
-  .container {
-    width: 100%;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: toRem(10);
-
-    h1 {
-      font-size: toRem(40);
-      line-height: toRem(50);
+    .container {
+      width: 100%;
     }
 
-    p {
-      font-size: toRem(16);
-      max-width: 100%;
-      text-align: left;
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: toRem(10);
+      max-width: toRem(648);
+      margin: auto;
+      h1 {
+        font-size: toRem(40);
+        line-height: toRem(50);
+      }
+
+      p {
+        font-size: toRem(16);
+        max-width: 100%;
+        text-align: left;
+      }
     }
-  }
   }
 
   .content {
@@ -219,9 +216,9 @@ body {
     padding: toRem(40) toRem(20);
   }
 
-    .container {
-      padding: 0;
-    }
+  .container {
+    padding: 0;
+  }
 
   .header h1 {
     font-size: toRem(32);
@@ -268,59 +265,54 @@ body {
 @media (max-width: 375px) {
   .BusinessResults {
     padding: toRem(20);
-  
 
-  .container {
-    width: 100%;
-  }
-
-  .header h1 {
-    font-size: toRem(28);
-    line-height: toRem(32);
-  }
-
-  .header p {
-    font-size: toRem(14);
-    line-height: toRem(20);
-    text-align: left;
-  }
-
-  .content {
-    align-items: center;
-    width: 100%;
-    gap: toRem(10);
-  
-
-  /* ✅ Перенесено внутрь .philosophy */
-  .philosophy {
-    width: 100%;
-    max-width: toRem(335);
-    padding: toRem(10);
-    gap: toRem(20);
-    .icon{
-      width: 80px;
-      height: 80px;
+    .container {
+      width: 100%;
     }
-    .text {
-      padding-bottom: 10px;
-      h2 {
-        color: #2A2D35;
-        font-size: toRem(32);
-        font-weight: 700;
-        line-height: 35px;
-        margin: 0;
-        margin-bottom: 10px;
+
+    .header h1 {
+      font-size: toRem(28);
+      line-height: toRem(32);
+    }
+
+    .header p {
+      font-size: toRem(14);
+      line-height: toRem(20);
+      text-align: left;
+    }
+
+    .content {
+      align-items: center;
+      width: 100%;
+      gap: toRem(10);
+
+      /* ✅ Перенесено внутрь .philosophy */
+      .philosophy {
+        width: 100%;
+        max-width: toRem(335);
+        padding: toRem(10);
+        gap: toRem(20);
+        .icon {
+          width: 80px;
+          height: 80px;
+        }
+        .text {
+          padding-bottom: 10px;
+          h2 {
+            color: #2a2d35;
+            font-size: toRem(32);
+            font-weight: 700;
+            line-height: 35px;
+            margin: 0;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: toRem(16);
+          }
+        }
       }
-      p{
-        font-size: toRem(16);
-      }
-    }
-    
     }
   }
-}
-    
-  
 
   .videoContainer {
     width: 100%;
@@ -337,4 +329,3 @@ body {
     }
   }
 }
-
