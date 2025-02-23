@@ -1,12 +1,11 @@
 "use client";
-
 import React, { useState } from "react";
-import styles from "./seo.module.scss";
+import styles from "./FAQ.module.scss";
 import Image from "next/image";
-import arrowDown from "@/public/image/arrow-down.svg"; // Иконка закрытой стрелки
-import arrowUp from "@/public/image/arrow-up.svg"; // Иконка открытой стрелки
+import arrowDown from "@/public/image/arrow-down.svg";
+import arrowUp from "@/public/image/arrow-up.svg";
 
-const FAQ = () => {
+export const FAQ: React.FC = () => {
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
   const toggleQuestion = (index: number) => {
@@ -70,5 +69,3 @@ const FAQ = () => {
     </div>
   );
 };
-
-export default FAQ;

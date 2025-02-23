@@ -1,6 +1,6 @@
 "use client";
 import React, { ChangeEvent, useState, useEffect, useCallback } from "react";
-import styles from "./Cases.module.scss";
+import styles from "./CasesFilter.module.scss";
 import Image from "next/image";
 import iconBlog from "@/public/caseItem.png";
 import insta from "@/public/image/social.png";
@@ -114,10 +114,11 @@ const cases = [
   },
 ];
 
-function Cases() {
+export const CasesFilter: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const isMobile = useIsMobile();
-  const itemsPerPage = isMobile ? 3 : 6; // Устанавливаем количество карточек на странице
+  // Устанавливаем количество карточек на странице
+  const itemsPerPage = isMobile ? 3 : 6;
 
   const [selectedTag, setSelectedTag] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -287,6 +288,4 @@ function Cases() {
       </div>
     </div>
   );
-}
-
-export default Cases;
+};

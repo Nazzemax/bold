@@ -1,4 +1,3 @@
-
 // import Cases from "@/src/components/Cases/Cases";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
@@ -9,7 +8,7 @@ import Image from "next/image";
 import ApproachSection from "@/src/components/ApproachSection/ApproachSection";
 import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
 import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
-import Seo from "@/src/components/Seo/seo";
+import Seo from "@/src/components/Seo/FAQ";
 import CarouselBlog from "@/src/components/CaruselBlog/caruselblog";
 import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
 import Carousel from "@/src/components/Carousel/Carousel";
@@ -31,84 +30,34 @@ import { servicesData2 } from "@/src/data/servicesData2";
 import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
-import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
-import ExamplePage, { ExamplePage1, ExamplePage2, ExamplePage3 } from "@/src/UI/ExamplePage/ExamplePage";
+import {
+  crmBenefits,
+  crmBenefits2,
+  howWeWorkSteps,
+} from "@/src/data/stepsData";
+import ExamplePage, {
+  ExamplePage1,
+  ExamplePage2,
+  ExamplePage3,
+} from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
-import CRM from '@/app/pages/Page1/CRM'
+import CRM from "@/app/pages/Page1/CRM";
 import CMS from "@/app/pages/Page1/CMS";
 import Link from "next/link";
 import VideoProductionPage from "./pages/Page1/VideoProduction";
+import Cases from "@/src/components/Cases/CasesFilter";
 
 export default function Home() {
   return (
     <div>
-      
-      {/* <VideoProductionPage/> */}
-      {/* <Link href='/crm'>
-      // <CRM/>
-      </Link> */}
-      
-      {/* <CMS/> */}
-      {/* <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  /> */}
-      {/* <StepCard title="Почему выбирают Bold Brands?" steps={crmBenefits2} buttonText="Получить консультацию"  />
-      <StepCard title="Комплексное маркетинговое сопровождение" steps={crmBenefits} buttonText="Получить консультацию"  />
-      <Results/>
-      
-      <ExamplePage1 />
-      <ExamplePage2 />
-      <PartnershipBanner/>
-      <ServiceSection2 {...servicesData2} />;
-      
+      {/* блок 1 на главной странице (доделать) */}
+      <MarketingSection />
 
-      {/* <Headers /> */}
-      {/* блок 1 на странице брендинга (слайдер) */}
-      {/* <BrandingCarousel /> */}
-      {/* блок 1 на главной странице */}
-      {/* <MarketingSection /> */}
-      {/* блок 2 на главной странице (с крутящейся кнопкой) */}
-      {/* <VideoButton /> */}
-      {/* непонятно */}
-      {/* <Contacts /> */}
-      {/* блок 7 на галвной странице (слайдер о помощзи другим бизнесам) */}
-      {/* <Cases /> */}
-      {/* блок видео отзывов на страницах услуг */}
-      {/* <VideoTestimonials /> */}
-      {/* блок 10 на главной тсранице (слайдер отзывов клиентов) */}
-      {/* <ReviewsSlider /> */}
-      {/* блок 3 на старнице о нас (фреймы команды) */}
-      {/* <Team /> */}
-      {/* зигзаг-блок 1 на странице SMM */}
-      {/* <ApproachSection /> */}
-      {/* блок 1 на странице о нас */}
-     
-      {/* блок 2 на странице контекстной рекламы */}
-      {/* <HowWeWork /> */}
-      {/* блок частозадаваемых вопросов на странице SEO оптимизации */}
-      {/* <Seo /> */}
-      {/* блок 2 (слайдер продающегося контента) страница SMM */}
-      {/* <CarouselBlog />
-      {/* зигзаг-блок 4 на странице CRM */}
-      {/* <CRMIntegration /> */} 
-      {/* блок 9 на главной странице (слайдер партнёры) */}
-      {/* <Carousel /> */}
-      {/* блок 3 на главной странице (кружки-часики) */}
-      {/* <Cases_Carusel /> */}
-      {/* последний блок главной страницы (простая форма) */}
-      {/* <Form /> */}
-      {/* блок 6 на галвной странице (диагностика) */}
-      {/* <DiagnosticBanner /> */}
-      {/* блок 3 на странице CRM (официальные партнёры) */}
-      {/* <PartnershipBanner /> */}
-      {/* <DiagnosticBanner/> */}
-      {/* <ReviewsSlider/> */}
-      {/* /* <VideoProduction /> */}
-      
-      
-      <ServiceSection3 {...servicesData3} />; 
-      <Form/>
-       <BrandingCarousel/>
-      
+      {/* зигзаг-блок 1 на странице SMM (переделать/доделать) */}
+      <ApproachSection />
+
+      {/* переделать */}
+      {/* <CarouselBlog /> */}
     </div>
-
   );
 }

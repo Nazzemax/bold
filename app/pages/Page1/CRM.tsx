@@ -1,5 +1,4 @@
-
-import Cases from "@/src/components/Cases/Cases";
+import Cases from "@/src/components/Cases/CasesFilter";
 import Contacts from "@/src/components/Contacts";
 import ReviewsSlider from "@/src/components/ReviewsSlider/ReviewsSlider";
 import VideoTestimonials from "@/src/components/VideoTestimonials/VideoTestimonials";
@@ -9,7 +8,7 @@ import Image from "next/image";
 import ApproachSection from "@/src/components/ApproachSection/ApproachSection";
 import BusinessResults from "@/src/components/BusinessResults/BusinessResults";
 import { HowWeWork } from "@/src/components/HowWeWork/HowWeWork";
-import Seo from "@/src/components/Seo/seo";
+import Seo from "@/src/components/Seo/FAQ";
 import CarouselBlog from "@/src/components/CaruselBlog/caruselblog";
 import CRMIntegration from "@/src/components/CRMIntegration/CRMIntegration";
 import Carousel from "@/src/components/Carousel/Carousel";
@@ -31,21 +30,28 @@ import { servicesData2 } from "@/src/data/servicesData2";
 import ServiceSection3 from "@/src/UI/ServiceSection3/ServiceSection3";
 import { servicesData3 } from "@/src/data/servicesData3";
 import StepCard from "@/src/UI/StepCard/StepCard";
-import { crmBenefits, crmBenefits2, howWeWorkSteps } from "@/src/data/stepsData";
-import ExamplePage, { ExamplePage1, ExamplePage2 } from "@/src/UI/ExamplePage/ExamplePage";
+import {
+  crmBenefits,
+  crmBenefits2,
+  howWeWorkSteps,
+} from "@/src/data/stepsData";
+import ExamplePage, {
+  ExamplePage1,
+  ExamplePage2,
+} from "@/src/UI/ExamplePage/ExamplePage";
 import Results from "@/src/components/Results/Results";
 
 export default function CRM() {
   return (
     <div>
-      <StepCard title="Почему вашему бизнесу нужна CRM?" steps={crmBenefits} buttonText="Получить консультацию"  />
+      <StepCard
+        title="Почему вашему бизнесу нужна CRM?"
+        steps={crmBenefits}
+        buttonText="Получить консультацию"
+      />
       <ExamplePage1 />
-      <PartnershipBanner/>
+      <PartnershipBanner />
       <ServiceSection2 {...servicesData2} />;
-      <Form/>
-      
-      
     </div>
-
   );
 }

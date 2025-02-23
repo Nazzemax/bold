@@ -1,9 +1,5 @@
 import React from 'react';
 import ApproachSection from '@/src/UI/Section/Section';
-
-import dataMigrationImage from '@/public/image/dataMigration.png';
-import processAutomationImage from '@/public/image/processAutomation.png';
-import supportTrainingImage from '@/public/image/supportTraining.png';
 import imageApproach from '@/public/image/image.png'
 
 
