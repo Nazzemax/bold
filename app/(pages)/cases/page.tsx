@@ -1,17 +1,21 @@
+import { SecondBanner } from "@/widgets/secondBanner/SecondBanner";
+import React from "react";
+import bgImg from "@/public/banner/img-1.jpg";
+import Cases from "@/widgets/Cases/Cases";
 
-import { SecondBanner } from '@/widgets/secondBanner/SecondBanner'
-import React from 'react'
-import bgImg from '@/public/banner/img-1.jpg'
-
-type Props = {}
+type Props = {};
 
 const CasesPage: React.FC<Props> = ({}) => {
-     return (
-       <div>
-        <SecondBanner bgImg={bgImg} title={'Наша миссия воплощать идеи в жизнь'}
-        />
-       </div>
-     )
-}
+  return (
+    <div>
+      <SecondBanner
+        bgImg={bgImg}
+        title={"Наша миссия воплощать идеи в жизнь"}
+      />
 
-export default CasesPage
+      <Cases />
+    </div>
+  );
+};
+
+export default CasesPage;
