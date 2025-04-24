@@ -1,0 +1,105 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.casesWhatWeHaveDone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: toRem(30);
+  padding: toRem(70) toRem(210) toRem(70) toRem(210);
+  border-bottom: 1px solid #ecebef;
+  border-top: 1px solid #ecebef;
+
+  .casesWhatWeHaveDone-title {
+    color: #838895;
+    width: toRem(200);
+    text-align: start;
+  }
+
+  .casesWhatWeHaveDone-text {
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+
+    .block-item {
+      margin-right: toRem(20);
+      .block-item-images {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        img {
+          width: toRem(380);
+          height: toRem(255);
+        }
+      }
+
+      p {
+        color: #838895;
+        margin-top: toRem(30);
+        margin-bottom: toRem(30);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1060px) {
+  .casesWhatWeHaveDone {
+    flex-direction: column;
+    padding: toRem(70) toRem(0) toRem(60) toRem(280);
+
+    .casesWhatWeHaveDone-text {
+      width: toRem(400);
+
+      .block-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: toRem(400);
+
+        .block-item-images {
+          flex-direction: column;
+          gap: toRem(20);
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 850px) {
+  .casesWhatWeHaveDone {
+    padding: toRem(70) toRem(0) toRem(60) toRem(140);
+  }
+}
+
+@media all and (max-width: 662px) {
+  .casesWhatWeHaveDone {
+    padding: toRem(70) toRem(70) toRem(60) toRem(100);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .casesWhatWeHaveDone {
+    padding: toRem(70) toRem(20) toRem(60) toRem(20);
+  }
+}
+
+@media all and (max-width: 444px) {
+  .casesWhatWeHaveDone {
+    padding: toRem(70) toRem(5) toRem(60) toRem(10);
+
+    .casesWhatWeHaveDone-text {
+        width: toRem(350);
+
+      .block-item {
+        width: toRem(350);
+        .block-item-images {
+          img {
+            width: toRem(350);
+            height: toRem(235);
+          }
+        }
+      }
+    }
+  }
+}

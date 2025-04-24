@@ -1,0 +1,126 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.casesIntro-main {
+  display: flex;
+  flex-direction: column;
+  padding: toRem(50) toRem(100) toRem(0) toRem(100);
+  gap: toRem(18);
+  border-bottom: 1px solid #ecebef;
+}
+
+.casesIntro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: toRem(0) toRem(100) toRem(70) toRem(100);
+
+
+  p {
+    color: #838895;
+    font-size: toRem(15);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: toRem(50);
+    color: #2a2d35;
+  }
+
+  .casesIntro-left {
+    width: toRem(550);
+    line-height: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(17);
+
+    .casesIntro-left-up {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: toRem(9);
+    }
+  }
+
+  .casesIntro-right {
+    width: toRem(435);
+    height: toRem(350);
+    margin-left: toRem(50);
+
+    .casesIntro-right-tags-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: toRem(6);
+      margin: toRem(15);
+    }
+
+    .casesIntro-right-tag {
+      border: none;
+      border-radius: 8px;
+      height: toRem(34);
+      background: #41414166;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: toRem(4);
+      padding: toRem(11);
+
+      span {
+        color: white;
+        font-size: toRem(15);
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1034px) {
+  .casesIntro {
+    .casesIntro-right {
+      margin: toRem(0);
+    }
+  }
+}
+
+@media all and (max-width: 984px) {
+  .casesIntro {
+    flex-direction: column;
+    .casesIntro-right {
+      width: toRem(300);
+      height: toRem(250);
+      margin-left: toRem(0);
+    }
+  }
+}
+
+@media all and (max-width: 949px) {
+  .casesIntro {
+    gap: toRem(25);
+    align-items: center;
+    h2 {
+      font-size: toRem(30);
+    }
+    .casesIntro-right {
+      width: toRem(400);
+      height: toRem(315);
+    }
+    .casesIntro-left {
+      width: toRem(400);
+    }
+  }
+}
+
+@media all and (max-width: 605px) {
+  .casesIntro{
+    .casesIntro-left{
+      width: toRem(325);
+
+    }
+    .casesIntro-right {
+      width: toRem(325);
+      height: toRem(285);
+    }
+  }
+}
