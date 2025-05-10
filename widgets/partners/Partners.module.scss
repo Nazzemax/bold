@@ -1,0 +1,90 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.partners {
+  padding: toRem(150) 0;
+  position: relative;
+  &__title {
+    font-size: toRem(24);
+    font-weight: 500;
+    color: #838895;
+    text-align: center;
+    margin-bottom: toRem(8);
+    text-transform: uppercase;
+  }
+  &__content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      width: toRem(250);
+      height: 100%;
+      content: "";
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &:before {
+      left: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+    }
+
+    &:after {
+      right: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    }
+  }
+
+  &__group {
+    display: flex;
+    gap: toRem(32);
+    justify-content: center;
+    position: relative;
+
+    animation: 30s slide infinite linear;
+    will-change: transform;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__img {
+    min-width: toRem(274);
+    height: toRem(216);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3 * 2));
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .partners {
+    padding: toRem(56) 0;
+
+    &__content {
+      &::before,
+      &::after {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}

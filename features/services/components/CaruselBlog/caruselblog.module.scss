@@ -1,0 +1,158 @@
+.carouselContainer {
+  max-width: 1328px; /* Максимальная ширина */
+  margin: 0 auto; /* Центрируем */
+  padding: 40px 20px;
+  background-color: #000;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ==== Текстовый блок ==== */
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+
+    @media (max-width: 1024px) {
+      /* Планшеты */
+      font-size: 38px;
+    }
+
+    @media (max-width: 768px) {
+      /* Телефоны */
+      font-size: 28px;
+    }
+
+    @media (max-width: 480px) {
+      /* Маленькие экраны */
+      font-size: 24px;
+    }
+  }
+
+  p {
+    max-width: 450px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 25px;
+
+    @media (max-width: 1024px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+}
+
+/* ==== Слайдер (Slick) ==== */
+.slick-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .slick-list {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  /* Делаем точки маленькими */
+  .slick-dots {
+    bottom: -25px; /* Отступ снизу */
+    display: flex !important;
+    justify-content: center;
+
+    li {
+      button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #777;
+      }
+
+      &.slick-active button {
+        background: #fff;
+      }
+    }
+  }
+
+  /* Скрываем стрелки */
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+}
+
+/* ==== Картинки ==== */
+.image {
+  width: 340px;
+  height: 340px;
+  border-radius: 12px;
+  object-fit: cover;
+
+  @media (max-width: 1024px) {
+    /* Планшеты */
+    width: 280px;
+    height: 280px;
+  }
+
+  @media (max-width: 768px) {
+    /* Телефоны */
+    width: 220px;
+    height: 220px;
+  }
+
+  @media (max-width: 480px) {
+    /* Маленькие экраны */
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ==== Дополнительные фиксы для телефонов ==== */
+@media (max-width: 768px) {
+  .carouselContainer {
+    padding: 20px;
+  }
+
+  .slick-slider {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    padding: 15px;
+  }
+
+  .title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,54 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.btn {
+  max-width: toRem(290);
+  height: toRem(56);
+  background: #ff2b44;
+  border-radius: toRem(16);
+  color: white;
+  font-size: toRem(18);
+  font-weight: 500;
+  line-height: toRem(21.78);
+  padding-left: toRem(16);
+  padding: toRem(8);
+  animation: fadeIn 1s ease-out;
+
+  .btn__arrow {
+    display: none;
+  }
+
+  &:hover {
+    background: #da273c;
+
+    .btn__arrow {
+      display: block;
+      color: #2a2d35;
+    }
+    .btn__arrowImg {
+      display: none;
+    }
+    span {
+      margin-left: toRem(12);
+    }
+  }
+  span {
+    min-width: toRem(40);
+    height: toRem(40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: toRem(10);
+    background: white;
+    border-radius: toRem(12);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
