@@ -1,0 +1,219 @@
+@function toRem($value) {
+  @return ($value / 16) * 1rem;
+}
+
+.videoSection {
+  padding: toRem(80) toRem(20);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+  max-width: toRem(1328);
+  font-size: toRem(68);
+  font-weight: 700;
+  text-align: left;
+  color: #333;
+  margin-bottom: toRem(60);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(100);
+  max-width: toRem(1328);
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  gap: toRem(80);
+  max-width: 100%;
+  align-items: center;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.videoWrapper {
+  flex: 1;
+  max-width: toRem(648);
+  border-radius: toRem(24);
+  overflow: hidden;
+  box-shadow: 0 toRem(4) toRem(10) rgba(0, 0, 0, 0.1);
+
+  iframe {
+    background-color: #333;
+    width: 100%;
+    height: toRem(400);
+    border-radius: toRem(24);
+  }
+}
+
+.text {
+  flex: 1;
+  max-width: toRem(600);
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: toRem(5);
+    li {
+      font-size: toRem(18);
+      color: #838895;
+      border: 1px solid #d1d7e2;
+      border-radius: 8px;
+      padding: 5px;
+    }
+  }
+}
+
+.cardTitle {
+  font-size: toRem(40);
+  font-weight: 700;
+  color: #222;
+  margin-bottom: toRem(10);
+}
+
+.cardDescription {
+  font-size: toRem(18);
+  color: #838895;
+  line-height: 1.5;
+  margin-bottom: toRem(10);
+  font-weight: 500;
+}
+
+
+
+
+.Button {
+  display: flex;
+  align-items: center;
+  gap: toRem(8);
+}
+
+.link {
+  font-size: toRem(16);
+  font-weight: 600;
+  color: #FF2B44;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .title {
+    font-size: toRem(32);
+    width: toRem(335);
+    text-align: left;
+    margin-bottom: toRem(40);
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    gap: toRem(20);
+  }
+
+  .videoWrapper {
+    max-width: 100%;
+    width: 335px;
+    iframe {
+      height: toRem(250);
+    }
+  }
+
+  .text li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+  .cardTitle {
+    font-size: toRem(26);
+    text-align: left;
+    width: 335px;
+  }
+
+  .cardDescription {
+    font-size: toRem(16);
+    text-align: left;
+  }
+
+  .tagsContainer {
+    max-width: 100%;
+  }
+
+  .li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+
+  .Button {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: toRem(32);
+    width: toRem(335);
+    text-align: left;
+    margin-bottom: toRem(40);
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    gap: toRem(20);
+  }
+
+  .videoWrapper {
+    max-width: 100%;
+    width: 335px;
+    iframe {
+      height: toRem(250);
+    }
+  }
+
+  .text li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+  .cardTitle {
+    font-size: toRem(26);
+    text-align: left;
+    width: 335px;
+  }
+
+  .cardDescription {
+    font-size: toRem(16);
+    text-align: left;
+  }
+
+  .tagsContainer {
+    max-width: 100%;
+  }
+
+  .li {
+    font-size: toRem(16);
+    padding: toRem(8);
+    width: 335px;
+    text-align: left;
+  }
+
+  .Button {
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+}

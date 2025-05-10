@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    justify-content: flex-end; /* Сдвигаем слайдер вправо */
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .paginationButton {
+    background-color: #f3f4f6;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .paginationButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .paginationButton:hover:not(:disabled) {
+    background-color: #e4e4e4;
+  }
+  
